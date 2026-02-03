@@ -7,14 +7,13 @@ namespace QuanLyTiemToc.Data
     {
        
             public int KhachHangId { get; set; }
-            public string HoTen { get; set; }
-            public string DienThoai { get; set; }
+            public string TenKH { get; set; }
+            public string SDT { get; set; }
+            public string DiaChi { get; set; }
 
-            public int DichVuId { get; set; }   
-            public DichVu DichVu { get; set; }  
-        }
+    }
 
     }
 
 
-}
+

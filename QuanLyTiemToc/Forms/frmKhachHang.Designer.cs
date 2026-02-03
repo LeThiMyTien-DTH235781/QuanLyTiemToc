@@ -38,13 +38,13 @@
             txtSDT = new TextBox();
             txtTenKH = new TextBox();
             txtMaKH = new TextBox();
-            label6 = new Label();
             label4 = new Label();
             label5 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            cbDichVu = new ComboBox();
+            label6 = new Label();
+            txtDiaChi = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dtKhachHang).BeginInit();
             SuspendLayout();
             // 
@@ -62,7 +62,6 @@
             dtKhachHang.RowHeadersWidth = 51;
             dtKhachHang.Size = new Size(1397, 356);
             dtKhachHang.TabIndex = 28;
-            dtKhachHang.CellClick += dtKhachHang_CellClick;
             // 
             // btnThoat
             // 
@@ -154,16 +153,6 @@
             txtMaKH.Size = new Size(258, 27);
             txtMaKH.TabIndex = 15;
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(768, 129);
-            label6.Margin = new Padding(4, 0, 4, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(72, 20);
-            label6.TabIndex = 14;
-            label6.Text = "Dịch vụ:";
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -197,42 +186,50 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Rockwell Condensed", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Rockwell Condensed", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.SlateGray;
-            label2.Location = new Point(592, 13);
+            label2.Location = new Point(52, 36);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(272, 40);
+            label2.Size = new Size(188, 27);
             label2.TabIndex = 10;
             label2.Text = "Thông Tin Khách Hàng";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Courier New", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Courier New", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Teal;
-            label1.Location = new Point(61, 24);
+            label1.Location = new Point(605, 22);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(291, 27);
+            label1.Size = new Size(351, 31);
             label1.TabIndex = 9;
             label1.Text = "Tiệm tóc nam Mable🍁";
             // 
-            // cbDichVu
+            // label6
             // 
-            cbDichVu.FormattingEnabled = true;
-            cbDichVu.Items.AddRange(new object[] { "Cắt tóc tạo kiểu (cắt + gội + cạo mặt + tạo kiểu)", "Uốn/Phục hồi tóc", "Nhuộm màu (tùy thuộc chất tóc và độ dài tóc)" });
-            cbDichVu.Location = new Point(924, 126);
-            cbDichVu.Name = "cbDichVu";
-            cbDichVu.Size = new Size(364, 28);
-            cbDichVu.TabIndex = 29;
+            label6.AutoSize = true;
+            label6.Location = new Point(771, 145);
+            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(67, 20);
+            label6.TabIndex = 13;
+            label6.Text = "Địa chỉ:";
+            // 
+            // txtDiaChi
+            // 
+            txtDiaChi.Location = new Point(924, 139);
+            txtDiaChi.Margin = new Padding(4, 3, 4, 3);
+            txtDiaChi.Name = "txtDiaChi";
+            txtDiaChi.Size = new Size(254, 27);
+            txtDiaChi.TabIndex = 17;
             // 
             // frmKhachHang
             // 
             AutoScaleDimensions = new SizeF(10F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1683, 626);
-            Controls.Add(cbDichVu);
             Controls.Add(dtKhachHang);
             Controls.Add(btnThoat);
             Controls.Add(btnHuy);
@@ -240,10 +237,11 @@
             Controls.Add(btnSua);
             Controls.Add(btnXoa);
             Controls.Add(btnThem);
+            Controls.Add(txtDiaChi);
             Controls.Add(txtSDT);
             Controls.Add(txtTenKH);
-            Controls.Add(txtMaKH);
             Controls.Add(label6);
+            Controls.Add(txtMaKH);
             Controls.Add(label4);
             Controls.Add(label5);
             Controls.Add(label3);
@@ -271,12 +269,12 @@
         private TextBox txtSDT;
         private TextBox txtTenKH;
         private TextBox txtMaKH;
-        private Label label6;
         private Label label4;
         private Label label5;
         private Label label3;
         private Label label2;
         private Label label1;
-        private ComboBox cbDichVu;
+        private Label label6;
+        private TextBox txtDiaChi;
     }
 }

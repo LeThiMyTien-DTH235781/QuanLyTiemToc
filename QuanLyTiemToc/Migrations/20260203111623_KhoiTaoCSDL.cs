@@ -15,15 +15,14 @@ namespace QuanLyTiemToc.Migrations
                 name: "DichVu",
                 columns: table => new
                 {
-                    MaDichVu = table.Column<int>(type: "int", nullable: false)
+                    DichVuId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TenDichVu = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    DonGia = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    MoTa = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    TenDichVu = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DonGia = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DichVu", x => x.MaDichVu);
+                    table.PrimaryKey("PK_DichVu", x => x.DichVuId);
                 });
 
             migrationBuilder.CreateTable(
@@ -32,9 +31,9 @@ namespace QuanLyTiemToc.Migrations
                 {
                     KhachHangId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    HoTen = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    DienThoai = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
-                    DiaChi = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false)
+                    TenKH = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SDT = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DiaChi = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -47,10 +46,12 @@ namespace QuanLyTiemToc.Migrations
                 {
                     NhanVienId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    HoTen = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    DienThoai = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
-                    ChucVu = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Luong = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    HoTen = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DienThoai = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DiaChi = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TenDangNhap = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MatKhau = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ChuyenMon = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -64,9 +65,10 @@ namespace QuanLyTiemToc.Migrations
                     SanPhamId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TenSanPham = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Loai = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    SoLuong = table.Column<int>(type: "int", nullable: false),
                     DonGia = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    SoLuongTon = table.Column<int>(type: "int", nullable: false),
-                    MoTa = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false)
+                    DonVi = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -118,7 +120,7 @@ namespace QuanLyTiemToc.Migrations
                         name: "FK_HoaDonChiTiet_DichVu_DichVuId",
                         column: x => x.DichVuId,
                         principalTable: "DichVu",
-                        principalColumn: "MaDichVu");
+                        principalColumn: "DichVuId");
                     table.ForeignKey(
                         name: "FK_HoaDonChiTiet_HoaDon_HoaDonId",
                         column: x => x.HoaDonId,

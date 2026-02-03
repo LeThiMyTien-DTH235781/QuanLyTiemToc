@@ -48,13 +48,14 @@
             txtMK = new TextBox();
             label7 = new Label();
             cbChuyenMon = new ComboBox();
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)dtNhanVien).BeginInit();
             SuspendLayout();
             // 
             // btnThoat
             // 
             btnThoat.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnThoat.Location = new Point(987, 145);
+            btnThoat.Location = new Point(1015, 172);
             btnThoat.Margin = new Padding(4, 3, 4, 3);
             btnThoat.Name = "btnThoat";
             btnThoat.Size = new Size(125, 38);
@@ -66,7 +67,7 @@
             // btnHuy
             // 
             btnHuy.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnHuy.Location = new Point(987, 89);
+            btnHuy.Location = new Point(1015, 116);
             btnHuy.Margin = new Padding(4, 3, 4, 3);
             btnHuy.Name = "btnHuy";
             btnHuy.Size = new Size(125, 38);
@@ -78,7 +79,8 @@
             // btnLuu
             // 
             btnLuu.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnLuu.Location = new Point(987, 39);
+            btnLuu.ForeColor = Color.DodgerBlue;
+            btnLuu.Location = new Point(1015, 66);
             btnLuu.Margin = new Padding(4, 3, 4, 3);
             btnLuu.Name = "btnLuu";
             btnLuu.Size = new Size(125, 36);
@@ -90,7 +92,7 @@
             // btnSua
             // 
             btnSua.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnSua.Location = new Point(827, 89);
+            btnSua.Location = new Point(855, 116);
             btnSua.Margin = new Padding(4, 3, 4, 3);
             btnSua.Name = "btnSua";
             btnSua.Size = new Size(122, 38);
@@ -102,7 +104,8 @@
             // btnXoa
             // 
             btnXoa.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnXoa.Location = new Point(827, 145);
+            btnXoa.ForeColor = Color.Brown;
+            btnXoa.Location = new Point(855, 172);
             btnXoa.Margin = new Padding(4, 3, 4, 3);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(122, 38);
@@ -114,7 +117,7 @@
             // btnThem
             // 
             btnThem.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnThem.Location = new Point(827, 40);
+            btnThem.Location = new Point(855, 67);
             btnThem.Margin = new Padding(4, 3, 4, 3);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(122, 35);
@@ -126,12 +129,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Courier New", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Courier New", 19.8000011F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Teal;
-            label1.Location = new Point(20, 21);
+            label1.Location = new Point(456, 9);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(291, 27);
+            label1.Size = new Size(414, 38);
             label1.TabIndex = 28;
             label1.Text = "Tiệm tóc nam Mable🍁";
             // 
@@ -154,7 +157,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            label2.Location = new Point(21, 66);
+            label2.Location = new Point(49, 93);
             label2.Name = "label2";
             label2.Size = new Size(83, 17);
             label2.TabIndex = 47;
@@ -162,7 +165,7 @@
             // 
             // txtHoTen
             // 
-            txtHoTen.Location = new Point(108, 62);
+            txtHoTen.Location = new Point(136, 89);
             txtHoTen.Name = "txtHoTen";
             txtHoTen.Size = new Size(235, 27);
             txtHoTen.TabIndex = 48;
@@ -171,7 +174,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            label3.Location = new Point(21, 108);
+            label3.Location = new Point(49, 135);
             label3.Name = "label3";
             label3.Size = new Size(84, 17);
             label3.TabIndex = 47;
@@ -179,7 +182,7 @@
             // 
             // txtSDT
             // 
-            txtSDT.Location = new Point(108, 104);
+            txtSDT.Location = new Point(136, 131);
             txtSDT.Name = "txtSDT";
             txtSDT.Size = new Size(235, 27);
             txtSDT.TabIndex = 48;
@@ -188,7 +191,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            label4.Location = new Point(21, 154);
+            label4.Location = new Point(49, 181);
             label4.Name = "label4";
             label4.Size = new Size(60, 17);
             label4.TabIndex = 47;
@@ -196,7 +199,7 @@
             // 
             // txtDiaChi
             // 
-            txtDiaChi.Location = new Point(108, 150);
+            txtDiaChi.Location = new Point(136, 177);
             txtDiaChi.Name = "txtDiaChi";
             txtDiaChi.Size = new Size(235, 27);
             txtDiaChi.TabIndex = 48;
@@ -205,7 +208,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            label5.Location = new Point(416, 63);
+            label5.Location = new Point(444, 90);
             label5.Name = "label5";
             label5.Size = new Size(109, 17);
             label5.TabIndex = 47;
@@ -213,7 +216,7 @@
             // 
             // txtTenDangNhap
             // 
-            txtTenDangNhap.Location = new Point(552, 62);
+            txtTenDangNhap.Location = new Point(580, 89);
             txtTenDangNhap.Name = "txtTenDangNhap";
             txtTenDangNhap.Size = new Size(235, 27);
             txtTenDangNhap.TabIndex = 48;
@@ -222,7 +225,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            label6.Location = new Point(416, 108);
+            label6.Location = new Point(444, 135);
             label6.Name = "label6";
             label6.Size = new Size(76, 17);
             label6.TabIndex = 47;
@@ -230,7 +233,7 @@
             // 
             // txtMK
             // 
-            txtMK.Location = new Point(552, 104);
+            txtMK.Location = new Point(580, 131);
             txtMK.Name = "txtMK";
             txtMK.Size = new Size(235, 27);
             txtMK.TabIndex = 48;
@@ -239,7 +242,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            label7.Location = new Point(416, 158);
+            label7.Location = new Point(444, 185);
             label7.Name = "label7";
             label7.Size = new Size(98, 17);
             label7.TabIndex = 47;
@@ -249,16 +252,29 @@
             // 
             cbChuyenMon.FormattingEnabled = true;
             cbChuyenMon.Items.AddRange(new object[] { "Thợ chính", "Thợ phụ" });
-            cbChuyenMon.Location = new Point(552, 149);
+            cbChuyenMon.Location = new Point(580, 176);
             cbChuyenMon.Name = "cbChuyenMon";
             cbChuyenMon.Size = new Size(151, 28);
             cbChuyenMon.TabIndex = 49;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Rockwell Condensed", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.SlateGray;
+            label8.Location = new Point(49, 41);
+            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(89, 27);
+            label8.TabIndex = 50;
+            label8.Text = "Thông Tin";
             // 
             // frmNhanVien
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1286, 631);
+            Controls.Add(label8);
             Controls.Add(cbChuyenMon);
             Controls.Add(txtDiaChi);
             Controls.Add(label7);
@@ -310,5 +326,6 @@
         private TextBox txtMK;
         private Label label7;
         private ComboBox cbChuyenMon;
+        private Label label8;
     }
 }

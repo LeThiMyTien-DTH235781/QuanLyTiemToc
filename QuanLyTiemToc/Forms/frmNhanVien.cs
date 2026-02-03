@@ -190,6 +190,8 @@ namespace QuanLyTiemToc.Forms
             cbChuyenMon.SelectedIndex = -1;
             id = 0;
         }
+
+       
     }
-    
+
 }

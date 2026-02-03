@@ -12,8 +12,8 @@ using QuanLyTiemToc.Data;
 namespace QuanLyTiemToc.Migrations
 {
     [DbContext(typeof(QLTiemTocDbContext))]
-    [Migration("20260129164606_KhoiTaoCSQL")]
-    partial class KhoiTaoCSQL
+    [Migration("20260203111623_KhoiTaoCSDL")]
+    partial class KhoiTaoCSDL
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -116,20 +116,19 @@ namespace QuanLyTiemToc.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("KhachHangId"));
 
-                    b.Property<int?>("DichVuId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("DienThoai")
+                    b.Property<string>("DiaChi")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("HoTen")
+                    b.Property<string>("SDT")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TenKH")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("KhachHangId");
-
-                    b.HasIndex("DichVuId");
 
                     b.ToTable("KhachHang");
                 });
@@ -142,23 +141,29 @@ namespace QuanLyTiemToc.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NhanVienId"));
 
-                    b.Property<string>("ChucVu")
+                    b.Property<string>("ChuyenMon")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DiaChi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DienThoai")
                         .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HoTen")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Luong")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<string>("MatKhau")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TenDangNhap")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("NhanVienId");
 
@@ -176,12 +181,17 @@ namespace QuanLyTiemToc.Migrations
                     b.Property<decimal>("DonGia")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("MoTa")
+                    b.Property<string>("DonVi")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("SoLuongTon")
+                    b.Property<string>("Loai")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("SoLuong")
                         .HasColumnType("int");
 
                     b.Property<string>("TenSanPham")
@@ -203,7 +213,7 @@ namespace QuanLyTiemToc.Migrations
                         .IsRequired();
 
                     b.HasOne("QuanLyTiemToc.Data.NhanVien", "NhanVien")
-                        .WithMany("HoaDons")
+                        .WithMany()
                         .HasForeignKey("NhanVienId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
@@ -238,24 +248,9 @@ namespace QuanLyTiemToc.Migrations
                     b.Navigation("SanPham");
                 });
 
-            modelBuilder.Entity("QuanLyTiemToc.Data.KhachHang", b =>
-                {
-                    b.HasOne("QuanLyTiemToc.Data.DichVu", "DichVu")
-                        .WithMany()
-                        .HasForeignKey("DichVuId")
-                        .OnDelete(DeleteBehavior.NoAction);
-
-                    b.Navigation("DichVu");
-                });
-
             modelBuilder.Entity("QuanLyTiemToc.Data.HoaDon", b =>
                 {
                     b.Navigation("HoaDonChiTiets");
-                });
-
-            modelBuilder.Entity("QuanLyTiemToc.Data.NhanVien", b =>
-                {
-                    b.Navigation("HoaDons");
                 });
 #pragma warning restore 612, 618
         }
