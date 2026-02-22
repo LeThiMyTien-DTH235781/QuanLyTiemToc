@@ -18,7 +18,18 @@ namespace QuanLyTiemToc.Data
 
         public int SoLuong { get; set; }
         public decimal DonGia { get; set; }
-
-        public decimal ThanhTien => SoLuong * DonGia;
+        public decimal GiaDichVu { get; set; }
+        public decimal ThanhTien { get; set; }
+    }
+    public class DanhSachHoaDonChiTiet
+    {
+        public int ID { get; set; }
+        public int HoaDonId { get; set; }
+        public int SanPhamID { get; set; }
+        public string TenSanPham { get; set; }
+        public short SoLuong { get; set; }
+        public decimal DonGia { get; set; }
+        public decimal ThanhTien { get; set; }
+        public decimal GiaDichVu { get; set; }
     }
 }

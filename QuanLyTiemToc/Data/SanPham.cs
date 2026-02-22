@@ -12,8 +12,7 @@ namespace QuanLyTiemToc.Data
         public string TenSanPham { get; set; }
 
         [MaxLength(100)]
-        public string Loai { get; set; }
-
+        
         public int SoLuong { get; set; }
 
         public decimal DonGia { get; set; }

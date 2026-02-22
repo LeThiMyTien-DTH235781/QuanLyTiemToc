@@ -31,21 +31,11 @@
             label8 = new Label();
             cbDonVi = new ComboBox();
             label7 = new Label();
-            label4 = new Label();
-            txtDonGia = new TextBox();
             label6 = new Label();
-            txtSoLuong = new TextBox();
             label3 = new Label();
             label5 = new Label();
             txtMaSanPham = new TextBox();
             label2 = new Label();
-            dtSanPham = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
-            TenSanPham = new DataGridViewTextBoxColumn();
-            Loai = new DataGridViewTextBoxColumn();
-            SoLuong = new DataGridViewTextBoxColumn();
-            DonGia = new DataGridViewTextBoxColumn();
-            DonVi = new DataGridViewTextBoxColumn();
             btnThoat = new Button();
             btnHuy = new Button();
             btnLuu = new Button();
@@ -56,9 +46,20 @@
             btnTim = new Button();
             btnNhap = new Button();
             btnXuat = new Button();
-            cbLoai = new ComboBox();
-            txtTenSanPham = new TextBox();
+            cboSanPham = new ComboBox();
+            numDonGia = new NumericUpDown();
+            numSoLuong = new NumericUpDown();
+            dtSanPham = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
+            SanPham = new DataGridViewTextBoxColumn();
+            SoLuong = new DataGridViewTextBoxColumn();
+            DonVi = new DataGridViewTextBoxColumn();
+            DonGia = new DataGridViewTextBoxColumn();
+            groupBox1 = new GroupBox();
+            ((System.ComponentModel.ISupportInitialize)numDonGia).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numSoLuong).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtSanPham).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // label8
@@ -77,7 +78,7 @@
             // 
             cbDonVi.FormattingEnabled = true;
             cbDonVi.Items.AddRange(new object[] { "Chai", "Hộp", "Tuýp", "Gói" });
-            cbDonVi.Location = new Point(600, 173);
+            cbDonVi.Location = new Point(583, 147);
             cbDonVi.Name = "cbDonVi";
             cbDonVi.Size = new Size(151, 28);
             cbDonVi.TabIndex = 70;
@@ -86,51 +87,27 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            label7.Location = new Point(464, 182);
+            label7.Location = new Point(447, 156);
             label7.Name = "label7";
             label7.Size = new Size(58, 17);
             label7.TabIndex = 63;
             label7.Text = "Đơn vị:";
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            label4.Location = new Point(32, 175);
-            label4.Name = "label4";
-            label4.Size = new Size(42, 17);
-            label4.TabIndex = 62;
-            label4.Text = "Loại:";
-            // 
-            // txtDonGia
-            // 
-            txtDonGia.Location = new Point(600, 128);
-            txtDonGia.Name = "txtDonGia";
-            txtDonGia.Size = new Size(235, 27);
-            txtDonGia.TabIndex = 68;
-            // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            label6.Location = new Point(464, 132);
+            label6.Location = new Point(447, 106);
             label6.Name = "label6";
             label6.Size = new Size(66, 17);
             label6.TabIndex = 61;
             label6.Text = "Đơn giá:";
             // 
-            // txtSoLuong
-            // 
-            txtSoLuong.Location = new Point(156, 128);
-            txtSoLuong.Name = "txtSoLuong";
-            txtSoLuong.Size = new Size(235, 27);
-            txtSoLuong.TabIndex = 67;
-            // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            label3.Location = new Point(32, 129);
+            label3.Location = new Point(33, 134);
             label3.Name = "label3";
             label3.Size = new Size(75, 17);
             label3.TabIndex = 64;
@@ -140,11 +117,11 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            label5.Location = new Point(464, 87);
+            label5.Location = new Point(33, 186);
             label5.Name = "label5";
-            label5.Size = new Size(103, 17);
+            label5.Size = new Size(110, 17);
             label5.TabIndex = 60;
-            label5.Text = "Tên sản phẩm";
+            label5.Text = " Tên sản phẩm:";
             // 
             // txtMaSanPham
             // 
@@ -162,64 +139,6 @@
             label2.Size = new Size(102, 17);
             label2.TabIndex = 59;
             label2.Text = "Mã sản phẩm:";
-            // 
-            // dtSanPham
-            // 
-            dtSanPham.AllowUserToAddRows = false;
-            dtSanPham.AllowUserToDeleteRows = false;
-            dtSanPham.AllowUserToResizeRows = false;
-            dtSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dtSanPham.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtSanPham.Columns.AddRange(new DataGridViewColumn[] { ID, TenSanPham, Loai, SoLuong, DonGia, DonVi });
-            dtSanPham.Location = new Point(32, 243);
-            dtSanPham.MultiSelect = false;
-            dtSanPham.Name = "dtSanPham";
-            dtSanPham.RowHeadersWidth = 51;
-            dtSanPham.Size = new Size(1258, 373);
-            dtSanPham.TabIndex = 58;
-            dtSanPham.CellClick += dtSanPham_CellClick;
-            // 
-            // ID
-            // 
-            ID.DataPropertyName = "ID";
-            ID.HeaderText = "ID";
-            ID.MinimumWidth = 6;
-            ID.Name = "ID";
-            // 
-            // TenSanPham
-            // 
-            TenSanPham.DataPropertyName = "TenSanPham";
-            TenSanPham.HeaderText = "Tên Sản Phẩm";
-            TenSanPham.MinimumWidth = 6;
-            TenSanPham.Name = "TenSanPham";
-            // 
-            // Loai
-            // 
-            Loai.DataPropertyName = "Loai";
-            Loai.HeaderText = "Loại";
-            Loai.MinimumWidth = 6;
-            Loai.Name = "Loai";
-            // 
-            // SoLuong
-            // 
-            SoLuong.DataPropertyName = "SoLuong";
-            SoLuong.HeaderText = "Số lượng";
-            SoLuong.MinimumWidth = 6;
-            SoLuong.Name = "SoLuong";
-            // 
-            // DonGia
-            // 
-            DonGia.DataPropertyName = "DonGia";
-            DonGia.HeaderText = "Đơn giá";
-            DonGia.MinimumWidth = 6;
-            DonGia.Name = "DonGia";
-            // 
-            // DonVi
-            // 
-            DonVi.DataPropertyName = "DonVi";
-            DonVi.HeaderText = "Đơn vị";
-            DonVi.MinimumWidth = 6;
-            DonVi.Name = "DonVi";
             // 
             // btnThoat
             // 
@@ -317,6 +236,7 @@
             btnTim.TabIndex = 55;
             btnTim.Text = "Tìm";
             btnTim.UseVisualStyleBackColor = true;
+            btnTim.Click += btnTim_Click;
             // 
             // btnNhap
             // 
@@ -328,6 +248,7 @@
             btnNhap.TabIndex = 56;
             btnNhap.Text = "Nhập";
             btnNhap.UseVisualStyleBackColor = true;
+            btnNhap.Click += btnNhap_Click;
             // 
             // btnXuat
             // 
@@ -339,42 +260,111 @@
             btnXuat.TabIndex = 57;
             btnXuat.Text = "Xuất";
             btnXuat.UseVisualStyleBackColor = true;
+            btnXuat.Click += btnXuat_Click;
             // 
-            // cbLoai
+            // cboSanPham
             // 
-            cbLoai.FormattingEnabled = true;
-            cbLoai.Items.AddRange(new object[] { "Dầu gội", "", "", "Thuốc nhuộm", "", "", "Kem uốn", "", "", "Hấp phục hồi", "", "" });
-            cbLoai.Location = new Point(156, 179);
-            cbLoai.Name = "cbLoai";
-            cbLoai.Size = new Size(202, 28);
-            cbLoai.TabIndex = 72;
+            cboSanPham.FormattingEnabled = true;
+            cboSanPham.Location = new Point(156, 182);
+            cboSanPham.Name = "cboSanPham";
+            cboSanPham.Size = new Size(233, 28);
+            cboSanPham.TabIndex = 73;
+            cboSanPham.SelectedIndexChanged += cboSanPham_SelectedIndexChanged;
             // 
-            // txtTenSanPham
+            // numDonGia
             // 
-            txtTenSanPham.Location = new Point(602, 82);
-            txtTenSanPham.Name = "txtTenSanPham";
-            txtTenSanPham.Size = new Size(233, 27);
-            txtTenSanPham.TabIndex = 73;
+            numDonGia.Location = new Point(583, 98);
+            numDonGia.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
+            numDonGia.Name = "numDonGia";
+            numDonGia.Size = new Size(150, 27);
+            numDonGia.TabIndex = 74;
+            numDonGia.ThousandsSeparator = true;
+            // 
+            // numSoLuong
+            // 
+            numSoLuong.Location = new Point(156, 134);
+            numSoLuong.Name = "numSoLuong";
+            numSoLuong.Size = new Size(150, 27);
+            numSoLuong.TabIndex = 75;
+            numSoLuong.ThousandsSeparator = true;
+            // 
+            // dtSanPham
+            // 
+            dtSanPham.AllowUserToAddRows = false;
+            dtSanPham.AllowUserToDeleteRows = false;
+            dtSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtSanPham.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtSanPham.Columns.AddRange(new DataGridViewColumn[] { ID, SanPham, SoLuong, DonVi, DonGia });
+            dtSanPham.Dock = DockStyle.Fill;
+            dtSanPham.Location = new Point(3, 23);
+            dtSanPham.Name = "dtSanPham";
+            dtSanPham.RowHeadersWidth = 51;
+            dtSanPham.Size = new Size(1310, 265);
+            dtSanPham.TabIndex = 76;
+            dtSanPham.SelectionChanged += dtSanPham_SelectionChanged;
+            // 
+            // ID
+            // 
+            ID.DataPropertyName = "ID";
+            ID.HeaderText = "ID";
+            ID.MinimumWidth = 6;
+            ID.Name = "ID";
+            // 
+            // SanPham
+            // 
+            SanPham.DataPropertyName = "SanPham";
+            SanPham.HeaderText = "Sản phẩm";
+            SanPham.MinimumWidth = 6;
+            SanPham.Name = "SanPham";
+            // 
+            // SoLuong
+            // 
+            SoLuong.DataPropertyName = "SoLuong";
+            SoLuong.HeaderText = "Số lượng";
+            SoLuong.MinimumWidth = 6;
+            SoLuong.Name = "SoLuong";
+            // 
+            // DonVi
+            // 
+            DonVi.DataPropertyName = "DonVi";
+            DonVi.HeaderText = "Đơn vị";
+            DonVi.MinimumWidth = 6;
+            DonVi.Name = "DonVi";
+            // 
+            // DonGia
+            // 
+            DonGia.DataPropertyName = "DonGia";
+            DonGia.HeaderText = "Đơn giá";
+            DonGia.MinimumWidth = 6;
+            DonGia.Name = "DonGia";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(dtSanPham);
+            groupBox1.Location = new Point(6, 230);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(1316, 291);
+            groupBox1.TabIndex = 77;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Danh sách sản phẩm";
             // 
             // frmSanPham
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1334, 643);
-            Controls.Add(txtTenSanPham);
-            Controls.Add(cbLoai);
+            ClientSize = new Size(1334, 549);
+            Controls.Add(groupBox1);
+            Controls.Add(numSoLuong);
+            Controls.Add(numDonGia);
+            Controls.Add(cboSanPham);
             Controls.Add(label8);
             Controls.Add(cbDonVi);
             Controls.Add(label7);
-            Controls.Add(label4);
-            Controls.Add(txtDonGia);
             Controls.Add(label6);
-            Controls.Add(txtSoLuong);
             Controls.Add(label3);
             Controls.Add(label5);
             Controls.Add(txtMaSanPham);
             Controls.Add(label2);
-            Controls.Add(dtSanPham);
             Controls.Add(btnXuat);
             Controls.Add(btnThoat);
             Controls.Add(btnNhap);
@@ -388,7 +378,10 @@
             Name = "frmSanPham";
             Text = "frmSanPham";
             Load += frmSanPham_Load;
+            ((System.ComponentModel.ISupportInitialize)numDonGia).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numSoLuong).EndInit();
             ((System.ComponentModel.ISupportInitialize)dtSanPham).EndInit();
+            groupBox1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -398,16 +391,12 @@
         private Label label8;
         private ComboBox cbDonVi;
         private Label label7;
-        private Label label4;
-        private TextBox txtDonGia;
         private Label label6;
-        private TextBox txtSoLuong;
         private TextBox txtTenDangNhap;
         private Label label3;
         private Label label5;
         private TextBox txtMaSanPham;
         private Label label2;
-        private DataGridView dtSanPham;
         private Button btnThoat;
         private Button btnHuy;
         private Button btnLuu;
@@ -418,13 +407,15 @@
         private Button btnTim;
         private Button btnNhap;
         private Button btnXuat;
+        private ComboBox cboSanPham;
+        private NumericUpDown numDonGia;
+        private NumericUpDown numSoLuong;
+        private DataGridView dtSanPham;
+        private GroupBox groupBox1;
         private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn TenSanPham;
-        private DataGridViewTextBoxColumn Loai;
+        private DataGridViewTextBoxColumn SanPham;
         private DataGridViewTextBoxColumn SoLuong;
-        private DataGridViewTextBoxColumn DonGia;
         private DataGridViewTextBoxColumn DonVi;
-        private ComboBox cbLoai;
-        private TextBox txtTenSanPham;
+        private DataGridViewTextBoxColumn DonGia;
     }
 }

@@ -4,11 +4,18 @@ namespace QuanLyTiemToc.Data
 {
     public class DichVu
     {
-        
-            public int DichVuId { get; set; }
-            public string TenDichVu { get; set; }
-            public decimal DonGia { get; set; }
-        
+
+        [Key]
+        public int DichVuId { get; set; }
+
+        [Required]
+        public string TenDichVu { get; set; }
+
+        [Required]
+        public decimal Gia { get; set; }
+
+        public int ThoiGian { get; set; }
+
 
     }
 }

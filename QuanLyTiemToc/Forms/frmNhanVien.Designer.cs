@@ -37,25 +37,21 @@
             label1 = new Label();
             dtNhanVien = new DataGridView();
             label2 = new Label();
-            txtHoTen = new TextBox();
             label3 = new Label();
             txtSDT = new TextBox();
             label4 = new Label();
             txtDiaChi = new TextBox();
-            label5 = new Label();
-            txtTenDangNhap = new TextBox();
-            label6 = new Label();
-            txtMK = new TextBox();
             label7 = new Label();
             cbChuyenMon = new ComboBox();
             label8 = new Label();
+            cboHoTen = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dtNhanVien).BeginInit();
             SuspendLayout();
             // 
             // btnThoat
             // 
-            btnThoat.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnThoat.Location = new Point(1015, 172);
+            btnThoat.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnThoat.Location = new Point(1099, 170);
             btnThoat.Margin = new Padding(4, 3, 4, 3);
             btnThoat.Name = "btnThoat";
             btnThoat.Size = new Size(125, 38);
@@ -66,8 +62,8 @@
             // 
             // btnHuy
             // 
-            btnHuy.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnHuy.Location = new Point(1015, 116);
+            btnHuy.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnHuy.Location = new Point(1099, 114);
             btnHuy.Margin = new Padding(4, 3, 4, 3);
             btnHuy.Name = "btnHuy";
             btnHuy.Size = new Size(125, 38);
@@ -78,9 +74,9 @@
             // 
             // btnLuu
             // 
-            btnLuu.Font = new Font("Cambria", 9F, FontStyle.Bold);
+            btnLuu.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnLuu.ForeColor = Color.DodgerBlue;
-            btnLuu.Location = new Point(1015, 66);
+            btnLuu.Location = new Point(1099, 64);
             btnLuu.Margin = new Padding(4, 3, 4, 3);
             btnLuu.Name = "btnLuu";
             btnLuu.Size = new Size(125, 36);
@@ -91,8 +87,8 @@
             // 
             // btnSua
             // 
-            btnSua.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnSua.Location = new Point(855, 116);
+            btnSua.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnSua.Location = new Point(939, 114);
             btnSua.Margin = new Padding(4, 3, 4, 3);
             btnSua.Name = "btnSua";
             btnSua.Size = new Size(122, 38);
@@ -103,9 +99,9 @@
             // 
             // btnXoa
             // 
-            btnXoa.Font = new Font("Cambria", 9F, FontStyle.Bold);
+            btnXoa.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnXoa.ForeColor = Color.Brown;
-            btnXoa.Location = new Point(855, 172);
+            btnXoa.Location = new Point(939, 170);
             btnXoa.Margin = new Padding(4, 3, 4, 3);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(122, 38);
@@ -116,8 +112,8 @@
             // 
             // btnThem
             // 
-            btnThem.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnThem.Location = new Point(855, 67);
+            btnThem.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnThem.Location = new Point(939, 65);
             btnThem.Margin = new Padding(4, 3, 4, 3);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(122, 35);
@@ -156,32 +152,26 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Cambria", 9F, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label2.Location = new Point(49, 93);
             label2.Name = "label2";
-            label2.Size = new Size(83, 17);
+            label2.Size = new Size(86, 20);
             label2.TabIndex = 47;
             label2.Text = "Họ và Tên: ";
-            // 
-            // txtHoTen
-            // 
-            txtHoTen.Location = new Point(136, 89);
-            txtHoTen.Name = "txtHoTen";
-            txtHoTen.Size = new Size(235, 27);
-            txtHoTen.TabIndex = 48;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Cambria", 9F, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label3.Location = new Point(49, 135);
             label3.Name = "label3";
-            label3.Size = new Size(84, 17);
+            label3.Size = new Size(85, 20);
             label3.TabIndex = 47;
             label3.Text = "Điện thoại:";
             // 
             // txtSDT
             // 
+            txtSDT.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             txtSDT.Location = new Point(136, 131);
             txtSDT.Name = "txtSDT";
             txtSDT.Size = new Size(235, 27);
@@ -190,69 +180,37 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            label4.Location = new Point(49, 181);
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label4.Location = new Point(492, 97);
             label4.Name = "label4";
-            label4.Size = new Size(60, 17);
+            label4.Size = new Size(60, 20);
             label4.TabIndex = 47;
             label4.Text = "Địa chỉ:";
             // 
             // txtDiaChi
             // 
-            txtDiaChi.Location = new Point(136, 177);
+            txtDiaChi.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            txtDiaChi.Location = new Point(649, 93);
             txtDiaChi.Name = "txtDiaChi";
             txtDiaChi.Size = new Size(235, 27);
             txtDiaChi.TabIndex = 48;
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            label5.Location = new Point(444, 90);
-            label5.Name = "label5";
-            label5.Size = new Size(109, 17);
-            label5.TabIndex = 47;
-            label5.Text = "Tên đăng nhập";
-            // 
-            // txtTenDangNhap
-            // 
-            txtTenDangNhap.Location = new Point(580, 89);
-            txtTenDangNhap.Name = "txtTenDangNhap";
-            txtTenDangNhap.Size = new Size(235, 27);
-            txtTenDangNhap.TabIndex = 48;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            label6.Location = new Point(444, 135);
-            label6.Name = "label6";
-            label6.Size = new Size(76, 17);
-            label6.TabIndex = 47;
-            label6.Text = "Mật khẩu:";
-            // 
-            // txtMK
-            // 
-            txtMK.Location = new Point(580, 131);
-            txtMK.Name = "txtMK";
-            txtMK.Size = new Size(235, 27);
-            txtMK.TabIndex = 48;
-            // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            label7.Location = new Point(444, 185);
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label7.Location = new Point(492, 141);
             label7.Name = "label7";
-            label7.Size = new Size(98, 17);
+            label7.Size = new Size(101, 20);
             label7.TabIndex = 47;
             label7.Text = "Chuyên môn:";
             // 
             // cbChuyenMon
             // 
+            cbChuyenMon.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             cbChuyenMon.FormattingEnabled = true;
             cbChuyenMon.Items.AddRange(new object[] { "Thợ chính", "Thợ phụ" });
-            cbChuyenMon.Location = new Point(580, 176);
+            cbChuyenMon.Location = new Point(649, 135);
             cbChuyenMon.Name = "cbChuyenMon";
             cbChuyenMon.Size = new Size(151, 28);
             cbChuyenMon.TabIndex = 49;
@@ -269,23 +227,28 @@
             label8.TabIndex = 50;
             label8.Text = "Thông Tin";
             // 
+            // cboHoTen
+            // 
+            cboHoTen.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            cboHoTen.FormattingEnabled = true;
+            cboHoTen.Location = new Point(138, 93);
+            cboHoTen.Name = "cboHoTen";
+            cboHoTen.Size = new Size(233, 28);
+            cboHoTen.TabIndex = 51;
+            // 
             // frmNhanVien
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1286, 631);
+            Controls.Add(cboHoTen);
             Controls.Add(label8);
             Controls.Add(cbChuyenMon);
             Controls.Add(txtDiaChi);
             Controls.Add(label7);
             Controls.Add(label4);
-            Controls.Add(txtMK);
-            Controls.Add(label6);
             Controls.Add(txtSDT);
-            Controls.Add(txtTenDangNhap);
             Controls.Add(label3);
-            Controls.Add(label5);
-            Controls.Add(txtHoTen);
             Controls.Add(label2);
             Controls.Add(dtNhanVien);
             Controls.Add(btnThoat);
@@ -315,17 +278,12 @@
         private Label label1;
         private DataGridView dtNhanVien;
         private Label label2;
-        private TextBox txtHoTen;
         private Label label3;
         private TextBox txtSDT;
         private Label label4;
-       // private TextBox txtDiaChi;
-        private Label label5;
-        private TextBox txtTenDangNhap;
-        private Label label6;
-        private TextBox txtMK;
         private Label label7;
         private ComboBox cbChuyenMon;
         private Label label8;
+        private ComboBox cboHoTen;
     }
 }

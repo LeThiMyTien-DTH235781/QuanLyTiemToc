@@ -24,16 +24,15 @@ namespace QuanLyTiemToc.Forms
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
             LoadChuyenMon();
+            LoadHoTen();
             LoadNhanVien();
             BatTatChucNang(false);
         }
         private void BatTatChucNang(bool flag)
         {
-            txtHoTen.Enabled = flag;
+            cboHoTen.Enabled = flag;
             txtSDT.Enabled = flag;
             txtDiaChi.Enabled = flag;
-            txtTenDangNhap.Enabled = flag;
-            txtMK.Enabled = flag;
             cbChuyenMon.Enabled = flag;
 
             btnThem.Enabled = !flag;
@@ -42,6 +41,17 @@ namespace QuanLyTiemToc.Forms
 
             btnLuu.Enabled = flag;
             btnHuy.Enabled = flag;
+        }
+        private void LoadHoTen()
+        {
+            cboHoTen.Items.Clear();
+            cboHoTen.Items.Add("Liễu Trí Mẫn");
+            cboHoTen.Items.Add("Hạ Dĩ Thần");
+            cboHoTen.Items.Add("Trịnh Đinh Vũ");
+            cboHoTen.Items.Add("Thẩm Luyện");
+            cboHoTen.Items.Add("Ngôn Nhất Trì");
+
+            cboHoTen.SelectedIndex = -1;
         }
 
         // ================== LOAD CHUYÊN MÔN ==================
@@ -66,12 +76,17 @@ namespace QuanLyTiemToc.Forms
                     nv.HoTen,
                     nv.DienThoai,
                     nv.DiaChi,
-                    nv.TenDangNhap,
                     nv.ChuyenMon
                 })
                 .ToList();
 
             dtNhanVien.DataSource = data;
+
+            dtNhanVien.Columns["NhanVienId"].HeaderText = "ID";
+            dtNhanVien.Columns["HoTen"].HeaderText = "Họ tên";
+            dtNhanVien.Columns["DienThoai"].HeaderText = "Điện thoại";
+            dtNhanVien.Columns["DiaChi"].HeaderText = "Địa chỉ";
+            dtNhanVien.Columns["ChuyenMon"].HeaderText = "Chuyên môn";
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -87,7 +102,7 @@ namespace QuanLyTiemToc.Forms
             if (id == 0) return;
             isThem = false;
             BatTatChucNang(true);
-            txtTenDangNhap.Enabled = false;
+           
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -110,11 +125,9 @@ namespace QuanLyTiemToc.Forms
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtHoTen.Text) ||
-                string.IsNullOrWhiteSpace(txtTenDangNhap.Text) ||
-                string.IsNullOrWhiteSpace(txtMK.Text))
+            if (string.IsNullOrWhiteSpace(cboHoTen.Text))
             {
-                MessageBox.Show("Nhập đầy đủ thông tin!");
+                MessageBox.Show("Vui lòng chọn họ tên nhân viên!");
                 return;
             }
 
@@ -124,11 +137,9 @@ namespace QuanLyTiemToc.Forms
                 {
                     var nv = new NhanVien
                     {
-                        HoTen = txtHoTen.Text.Trim(),
+                        HoTen = cboHoTen.Text.Trim(),
                         DienThoai = txtSDT.Text.Trim(),
                         DiaChi = txtDiaChi.Text.Trim(),
-                        TenDangNhap = txtTenDangNhap.Text.Trim(),
-                        MatKhau = txtMK.Text.Trim(),
                         ChuyenMon = cbChuyenMon.Text
                     };
 
@@ -139,10 +150,9 @@ namespace QuanLyTiemToc.Forms
                     var nv = context.NhanVien.Find(id);
                     if (nv != null)
                     {
-                        nv.HoTen = txtHoTen.Text.Trim();
+                        nv.HoTen = cboHoTen.Text.Trim();
                         nv.DienThoai = txtSDT.Text.Trim();
                         nv.DiaChi = txtDiaChi.Text.Trim();
-                        nv.MatKhau = txtMK.Text.Trim();
                         nv.ChuyenMon = cbChuyenMon.Text;
                     }
                 }
@@ -174,19 +184,17 @@ namespace QuanLyTiemToc.Forms
 
             id = Convert.ToInt32(dtNhanVien.Rows[e.RowIndex].Cells["NhanVienId"].Value);
 
-            txtHoTen.Text = dtNhanVien.Rows[e.RowIndex].Cells["HoTen"].Value.ToString();
+            cboHoTen.Text = dtNhanVien.Rows[e.RowIndex].Cells["HoTen"].Value.ToString();
             txtSDT.Text = dtNhanVien.Rows[e.RowIndex].Cells["DienThoai"].Value.ToString();
             txtDiaChi.Text = dtNhanVien.Rows[e.RowIndex].Cells["DiaChi"].Value.ToString();
-            txtTenDangNhap.Text = dtNhanVien.Rows[e.RowIndex].Cells["TenDangNhap"].Value.ToString();
             cbChuyenMon.Text = dtNhanVien.Rows[e.RowIndex].Cells["ChuyenMon"].Value.ToString();
         }
         private void ClearText()
         {
-            txtHoTen.Clear();
+            cboHoTen.SelectedIndex = -1;
+            cboHoTen.Text = "";
             txtSDT.Clear();
             txtDiaChi.Clear();
-            txtTenDangNhap.Clear();
-            txtMK.Clear();
             cbChuyenMon.SelectedIndex = -1;
             id = 0;
         }

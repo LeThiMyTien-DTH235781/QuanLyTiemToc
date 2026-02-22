@@ -16,10 +16,6 @@ namespace QuanLyTiemToc.Data
             public string DiaChi { get; set; }
 
             [Required]
-            public string TenDangNhap { get; set; }
-
-            [Required]
-            public string MatKhau { get; set; }
 
             public string ChuyenMon { get; set; }
         }
