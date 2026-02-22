@@ -5,15 +5,22 @@ namespace QuanLyTiemToc.Data
 {
     public class KhachHang
     {
-       
-            public int KhachHangId { get; set; }
-            public string TenKH { get; set; }
-            public string SDT { get; set; }
-            public string DiaChi { get; set; }
 
+        [Key]  // Thêm [Key] attribute
+        public int KhachHangId { get; set; }
+
+        [Required]
+        [MaxLength(100)]
+        public string TenKH { get; set; }
+
+        [MaxLength(15)]
+        public string SDT { get; set; }
+
+        [MaxLength(200)]
+        public string DiaChi { get; set; }
     }
 
-    }
+}
 
 
 

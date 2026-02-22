@@ -22,6 +22,35 @@ namespace QuanLyTiemToc.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("QuanLyTiemToc.Data.ChiTietPhieuNhap", b =>
+                {
+                    b.Property<int>("ChiTietPhieuNhapId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ChiTietPhieuNhapId"));
+
+                    b.Property<decimal>("GiaNhap")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("PhieuNhapId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SanPhamId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SoLuong")
+                        .HasColumnType("int");
+
+                    b.HasKey("ChiTietPhieuNhapId");
+
+                    b.HasIndex("PhieuNhapId");
+
+                    b.HasIndex("SanPhamId");
+
+                    b.ToTable("ChiTietPhieuNhap");
+                });
+
             modelBuilder.Entity("QuanLyTiemToc.Data.DichVu", b =>
                 {
                     b.Property<int>("DichVuId")
@@ -30,12 +59,15 @@ namespace QuanLyTiemToc.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DichVuId"));
 
-                    b.Property<decimal>("DonGia")
+                    b.Property<decimal>("Gia")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("TenDichVu")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ThoiGian")
+                        .HasColumnType("int");
 
                     b.HasKey("DichVuId");
 
@@ -115,19 +147,83 @@ namespace QuanLyTiemToc.Migrations
 
                     b.Property<string>("DiaChi")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("SDT")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("TenKH")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("KhachHangId");
 
                     b.ToTable("KhachHang");
+                });
+
+            modelBuilder.Entity("QuanLyTiemToc.Data.KhuyenMai", b =>
+                {
+                    b.Property<int>("KhuyenMaiId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("KhuyenMaiId"));
+
+                    b.Property<DateTime>("DenNgay")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("PhanTramGiam")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TenKhuyenMai")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("TuNgay")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("KhuyenMaiId");
+
+                    b.ToTable("KhuyenMai");
+                });
+
+            modelBuilder.Entity("QuanLyTiemToc.Data.LichHen", b =>
+                {
+                    b.Property<int>("LichHenId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LichHenId"));
+
+                    b.Property<int>("DichVuId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("KhachHangId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NhanVienId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ThoiGianHen")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("TrangThai")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("LichHenId");
+
+                    b.HasIndex("DichVuId");
+
+                    b.HasIndex("KhachHangId");
+
+                    b.HasIndex("NhanVienId");
+
+                    b.ToTable("LichHen");
                 });
 
             modelBuilder.Entity("QuanLyTiemToc.Data.NhanVien", b =>
@@ -167,6 +263,26 @@ namespace QuanLyTiemToc.Migrations
                     b.ToTable("NhanVien");
                 });
 
+            modelBuilder.Entity("QuanLyTiemToc.Data.PhieuNhap", b =>
+                {
+                    b.Property<int>("PhieuNhapId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PhieuNhapId"));
+
+                    b.Property<string>("GhiChu")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("NgayNhap")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("PhieuNhapId");
+
+                    b.ToTable("PhieuNhap");
+                });
+
             modelBuilder.Entity("QuanLyTiemToc.Data.SanPham", b =>
                 {
                     b.Property<int>("SanPhamId")
@@ -199,6 +315,25 @@ namespace QuanLyTiemToc.Migrations
                     b.HasKey("SanPhamId");
 
                     b.ToTable("SanPham");
+                });
+
+            modelBuilder.Entity("QuanLyTiemToc.Data.ChiTietPhieuNhap", b =>
+                {
+                    b.HasOne("QuanLyTiemToc.Data.PhieuNhap", "PhieuNhap")
+                        .WithMany()
+                        .HasForeignKey("PhieuNhapId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("QuanLyTiemToc.Data.SanPham", "SanPham")
+                        .WithMany()
+                        .HasForeignKey("SanPhamId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("PhieuNhap");
+
+                    b.Navigation("SanPham");
                 });
 
             modelBuilder.Entity("QuanLyTiemToc.Data.HoaDon", b =>
@@ -243,6 +378,33 @@ namespace QuanLyTiemToc.Migrations
                     b.Navigation("HoaDon");
 
                     b.Navigation("SanPham");
+                });
+
+            modelBuilder.Entity("QuanLyTiemToc.Data.LichHen", b =>
+                {
+                    b.HasOne("QuanLyTiemToc.Data.DichVu", "DichVu")
+                        .WithMany()
+                        .HasForeignKey("DichVuId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("QuanLyTiemToc.Data.KhachHang", "KhachHang")
+                        .WithMany()
+                        .HasForeignKey("KhachHangId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("QuanLyTiemToc.Data.NhanVien", "NhanVien")
+                        .WithMany()
+                        .HasForeignKey("NhanVienId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("DichVu");
+
+                    b.Navigation("KhachHang");
+
+                    b.Navigation("NhanVien");
                 });
 
             modelBuilder.Entity("QuanLyTiemToc.Data.HoaDon", b =>

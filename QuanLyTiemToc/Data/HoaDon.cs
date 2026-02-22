@@ -20,6 +20,6 @@ namespace QuanLyTiemToc.Data
         public decimal TongTien { get; set; }
 
         // Navigation
-        public ICollection<HoaDonChiTiet> HoaDonChiTiets { get; set; }
+        public ICollection<HoaDonChiTiet> HoaDonChiTiet { get; set; }
     }
 }

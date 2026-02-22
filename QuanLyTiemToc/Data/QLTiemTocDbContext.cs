@@ -17,12 +17,10 @@ namespace QuanLyTiemToc.Data
         {
         }
 
-        // Constructor cho design-time (Add-Migration)
         public QLTiemTocDbContext()
         {
         }
 
-        // Cấu hình quan hệ – tránh lỗi cascade delete
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             foreach (var fk in modelBuilder.Model
@@ -35,7 +33,6 @@ namespace QuanLyTiemToc.Data
             base.OnModelCreating(modelBuilder);
         }
 
-        // Đọc chuỗi kết nối từ App.config
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -48,24 +45,15 @@ namespace QuanLyTiemToc.Data
             }
         }
 
-        // ===== DBSET =====
-
-        // Khách hàng
         public DbSet<KhachHang> KhachHang { get; set; }
-
-        // Nhân viên
         public DbSet<NhanVien> NhanVien { get; set; }
-
-        // Dịch vụ (cắt, uốn, nhuộm…)
-        public DbSet<DichVu> DichVu { get; set; }
-
-        // Sản phẩm (dầu gội, sáp, thuốc nhuộm…)
         public DbSet<SanPham> SanPham { get; set; }
-
-        // Hóa đơn
+        public DbSet<DichVu> DichVu { get; set; }
         public DbSet<HoaDon> HoaDon { get; set; }
-
-        // Hóa đơn chi tiết
         public DbSet<HoaDonChiTiet> HoaDonChiTiet { get; set; }
+        public DbSet<LichHen> LichHen { get; set; }
+        public DbSet<PhieuNhap> PhieuNhap { get; set; }
+        public DbSet<ChiTietPhieuNhap> ChiTietPhieuNhap { get; set; }
+        public DbSet<KhuyenMai> KhuyenMai { get; set; }
     }
 }
