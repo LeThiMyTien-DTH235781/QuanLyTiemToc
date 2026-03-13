@@ -32,9 +32,15 @@
             cboDichVu = new ComboBox();
             label2 = new Label();
             label3 = new Label();
+<<<<<<< HEAD
             groupBox1 = new GroupBox();
             numThoiGian = new NumericUpDown();
             numDonGia = new NumericUpDown();
+=======
+            txtGia = new TextBox();
+            dtThoiGian = new DateTimePicker();
+            groupBox1 = new GroupBox();
+>>>>>>> 0fc5df7a333d3d51b76e14b01f90ba3a6771178a
             btnThoat = new Button();
             btnHuy = new Button();
             btnLuu = new Button();
@@ -47,8 +53,11 @@
             Gia = new DataGridViewTextBoxColumn();
             ThoiGian = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)numThoiGian).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numDonGia).BeginInit();
+=======
+>>>>>>> 0fc5df7a333d3d51b76e14b01f90ba3a6771178a
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
@@ -56,34 +65,54 @@
             // label1
             // 
             label1.AutoSize = true;
+<<<<<<< HEAD
             label1.Location = new Point(37, 44);
             label1.Name = "label1";
             label1.Size = new Size(96, 20);
+=======
+            label1.Location = new Point(37, 37);
+            label1.Name = "label1";
+            label1.Size = new Size(94, 17);
+>>>>>>> 0fc5df7a333d3d51b76e14b01f90ba3a6771178a
             label1.TabIndex = 0;
             label1.Text = "Tên dịch vụ: ";
             // 
             // cboDichVu
             // 
             cboDichVu.FormattingEnabled = true;
+<<<<<<< HEAD
             cboDichVu.Location = new Point(163, 42);
             cboDichVu.Margin = new Padding(3, 4, 3, 4);
             cboDichVu.Name = "cboDichVu";
             cboDichVu.Size = new Size(344, 28);
             cboDichVu.TabIndex = 1;
             cboDichVu.SelectedIndexChanged += cboDichVu_SelectedIndexChanged;
+=======
+            cboDichVu.Location = new Point(163, 36);
+            cboDichVu.Name = "cboDichVu";
+            cboDichVu.Size = new Size(344, 25);
+            cboDichVu.TabIndex = 1;
+>>>>>>> 0fc5df7a333d3d51b76e14b01f90ba3a6771178a
             // 
             // label2
             // 
             label2.AutoSize = true;
+<<<<<<< HEAD
             label2.Location = new Point(37, 95);
             label2.Name = "label2";
             label2.Size = new Size(67, 20);
+=======
+            label2.Location = new Point(37, 81);
+            label2.Name = "label2";
+            label2.Size = new Size(63, 17);
+>>>>>>> 0fc5df7a333d3d51b76e14b01f90ba3a6771178a
             label2.TabIndex = 2;
             label2.Text = "Đơn giá:";
             // 
             // label3
             // 
             label3.AutoSize = true;
+<<<<<<< HEAD
             label3.Location = new Point(37, 149);
             label3.Name = "label3";
             label3.Size = new Size(80, 20);
@@ -95,19 +124,55 @@
             groupBox1.BackColor = SystemColors.ControlLight;
             groupBox1.Controls.Add(numThoiGian);
             groupBox1.Controls.Add(numDonGia);
+=======
+            label3.Location = new Point(37, 127);
+            label3.Name = "label3";
+            label3.Size = new Size(77, 17);
+            label3.TabIndex = 2;
+            label3.Text = "Thời Gian:";
+            // 
+            // txtGia
+            // 
+            txtGia.Location = new Point(162, 78);
+            txtGia.Name = "txtGia";
+            txtGia.Size = new Size(242, 25);
+            txtGia.TabIndex = 3;
+            txtGia.KeyPress += txtDonGia_KeyPress;
+            // 
+            // dtThoiGian
+            // 
+            dtThoiGian.Format = DateTimePickerFormat.Custom;
+            dtThoiGian.Location = new Point(162, 122);
+            dtThoiGian.Name = "dtThoiGian";
+            dtThoiGian.Size = new Size(281, 25);
+            dtThoiGian.TabIndex = 4;
+            // 
+            // groupBox1
+            // 
+            groupBox1.BackColor = SystemColors.ControlLight;
+            groupBox1.Controls.Add(txtGia);
+            groupBox1.Controls.Add(dtThoiGian);
+>>>>>>> 0fc5df7a333d3d51b76e14b01f90ba3a6771178a
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(cboDichVu);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
+<<<<<<< HEAD
             groupBox1.Location = new Point(14, 12);
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 4, 3, 4);
             groupBox1.Size = new Size(706, 224);
+=======
+            groupBox1.Location = new Point(14, 10);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(706, 190);
+>>>>>>> 0fc5df7a333d3d51b76e14b01f90ba3a6771178a
             groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin dịch vụ";
             // 
+<<<<<<< HEAD
             // numThoiGian
             // 
             numThoiGian.Location = new Point(163, 140);
@@ -131,6 +196,15 @@
             btnThoat.Margin = new Padding(4, 4, 4, 4);
             btnThoat.Name = "btnThoat";
             btnThoat.Size = new Size(141, 38);
+=======
+            // btnThoat
+            // 
+            btnThoat.Font = new Font("Cambria", 9F, FontStyle.Bold);
+            btnThoat.Location = new Point(998, 135);
+            btnThoat.Margin = new Padding(4, 3, 4, 3);
+            btnThoat.Name = "btnThoat";
+            btnThoat.Size = new Size(141, 32);
+>>>>>>> 0fc5df7a333d3d51b76e14b01f90ba3a6771178a
             btnThoat.TabIndex = 66;
             btnThoat.Text = "Thoát";
             btnThoat.UseVisualStyleBackColor = true;
@@ -138,11 +212,19 @@
             // 
             // btnHuy
             // 
+<<<<<<< HEAD
             btnHuy.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnHuy.Location = new Point(998, 104);
             btnHuy.Margin = new Padding(4, 4, 4, 4);
             btnHuy.Name = "btnHuy";
             btnHuy.Size = new Size(141, 38);
+=======
+            btnHuy.Font = new Font("Cambria", 9F, FontStyle.Bold);
+            btnHuy.Location = new Point(998, 88);
+            btnHuy.Margin = new Padding(4, 3, 4, 3);
+            btnHuy.Name = "btnHuy";
+            btnHuy.Size = new Size(141, 32);
+>>>>>>> 0fc5df7a333d3d51b76e14b01f90ba3a6771178a
             btnHuy.TabIndex = 64;
             btnHuy.Text = "Hủy";
             btnHuy.UseVisualStyleBackColor = true;
@@ -150,12 +232,21 @@
             // 
             // btnLuu
             // 
+<<<<<<< HEAD
             btnLuu.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnLuu.ForeColor = Color.DodgerBlue;
             btnLuu.Location = new Point(998, 53);
             btnLuu.Margin = new Padding(4, 4, 4, 4);
             btnLuu.Name = "btnLuu";
             btnLuu.Size = new Size(141, 36);
+=======
+            btnLuu.Font = new Font("Cambria", 9F, FontStyle.Bold);
+            btnLuu.ForeColor = Color.DodgerBlue;
+            btnLuu.Location = new Point(998, 45);
+            btnLuu.Margin = new Padding(4, 3, 4, 3);
+            btnLuu.Name = "btnLuu";
+            btnLuu.Size = new Size(141, 31);
+>>>>>>> 0fc5df7a333d3d51b76e14b01f90ba3a6771178a
             btnLuu.TabIndex = 62;
             btnLuu.Text = "Lưu";
             btnLuu.UseVisualStyleBackColor = true;
@@ -163,11 +254,19 @@
             // 
             // btnSua
             // 
+<<<<<<< HEAD
             btnSua.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnSua.Location = new Point(818, 104);
             btnSua.Margin = new Padding(4, 4, 4, 4);
             btnSua.Name = "btnSua";
             btnSua.Size = new Size(137, 38);
+=======
+            btnSua.Font = new Font("Cambria", 9F, FontStyle.Bold);
+            btnSua.Location = new Point(818, 88);
+            btnSua.Margin = new Padding(4, 3, 4, 3);
+            btnSua.Name = "btnSua";
+            btnSua.Size = new Size(137, 32);
+>>>>>>> 0fc5df7a333d3d51b76e14b01f90ba3a6771178a
             btnSua.TabIndex = 60;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = true;
@@ -175,12 +274,21 @@
             // 
             // btnXoa
             // 
+<<<<<<< HEAD
             btnXoa.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnXoa.ForeColor = Color.OrangeRed;
             btnXoa.Location = new Point(818, 159);
             btnXoa.Margin = new Padding(4, 4, 4, 4);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(137, 38);
+=======
+            btnXoa.Font = new Font("Cambria", 9F, FontStyle.Bold);
+            btnXoa.ForeColor = Color.OrangeRed;
+            btnXoa.Location = new Point(818, 135);
+            btnXoa.Margin = new Padding(4, 3, 4, 3);
+            btnXoa.Name = "btnXoa";
+            btnXoa.Size = new Size(137, 32);
+>>>>>>> 0fc5df7a333d3d51b76e14b01f90ba3a6771178a
             btnXoa.TabIndex = 59;
             btnXoa.Text = "Xóa ";
             btnXoa.UseVisualStyleBackColor = true;
@@ -188,11 +296,19 @@
             // 
             // btnThem
             // 
+<<<<<<< HEAD
             btnThem.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnThem.Location = new Point(818, 54);
             btnThem.Margin = new Padding(4, 4, 4, 4);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(137, 35);
+=======
+            btnThem.Font = new Font("Cambria", 9F, FontStyle.Bold);
+            btnThem.Location = new Point(818, 46);
+            btnThem.Margin = new Padding(4, 3, 4, 3);
+            btnThem.Name = "btnThem";
+            btnThem.Size = new Size(137, 30);
+>>>>>>> 0fc5df7a333d3d51b76e14b01f90ba3a6771178a
             btnThem.TabIndex = 58;
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = true;
@@ -201,11 +317,17 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(dataGridView);
+<<<<<<< HEAD
             groupBox2.Location = new Point(14, 254);
             groupBox2.Margin = new Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(3, 4, 3, 4);
             groupBox2.Size = new Size(1201, 281);
+=======
+            groupBox2.Location = new Point(14, 216);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(1370, 239);
+>>>>>>> 0fc5df7a333d3d51b76e14b01f90ba3a6771178a
             groupBox2.TabIndex = 67;
             groupBox2.TabStop = false;
             groupBox2.Text = "Danh sách dịch vụ";
@@ -219,6 +341,7 @@
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.Columns.AddRange(new DataGridViewColumn[] { TenDichVu, Gia, ThoiGian });
             dataGridView.Dock = DockStyle.Fill;
+<<<<<<< HEAD
             dataGridView.Location = new Point(3, 24);
             dataGridView.Margin = new Padding(3, 4, 3, 4);
             dataGridView.MultiSelect = false;
@@ -227,6 +350,15 @@
             dataGridView.Size = new Size(1195, 253);
             dataGridView.TabIndex = 0;
             dataGridView.CellClick += dataGridView_CellClick;
+=======
+            dataGridView.Location = new Point(3, 21);
+            dataGridView.MultiSelect = false;
+            dataGridView.Name = "dataGridView";
+            dataGridView.RowHeadersWidth = 51;
+            dataGridView.Size = new Size(1364, 215);
+            dataGridView.TabIndex = 0;
+            dataGridView.CellContentClick += dataGridView1_CellContentClick;
+>>>>>>> 0fc5df7a333d3d51b76e14b01f90ba3a6771178a
             // 
             // TenDichVu
             // 
@@ -251,9 +383,15 @@
             // 
             // frmDichVu
             // 
+<<<<<<< HEAD
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1235, 547);
+=======
+            AutoScaleDimensions = new SizeF(9F, 17F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1397, 465);
+>>>>>>> 0fc5df7a333d3d51b76e14b01f90ba3a6771178a
             Controls.Add(groupBox2);
             Controls.Add(btnThoat);
             Controls.Add(btnHuy);
@@ -262,6 +400,7 @@
             Controls.Add(btnXoa);
             Controls.Add(btnThem);
             Controls.Add(groupBox1);
+<<<<<<< HEAD
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Margin = new Padding(3, 4, 3, 4);
             Name = "frmDichVu";
@@ -271,6 +410,14 @@
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numThoiGian).EndInit();
             ((System.ComponentModel.ISupportInitialize)numDonGia).EndInit();
+=======
+            Font = new Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Name = "frmDichVu";
+            Text = "frmDichVu";
+            Load += frmDichVu_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+>>>>>>> 0fc5df7a333d3d51b76e14b01f90ba3a6771178a
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
@@ -283,6 +430,10 @@
         private Label label2;
         private Label label3;
         private TextBox txtGia;
+<<<<<<< HEAD
+=======
+        private DateTimePicker dtThoiGian;
+>>>>>>> 0fc5df7a333d3d51b76e14b01f90ba3a6771178a
         private GroupBox groupBox1;
         private Button btnThoat;
         private Button btnHuy;
@@ -295,7 +446,10 @@
         private DataGridViewTextBoxColumn TenDichVu;
         private DataGridViewTextBoxColumn Gia;
         private DataGridViewTextBoxColumn ThoiGian;
+<<<<<<< HEAD
         private NumericUpDown numDonGia;
         private NumericUpDown numThoiGian;
+=======
+>>>>>>> 0fc5df7a333d3d51b76e14b01f90ba3a6771178a
     }
 }
