@@ -22,35 +22,6 @@ namespace QuanLyTiemToc.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("QuanLyTiemToc.Data.ChiTietPhieuNhap", b =>
-                {
-                    b.Property<int>("ChiTietPhieuNhapId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ChiTietPhieuNhapId"));
-
-                    b.Property<decimal>("GiaNhap")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("PhieuNhapId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SanPhamId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SoLuong")
-                        .HasColumnType("int");
-
-                    b.HasKey("ChiTietPhieuNhapId");
-
-                    b.HasIndex("PhieuNhapId");
-
-                    b.HasIndex("SanPhamId");
-
-                    b.ToTable("ChiTietPhieuNhap");
-                });
-
             modelBuilder.Entity("QuanLyTiemToc.Data.DichVu", b =>
                 {
                     b.Property<int>("DichVuId")
@@ -171,32 +142,6 @@ namespace QuanLyTiemToc.Migrations
                     b.ToTable("KhachHang");
                 });
 
-            modelBuilder.Entity("QuanLyTiemToc.Data.KhuyenMai", b =>
-                {
-                    b.Property<int>("KhuyenMaiId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("KhuyenMaiId"));
-
-                    b.Property<DateTime>("DenNgay")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("PhanTramGiam")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TenKhuyenMai")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("TuNgay")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("KhuyenMaiId");
-
-                    b.ToTable("KhuyenMai");
-                });
-
             modelBuilder.Entity("QuanLyTiemToc.Data.LichHen", b =>
                 {
                     b.Property<int>("LichHenId")
@@ -261,26 +206,6 @@ namespace QuanLyTiemToc.Migrations
                     b.ToTable("NhanVien");
                 });
 
-            modelBuilder.Entity("QuanLyTiemToc.Data.PhieuNhap", b =>
-                {
-                    b.Property<int>("PhieuNhapId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PhieuNhapId"));
-
-                    b.Property<string>("GhiChu")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("NgayNhap")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("PhieuNhapId");
-
-                    b.ToTable("PhieuNhap");
-                });
-
             modelBuilder.Entity("QuanLyTiemToc.Data.SanPham", b =>
                 {
                     b.Property<int>("SanPhamId")
@@ -309,25 +234,6 @@ namespace QuanLyTiemToc.Migrations
                     b.HasKey("SanPhamId");
 
                     b.ToTable("SanPham");
-                });
-
-            modelBuilder.Entity("QuanLyTiemToc.Data.ChiTietPhieuNhap", b =>
-                {
-                    b.HasOne("QuanLyTiemToc.Data.PhieuNhap", "PhieuNhap")
-                        .WithMany()
-                        .HasForeignKey("PhieuNhapId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("QuanLyTiemToc.Data.SanPham", "SanPham")
-                        .WithMany()
-                        .HasForeignKey("SanPhamId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.Navigation("PhieuNhap");
-
-                    b.Navigation("SanPham");
                 });
 
             modelBuilder.Entity("QuanLyTiemToc.Data.HoaDon", b =>

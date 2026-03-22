@@ -61,6 +61,7 @@
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView.BackgroundColor = Color.Gainsboro;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, NhanVien, KhachHang, NgayLap, TongTien });
             dataGridView.Dock = DockStyle.Fill;
@@ -109,7 +110,7 @@
             // 
             btnXuat.Location = new Point(1178, 380);
             btnXuat.Name = "btnXuat";
-            btnXuat.Size = new Size(137, 25);
+            btnXuat.Size = new Size(137, 41);
             btnXuat.TabIndex = 2;
             btnXuat.Text = "Xuất Excel";
             btnXuat.UseVisualStyleBackColor = true;
@@ -119,7 +120,7 @@
             // 
             btnTimKiem.Location = new Point(1011, 380);
             btnTimKiem.Name = "btnTimKiem";
-            btnTimKiem.Size = new Size(117, 25);
+            btnTimKiem.Size = new Size(117, 41);
             btnTimKiem.TabIndex = 3;
             btnTimKiem.Text = "Tìm kiếm..";
             btnTimKiem.UseVisualStyleBackColor = true;
@@ -129,7 +130,7 @@
             // 
             btnThoat.Location = new Point(828, 380);
             btnThoat.Name = "btnThoat";
-            btnThoat.Size = new Size(125, 25);
+            btnThoat.Size = new Size(125, 41);
             btnThoat.TabIndex = 4;
             btnThoat.Text = "Thoát";
             btnThoat.UseVisualStyleBackColor = true;
@@ -139,7 +140,7 @@
             // 
             btnXoa.Location = new Point(614, 380);
             btnXoa.Name = "btnXoa";
-            btnXoa.Size = new Size(148, 25);
+            btnXoa.Size = new Size(148, 41);
             btnXoa.TabIndex = 5;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = true;
@@ -149,7 +150,7 @@
             // 
             btnSua.Location = new Point(431, 380);
             btnSua.Name = "btnSua";
-            btnSua.Size = new Size(125, 25);
+            btnSua.Size = new Size(125, 41);
             btnSua.TabIndex = 6;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = true;
@@ -159,7 +160,7 @@
             // 
             btnInHoaDon.Location = new Point(255, 380);
             btnInHoaDon.Name = "btnInHoaDon";
-            btnInHoaDon.Size = new Size(136, 25);
+            btnInHoaDon.Size = new Size(136, 41);
             btnInHoaDon.TabIndex = 7;
             btnInHoaDon.Text = "In hóa đơn..";
             btnInHoaDon.UseVisualStyleBackColor = true;
@@ -169,7 +170,7 @@
             // 
             btnLapHoaDon.Location = new Point(38, 380);
             btnLapHoaDon.Name = "btnLapHoaDon";
-            btnLapHoaDon.Size = new Size(186, 25);
+            btnLapHoaDon.Size = new Size(186, 41);
             btnLapHoaDon.TabIndex = 8;
             btnLapHoaDon.Text = "Lập hóa đơn mới..";
             btnLapHoaDon.UseVisualStyleBackColor = true;
@@ -179,6 +180,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Silver;
             ClientSize = new Size(1402, 522);
             Controls.Add(btnXuat);
             Controls.Add(btnTimKiem);

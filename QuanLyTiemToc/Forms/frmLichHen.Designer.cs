@@ -30,6 +30,11 @@
         {
             groupBox1 = new GroupBox();
             dataGridView = new DataGridView();
+            TenNhanVien = new DataGridViewTextBoxColumn();
+            TenKhachHang = new DataGridViewTextBoxColumn();
+            DichVu = new DataGridViewTextBoxColumn();
+            ThoiGianHen = new DataGridViewTextBoxColumn();
+            TrangThai = new DataGridViewTextBoxColumn();
             btnThoat = new Button();
             btnHuy = new Button();
             btnLuu = new Button();
@@ -37,22 +42,17 @@
             btnXoa = new Button();
             btnThem = new Button();
             groupBox2 = new GroupBox();
+            cboTrangThai = new ComboBox();
+            cboDichVu = new ComboBox();
+            label6 = new Label();
+            dateThoiGian = new DateTimePicker();
+            txtKhachHang = new TextBox();
+            label5 = new Label();
+            label4 = new Label();
             label1 = new Label();
             cboNhanVien = new ComboBox();
             label3 = new Label();
             label2 = new Label();
-            txtKhachHang = new TextBox();
-            dateThoiGian = new DateTimePicker();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            cboDichVu = new ComboBox();
-            cboTrangThai = new ComboBox();
-            TrangThai = new DataGridViewTextBoxColumn();
-            ThoiGianHen = new DataGridViewTextBoxColumn();
-            DichVu = new DataGridViewTextBoxColumn();
-            TenKhachHang = new DataGridViewTextBoxColumn();
-            TenNhanVien = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             groupBox2.SuspendLayout();
@@ -76,6 +76,7 @@
             dataGridView.AllowUserToResizeColumns = false;
             dataGridView.AllowUserToResizeRows = false;
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView.BackgroundColor = Color.Gainsboro;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.Columns.AddRange(new DataGridViewColumn[] { TenNhanVien, TenKhachHang, DichVu, ThoiGianHen, TrangThai });
             dataGridView.Dock = DockStyle.Fill;
@@ -84,6 +85,41 @@
             dataGridView.RowHeadersWidth = 51;
             dataGridView.Size = new Size(1218, 237);
             dataGridView.TabIndex = 0;
+            // 
+            // TenNhanVien
+            // 
+            TenNhanVien.DataPropertyName = "TenNhanVien";
+            TenNhanVien.HeaderText = "Tên nhân viên";
+            TenNhanVien.MinimumWidth = 6;
+            TenNhanVien.Name = "TenNhanVien";
+            // 
+            // TenKhachHang
+            // 
+            TenKhachHang.DataPropertyName = "TenKhachHang";
+            TenKhachHang.HeaderText = "Tên khách hàng";
+            TenKhachHang.MinimumWidth = 6;
+            TenKhachHang.Name = "TenKhachHang";
+            // 
+            // DichVu
+            // 
+            DichVu.DataPropertyName = "DichVu";
+            DichVu.HeaderText = "Dịch vụ";
+            DichVu.MinimumWidth = 6;
+            DichVu.Name = "DichVu";
+            // 
+            // ThoiGianHen
+            // 
+            ThoiGianHen.DataPropertyName = "ThoiGianHen";
+            ThoiGianHen.HeaderText = "Thời gian hẹn";
+            ThoiGianHen.MinimumWidth = 6;
+            ThoiGianHen.Name = "ThoiGianHen";
+            // 
+            // TrangThai
+            // 
+            TrangThai.DataPropertyName = "TrangThai";
+            TrangThai.HeaderText = "Trạng thái";
+            TrangThai.MinimumWidth = 6;
+            TrangThai.Name = "TrangThai";
             // 
             // btnThoat
             // 
@@ -175,6 +211,64 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông tin dịch vụ";
             // 
+            // cboTrangThai
+            // 
+            cboTrangThai.FormattingEnabled = true;
+            cboTrangThai.Location = new Point(819, 96);
+            cboTrangThai.Name = "cboTrangThai";
+            cboTrangThai.Size = new Size(254, 28);
+            cboTrangThai.TabIndex = 6;
+            // 
+            // cboDichVu
+            // 
+            cboDichVu.FormattingEnabled = true;
+            cboDichVu.Location = new Point(819, 40);
+            cboDichVu.Name = "cboDichVu";
+            cboDichVu.Size = new Size(254, 28);
+            cboDichVu.TabIndex = 6;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(688, 99);
+            label6.Name = "label6";
+            label6.Size = new Size(84, 20);
+            label6.TabIndex = 5;
+            label6.Text = "Trạng thái:";
+            // 
+            // dateThoiGian
+            // 
+            dateThoiGian.Format = DateTimePickerFormat.Short;
+            dateThoiGian.Location = new Point(175, 126);
+            dateThoiGian.Name = "dateThoiGian";
+            dateThoiGian.Size = new Size(267, 27);
+            dateThoiGian.TabIndex = 4;
+            // 
+            // txtKhachHang
+            // 
+            txtKhachHang.Location = new Point(175, 79);
+            txtKhachHang.Name = "txtKhachHang";
+            txtKhachHang.Size = new Size(270, 27);
+            txtKhachHang.TabIndex = 3;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(688, 42);
+            label5.Name = "label5";
+            label5.Size = new Size(65, 20);
+            label5.TabIndex = 0;
+            label5.Text = "Dịch vụ:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(640, 42);
+            label4.Name = "label4";
+            label4.Size = new Size(13, 20);
+            label4.TabIndex = 0;
+            label4.Text = " ";
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -210,103 +304,11 @@
             label2.TabIndex = 2;
             label2.Text = "Tên khách hàng:";
             // 
-            // txtKhachHang
-            // 
-            txtKhachHang.Location = new Point(175, 79);
-            txtKhachHang.Name = "txtKhachHang";
-            txtKhachHang.Size = new Size(270, 27);
-            txtKhachHang.TabIndex = 3;
-            // 
-            // dateThoiGian
-            // 
-            dateThoiGian.Format = DateTimePickerFormat.Short;
-            dateThoiGian.Location = new Point(175, 126);
-            dateThoiGian.Name = "dateThoiGian";
-            dateThoiGian.Size = new Size(267, 27);
-            dateThoiGian.TabIndex = 4;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(640, 42);
-            label4.Name = "label4";
-            label4.Size = new Size(13, 20);
-            label4.TabIndex = 0;
-            label4.Text = " ";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(688, 42);
-            label5.Name = "label5";
-            label5.Size = new Size(65, 20);
-            label5.TabIndex = 0;
-            label5.Text = "Dịch vụ:";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(688, 99);
-            label6.Name = "label6";
-            label6.Size = new Size(84, 20);
-            label6.TabIndex = 5;
-            label6.Text = "Trạng thái:";
-            // 
-            // cboDichVu
-            // 
-            cboDichVu.FormattingEnabled = true;
-            cboDichVu.Location = new Point(819, 40);
-            cboDichVu.Name = "cboDichVu";
-            cboDichVu.Size = new Size(254, 28);
-            cboDichVu.TabIndex = 6;
-            // 
-            // cboTrangThai
-            // 
-            cboTrangThai.FormattingEnabled = true;
-            cboTrangThai.Location = new Point(819, 96);
-            cboTrangThai.Name = "cboTrangThai";
-            cboTrangThai.Size = new Size(254, 28);
-            cboTrangThai.TabIndex = 6;
-            // 
-            // TrangThai
-            // 
-            TrangThai.DataPropertyName = "TrangThai";
-            TrangThai.HeaderText = "Trạng thái";
-            TrangThai.MinimumWidth = 6;
-            TrangThai.Name = "TrangThai";
-            // 
-            // ThoiGianHen
-            // 
-            ThoiGianHen.DataPropertyName = "ThoiGianHen";
-            ThoiGianHen.HeaderText = "Thời gian hẹn";
-            ThoiGianHen.MinimumWidth = 6;
-            ThoiGianHen.Name = "ThoiGianHen";
-            // 
-            // DichVu
-            // 
-            DichVu.DataPropertyName = "DichVu";
-            DichVu.HeaderText = "Dịch vụ";
-            DichVu.MinimumWidth = 6;
-            DichVu.Name = "DichVu";
-            // 
-            // TenKhachHang
-            // 
-            TenKhachHang.DataPropertyName = "TenKhachHang";
-            TenKhachHang.HeaderText = "Tên khách hàng";
-            TenKhachHang.MinimumWidth = 6;
-            TenKhachHang.Name = "TenKhachHang";
-            // 
-            // TenNhanVien
-            // 
-            TenNhanVien.DataPropertyName = "TenNhanVien";
-            TenNhanVien.HeaderText = "Tên nhân viên";
-            TenNhanVien.MinimumWidth = 6;
-            TenNhanVien.Name = "TenNhanVien";
-            // 
             // frmLichHen
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Silver;
             ClientSize = new Size(1248, 530);
             Controls.Add(btnThoat);
             Controls.Add(btnHuy);

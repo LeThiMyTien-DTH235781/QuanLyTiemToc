@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label8 = new Label();
             cbDonVi = new ComboBox();
             label7 = new Label();
             label6 = new Label();
@@ -56,94 +55,86 @@
             DonVi = new DataGridViewTextBoxColumn();
             DonGia = new DataGridViewTextBoxColumn();
             groupBox1 = new GroupBox();
+            groupBox2 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)numDonGia).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numSoLuong).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtSanPham).BeginInit();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Rockwell Condensed", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.SlateGray;
-            label8.Location = new Point(69, 38);
-            label8.Margin = new Padding(4, 0, 4, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(89, 27);
-            label8.TabIndex = 71;
-            label8.Text = "Thông Tin";
             // 
             // cbDonVi
             // 
+            cbDonVi.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
             cbDonVi.FormattingEnabled = true;
             cbDonVi.Items.AddRange(new object[] { "Chai", "Hộp", "Tuýp", "Gói" });
-            cbDonVi.Location = new Point(583, 147);
+            cbDonVi.Location = new Point(577, 99);
             cbDonVi.Name = "cbDonVi";
-            cbDonVi.Size = new Size(151, 28);
+            cbDonVi.Size = new Size(151, 25);
             cbDonVi.TabIndex = 70;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            label7.Location = new Point(447, 156);
+            label7.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            label7.Location = new Point(441, 108);
             label7.Name = "label7";
-            label7.Size = new Size(58, 17);
+            label7.Size = new Size(64, 17);
             label7.TabIndex = 63;
             label7.Text = "Đơn vị:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            label6.Location = new Point(447, 106);
+            label6.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            label6.Location = new Point(441, 58);
             label6.Name = "label6";
-            label6.Size = new Size(66, 17);
+            label6.Size = new Size(72, 17);
             label6.TabIndex = 61;
             label6.Text = "Đơn giá:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            label3.Location = new Point(33, 134);
+            label3.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            label3.Location = new Point(22, 127);
             label3.Name = "label3";
-            label3.Size = new Size(75, 17);
+            label3.Size = new Size(80, 17);
             label3.TabIndex = 64;
             label3.Text = "Số lượng:";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            label5.Location = new Point(33, 186);
+            label5.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            label5.Location = new Point(22, 27);
             label5.Name = "label5";
-            label5.Size = new Size(110, 17);
+            label5.Size = new Size(120, 17);
             label5.TabIndex = 60;
             label5.Text = " Tên sản phẩm:";
             // 
             // txtMaSanPham
             // 
-            txtMaSanPham.Location = new Point(156, 86);
+            txtMaSanPham.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            txtMaSanPham.Location = new Point(145, 77);
             txtMaSanPham.Name = "txtMaSanPham";
-            txtMaSanPham.Size = new Size(235, 27);
+            txtMaSanPham.Size = new Size(235, 23);
             txtMaSanPham.TabIndex = 66;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            label2.Location = new Point(32, 87);
+            label2.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            label2.Location = new Point(21, 78);
             label2.Name = "label2";
-            label2.Size = new Size(102, 17);
+            label2.Size = new Size(104, 17);
             label2.TabIndex = 59;
             label2.Text = "Mã sản phẩm:";
             // 
             // btnThoat
             // 
-            btnThoat.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnThoat.Location = new Point(1035, 169);
+            btnThoat.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            btnThoat.Location = new Point(983, 133);
             btnThoat.Margin = new Padding(4, 3, 4, 3);
             btnThoat.Name = "btnThoat";
             btnThoat.Size = new Size(125, 38);
@@ -154,8 +145,8 @@
             // 
             // btnHuy
             // 
-            btnHuy.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnHuy.Location = new Point(1035, 113);
+            btnHuy.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            btnHuy.Location = new Point(983, 77);
             btnHuy.Margin = new Padding(4, 3, 4, 3);
             btnHuy.Name = "btnHuy";
             btnHuy.Size = new Size(125, 38);
@@ -166,9 +157,9 @@
             // 
             // btnLuu
             // 
-            btnLuu.Font = new Font("Cambria", 9F, FontStyle.Bold);
+            btnLuu.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
             btnLuu.ForeColor = Color.DodgerBlue;
-            btnLuu.Location = new Point(1035, 63);
+            btnLuu.Location = new Point(983, 27);
             btnLuu.Margin = new Padding(4, 3, 4, 3);
             btnLuu.Name = "btnLuu";
             btnLuu.Size = new Size(125, 36);
@@ -179,8 +170,8 @@
             // 
             // btnSua
             // 
-            btnSua.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnSua.Location = new Point(875, 113);
+            btnSua.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            btnSua.Location = new Point(823, 77);
             btnSua.Margin = new Padding(4, 3, 4, 3);
             btnSua.Name = "btnSua";
             btnSua.Size = new Size(122, 38);
@@ -191,9 +182,9 @@
             // 
             // btnXoa
             // 
-            btnXoa.Font = new Font("Cambria", 9F, FontStyle.Bold);
+            btnXoa.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
             btnXoa.ForeColor = Color.OrangeRed;
-            btnXoa.Location = new Point(875, 169);
+            btnXoa.Location = new Point(823, 133);
             btnXoa.Margin = new Padding(4, 3, 4, 3);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(122, 38);
@@ -204,8 +195,8 @@
             // 
             // btnThem
             // 
-            btnThem.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnThem.Location = new Point(875, 64);
+            btnThem.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            btnThem.Location = new Point(823, 28);
             btnThem.Margin = new Padding(4, 3, 4, 3);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(122, 35);
@@ -217,19 +208,19 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Courier New", 19.8000011F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Teal;
-            label1.Location = new Point(476, 6);
+            label1.Location = new Point(478, 9);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(414, 38);
+            label1.Size = new Size(394, 46);
             label1.TabIndex = 51;
             label1.Text = "Tiệm tóc nam Mable🍁";
             // 
             // btnTim
             // 
-            btnTim.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnTim.Location = new Point(1196, 61);
+            btnTim.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            btnTim.Location = new Point(1144, 26);
             btnTim.Margin = new Padding(4, 3, 4, 3);
             btnTim.Name = "btnTim";
             btnTim.Size = new Size(125, 36);
@@ -240,8 +231,8 @@
             // 
             // btnNhap
             // 
-            btnNhap.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnNhap.Location = new Point(1196, 111);
+            btnNhap.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            btnNhap.Location = new Point(1144, 75);
             btnNhap.Margin = new Padding(4, 3, 4, 3);
             btnNhap.Name = "btnNhap";
             btnNhap.Size = new Size(125, 38);
@@ -252,8 +243,8 @@
             // 
             // btnXuat
             // 
-            btnXuat.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnXuat.Location = new Point(1196, 167);
+            btnXuat.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            btnXuat.Location = new Point(1144, 131);
             btnXuat.Margin = new Padding(4, 3, 4, 3);
             btnXuat.Name = "btnXuat";
             btnXuat.Size = new Size(125, 38);
@@ -264,27 +255,30 @@
             // 
             // cboSanPham
             // 
+            cboSanPham.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
             cboSanPham.FormattingEnabled = true;
-            cboSanPham.Location = new Point(156, 182);
+            cboSanPham.Location = new Point(145, 23);
             cboSanPham.Name = "cboSanPham";
-            cboSanPham.Size = new Size(233, 28);
+            cboSanPham.Size = new Size(233, 25);
             cboSanPham.TabIndex = 73;
             cboSanPham.SelectedIndexChanged += cboSanPham_SelectedIndexChanged;
             // 
             // numDonGia
             // 
-            numDonGia.Location = new Point(583, 98);
+            numDonGia.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            numDonGia.Location = new Point(577, 50);
             numDonGia.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
             numDonGia.Name = "numDonGia";
-            numDonGia.Size = new Size(150, 27);
+            numDonGia.Size = new Size(150, 23);
             numDonGia.TabIndex = 74;
             numDonGia.ThousandsSeparator = true;
             // 
             // numSoLuong
             // 
-            numSoLuong.Location = new Point(156, 134);
+            numSoLuong.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            numSoLuong.Location = new Point(145, 127);
             numSoLuong.Name = "numSoLuong";
-            numSoLuong.Size = new Size(150, 27);
+            numSoLuong.Size = new Size(150, 23);
             numSoLuong.TabIndex = 75;
             numSoLuong.ThousandsSeparator = true;
             // 
@@ -293,13 +287,14 @@
             dtSanPham.AllowUserToAddRows = false;
             dtSanPham.AllowUserToDeleteRows = false;
             dtSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtSanPham.BackgroundColor = Color.Gainsboro;
             dtSanPham.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtSanPham.Columns.AddRange(new DataGridViewColumn[] { ID, SanPham, SoLuong, DonVi, DonGia });
             dtSanPham.Dock = DockStyle.Fill;
-            dtSanPham.Location = new Point(3, 23);
+            dtSanPham.Location = new Point(3, 21);
             dtSanPham.Name = "dtSanPham";
             dtSanPham.RowHeadersWidth = 51;
-            dtSanPham.Size = new Size(1310, 265);
+            dtSanPham.Size = new Size(1310, 267);
             dtSanPham.TabIndex = 76;
             dtSanPham.SelectionChanged += dtSanPham_SelectionChanged;
             // 
@@ -341,39 +336,52 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(dtSanPham);
-            groupBox1.Location = new Point(6, 230);
+            groupBox1.Font = new Font("Cascadia Code", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.Location = new Point(6, 252);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(1316, 291);
             groupBox1.TabIndex = 77;
             groupBox1.TabStop = false;
             groupBox1.Text = "Danh sách sản phẩm";
             // 
+            // groupBox2
+            // 
+            groupBox2.BackColor = Color.Gainsboro;
+            groupBox2.Controls.Add(btnSua);
+            groupBox2.Controls.Add(btnThem);
+            groupBox2.Controls.Add(cboSanPham);
+            groupBox2.Controls.Add(label5);
+            groupBox2.Controls.Add(numSoLuong);
+            groupBox2.Controls.Add(btnXoa);
+            groupBox2.Controls.Add(btnTim);
+            groupBox2.Controls.Add(numDonGia);
+            groupBox2.Controls.Add(btnLuu);
+            groupBox2.Controls.Add(btnHuy);
+            groupBox2.Controls.Add(cbDonVi);
+            groupBox2.Controls.Add(btnNhap);
+            groupBox2.Controls.Add(label7);
+            groupBox2.Controls.Add(btnThoat);
+            groupBox2.Controls.Add(label6);
+            groupBox2.Controls.Add(btnXuat);
+            groupBox2.Controls.Add(label3);
+            groupBox2.Controls.Add(label2);
+            groupBox2.Controls.Add(txtMaSanPham);
+            groupBox2.Font = new Font("Cascadia Code", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox2.Location = new Point(6, 64);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(1313, 182);
+            groupBox2.TabIndex = 78;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Thông tin sản phẩm";
+            // 
             // frmSanPham
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1334, 549);
+            BackColor = Color.Silver;
+            ClientSize = new Size(1334, 555);
+            Controls.Add(groupBox2);
             Controls.Add(groupBox1);
-            Controls.Add(numSoLuong);
-            Controls.Add(numDonGia);
-            Controls.Add(cboSanPham);
-            Controls.Add(label8);
-            Controls.Add(cbDonVi);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label3);
-            Controls.Add(label5);
-            Controls.Add(txtMaSanPham);
-            Controls.Add(label2);
-            Controls.Add(btnXuat);
-            Controls.Add(btnThoat);
-            Controls.Add(btnNhap);
-            Controls.Add(btnTim);
-            Controls.Add(btnHuy);
-            Controls.Add(btnLuu);
-            Controls.Add(btnSua);
-            Controls.Add(btnXoa);
-            Controls.Add(btnThem);
             Controls.Add(label1);
             Name = "frmSanPham";
             Text = "frmSanPham";
@@ -382,13 +390,13 @@
             ((System.ComponentModel.ISupportInitialize)numSoLuong).EndInit();
             ((System.ComponentModel.ISupportInitialize)dtSanPham).EndInit();
             groupBox1.ResumeLayout(false);
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label label8;
         private ComboBox cbDonVi;
         private Label label7;
         private Label label6;
@@ -417,5 +425,6 @@
         private DataGridViewTextBoxColumn SoLuong;
         private DataGridViewTextBoxColumn DonVi;
         private DataGridViewTextBoxColumn DonGia;
+        private GroupBox groupBox2;
     }
 }

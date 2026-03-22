@@ -52,8 +52,7 @@ namespace QuanLyTiemToc.Data
         public DbSet<HoaDon> HoaDon { get; set; }
         public DbSet<HoaDonChiTiet> HoaDonChiTiet { get; set; }
         public DbSet<LichHen> LichHen { get; set; }
-        public DbSet<PhieuNhap> PhieuNhap { get; set; }
-        public DbSet<ChiTietPhieuNhap> ChiTietPhieuNhap { get; set; }
-        public DbSet<KhuyenMai> KhuyenMai { get; set; }
+   
+        
     }
 }

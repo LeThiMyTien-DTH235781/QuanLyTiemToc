@@ -93,6 +93,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.BackColor = Color.Gainsboro;
             groupBox2.Controls.Add(numGiaDichVu);
             groupBox2.Controls.Add(cboNhanVien);
             groupBox2.Controls.Add(label7);
@@ -188,9 +189,9 @@
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
-            groupBox1.Location = new Point(29, 142);
+            groupBox1.Location = new Point(12, 142);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1288, 289);
+            groupBox1.Size = new Size(1290, 312);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin chi tiết hóa đơn";
@@ -200,8 +201,9 @@
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView.BackgroundColor = Color.Gainsboro;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Location = new Point(14, 86);
+            dataGridView.Location = new Point(16, 99);
             dataGridView.MultiSelect = false;
             dataGridView.Name = "dataGridView";
             dataGridView.RowHeadersWidth = 51;
@@ -288,6 +290,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Silver;
             ClientSize = new Size(1344, 522);
             Controls.Add(btnThoat);
             Controls.Add(btnInHoaDon);
@@ -295,6 +298,7 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ForeColor = Color.Black;
             Name = "frmHoaDonChiTiet";
             Load += frmHoaDonChiTiet_Load;
             groupBox2.ResumeLayout(false);
