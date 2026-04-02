@@ -18,6 +18,7 @@ namespace QuanLyTiemToc.Data
             [Required]
 
             public string ChuyenMon { get; set; }
-        }
+        public ICollection<HoaDon> HoaDons { get; set; }
+    }
     }
 

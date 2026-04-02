@@ -42,11 +42,11 @@
             btnXoa = new Button();
             btnThem = new Button();
             groupBox2 = new GroupBox();
+            cboKhachHang = new ComboBox();
             cboTrangThai = new ComboBox();
             cboDichVu = new ComboBox();
             label6 = new Label();
             dateThoiGian = new DateTimePicker();
-            txtKhachHang = new TextBox();
             label5 = new Label();
             label4 = new Label();
             label1 = new Label();
@@ -61,7 +61,7 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(dataGridView);
-            groupBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            groupBox1.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
             groupBox1.Location = new Point(12, 255);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(1224, 263);
@@ -80,11 +80,12 @@
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.Columns.AddRange(new DataGridViewColumn[] { TenNhanVien, TenKhachHang, DichVu, ThoiGianHen, TrangThai });
             dataGridView.Dock = DockStyle.Fill;
-            dataGridView.Location = new Point(3, 23);
+            dataGridView.Location = new Point(3, 21);
             dataGridView.Name = "dataGridView";
             dataGridView.RowHeadersWidth = 51;
-            dataGridView.Size = new Size(1218, 237);
+            dataGridView.Size = new Size(1218, 239);
             dataGridView.TabIndex = 0;
+            dataGridView.CellClick += dataGridView_CellClick;
             // 
             // TenNhanVien
             // 
@@ -123,7 +124,8 @@
             // 
             // btnThoat
             // 
-            btnThoat.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnThoat.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
+            btnThoat.ForeColor = Color.Teal;
             btnThoat.Location = new Point(1067, 217);
             btnThoat.Margin = new Padding(4, 3, 4, 3);
             btnThoat.Name = "btnThoat";
@@ -131,10 +133,12 @@
             btnThoat.TabIndex = 81;
             btnThoat.Text = "Thoát";
             btnThoat.UseVisualStyleBackColor = true;
+            btnThoat.Click += btnThoat_Click;
             // 
             // btnHuy
             // 
-            btnHuy.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnHuy.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
+            btnHuy.ForeColor = Color.Teal;
             btnHuy.Location = new Point(856, 217);
             btnHuy.Margin = new Padding(4, 3, 4, 3);
             btnHuy.Name = "btnHuy";
@@ -142,10 +146,11 @@
             btnHuy.TabIndex = 80;
             btnHuy.Text = "Hủy";
             btnHuy.UseVisualStyleBackColor = true;
+            btnHuy.Click += btnHuy_Click;
             // 
             // btnLuu
             // 
-            btnLuu.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnLuu.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
             btnLuu.ForeColor = Color.DodgerBlue;
             btnLuu.Location = new Point(646, 217);
             btnLuu.Margin = new Padding(4, 3, 4, 3);
@@ -154,10 +159,12 @@
             btnLuu.TabIndex = 79;
             btnLuu.Text = "Lưu";
             btnLuu.UseVisualStyleBackColor = true;
+            btnLuu.Click += btnLuu_Click;
             // 
             // btnSua
             // 
-            btnSua.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnSua.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
+            btnSua.ForeColor = Color.Teal;
             btnSua.Location = new Point(238, 216);
             btnSua.Margin = new Padding(4, 3, 4, 3);
             btnSua.Name = "btnSua";
@@ -165,10 +172,11 @@
             btnSua.TabIndex = 78;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = true;
+            btnSua.Click += btnSua_Click;
             // 
             // btnXoa
             // 
-            btnXoa.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnXoa.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
             btnXoa.ForeColor = Color.OrangeRed;
             btnXoa.Location = new Point(441, 215);
             btnXoa.Margin = new Padding(4, 3, 4, 3);
@@ -177,10 +185,12 @@
             btnXoa.TabIndex = 77;
             btnXoa.Text = "Xóa ";
             btnXoa.UseVisualStyleBackColor = true;
+            btnXoa.Click += btnXoa_Click;
             // 
             // btnThem
             // 
-            btnThem.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnThem.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
+            btnThem.ForeColor = Color.Teal;
             btnThem.Location = new Point(31, 216);
             btnThem.Margin = new Padding(4, 3, 4, 3);
             btnThem.Name = "btnThem";
@@ -188,28 +198,38 @@
             btnThem.TabIndex = 76;
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = true;
+            btnThem.Click += btnThem_Click;
             // 
             // groupBox2
             // 
             groupBox2.BackColor = SystemColors.ControlLight;
+            groupBox2.Controls.Add(cboKhachHang);
             groupBox2.Controls.Add(cboTrangThai);
             groupBox2.Controls.Add(cboDichVu);
             groupBox2.Controls.Add(label6);
             groupBox2.Controls.Add(dateThoiGian);
-            groupBox2.Controls.Add(txtKhachHang);
             groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(label1);
             groupBox2.Controls.Add(cboNhanVien);
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(label2);
-            groupBox2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            groupBox2.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
             groupBox2.Location = new Point(12, 12);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(1221, 182);
             groupBox2.TabIndex = 75;
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông tin dịch vụ";
+//            groupBox2.Enter += groupBox2_Enter;
+            // 
+            // cboKhachHang
+            // 
+            cboKhachHang.FormattingEnabled = true;
+            cboKhachHang.Location = new Point(197, 78);
+            cboKhachHang.Name = "cboKhachHang";
+            cboKhachHang.Size = new Size(264, 28);
+            cboKhachHang.TabIndex = 7;
             // 
             // cboTrangThai
             // 
@@ -232,31 +252,24 @@
             label6.AutoSize = true;
             label6.Location = new Point(688, 99);
             label6.Name = "label6";
-            label6.Size = new Size(84, 20);
+            label6.Size = new Size(108, 20);
             label6.TabIndex = 5;
             label6.Text = "Trạng thái:";
             // 
             // dateThoiGian
             // 
             dateThoiGian.Format = DateTimePickerFormat.Short;
-            dateThoiGian.Location = new Point(175, 126);
+            dateThoiGian.Location = new Point(196, 128);
             dateThoiGian.Name = "dateThoiGian";
-            dateThoiGian.Size = new Size(267, 27);
+            dateThoiGian.Size = new Size(267, 25);
             dateThoiGian.TabIndex = 4;
-            // 
-            // txtKhachHang
-            // 
-            txtKhachHang.Location = new Point(175, 79);
-            txtKhachHang.Name = "txtKhachHang";
-            txtKhachHang.Size = new Size(270, 27);
-            txtKhachHang.TabIndex = 3;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Location = new Point(688, 42);
             label5.Name = "label5";
-            label5.Size = new Size(65, 20);
+            label5.Size = new Size(81, 20);
             label5.TabIndex = 0;
             label5.Text = "Dịch vụ:";
             // 
@@ -265,7 +278,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(640, 42);
             label4.Name = "label4";
-            label4.Size = new Size(13, 20);
+            label4.Size = new Size(18, 20);
             label4.TabIndex = 0;
             label4.Text = " ";
             // 
@@ -274,14 +287,14 @@
             label1.AutoSize = true;
             label1.Location = new Point(37, 37);
             label1.Name = "label1";
-            label1.Size = new Size(110, 20);
+            label1.Size = new Size(135, 20);
             label1.TabIndex = 0;
             label1.Text = "Tên nhân viên:";
             // 
             // cboNhanVien
             // 
             cboNhanVien.FormattingEnabled = true;
-            cboNhanVien.Location = new Point(176, 34);
+            cboNhanVien.Location = new Point(197, 36);
             cboNhanVien.Name = "cboNhanVien";
             cboNhanVien.Size = new Size(269, 28);
             cboNhanVien.TabIndex = 1;
@@ -291,7 +304,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(37, 126);
             label3.Name = "label3";
-            label3.Size = new Size(108, 20);
+            label3.Size = new Size(135, 20);
             label3.TabIndex = 2;
             label3.Text = "Thời gian hẹn:";
             // 
@@ -300,7 +313,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(37, 81);
             label2.Name = "label2";
-            label2.Size = new Size(122, 20);
+            label2.Size = new Size(144, 20);
             label2.TabIndex = 2;
             label2.Text = "Tên khách hàng:";
             // 
@@ -320,6 +333,7 @@
             Controls.Add(groupBox1);
             Name = "frmLichHen";
             Text = "frmLichHen";
+            Load += frmLichHen_Load;
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             groupBox2.ResumeLayout(false);
@@ -342,7 +356,6 @@
         private Label label3;
         private Label label2;
         private DataGridView dataGridView;
-        private TextBox txtKhachHang;
         private DateTimePicker dateThoiGian;
         private ComboBox cboTrangThai;
         private ComboBox cboDichVu;
@@ -354,5 +367,6 @@
         private DataGridViewTextBoxColumn DichVu;
         private DataGridViewTextBoxColumn ThoiGianHen;
         private DataGridViewTextBoxColumn TrangThai;
+        private ComboBox cboKhachHang;
     }
 }

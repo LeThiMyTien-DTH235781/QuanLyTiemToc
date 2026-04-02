@@ -134,6 +134,7 @@
             // btnThoat
             // 
             btnThoat.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            btnThoat.ForeColor = Color.Teal;
             btnThoat.Location = new Point(983, 133);
             btnThoat.Margin = new Padding(4, 3, 4, 3);
             btnThoat.Name = "btnThoat";
@@ -146,6 +147,7 @@
             // btnHuy
             // 
             btnHuy.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            btnHuy.ForeColor = Color.Teal;
             btnHuy.Location = new Point(983, 77);
             btnHuy.Margin = new Padding(4, 3, 4, 3);
             btnHuy.Name = "btnHuy";
@@ -158,7 +160,7 @@
             // btnLuu
             // 
             btnLuu.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
-            btnLuu.ForeColor = Color.DodgerBlue;
+            btnLuu.ForeColor = Color.Teal;
             btnLuu.Location = new Point(983, 27);
             btnLuu.Margin = new Padding(4, 3, 4, 3);
             btnLuu.Name = "btnLuu";
@@ -171,6 +173,7 @@
             // btnSua
             // 
             btnSua.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            btnSua.ForeColor = Color.Teal;
             btnSua.Location = new Point(823, 77);
             btnSua.Margin = new Padding(4, 3, 4, 3);
             btnSua.Name = "btnSua";
@@ -183,7 +186,7 @@
             // btnXoa
             // 
             btnXoa.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
-            btnXoa.ForeColor = Color.OrangeRed;
+            btnXoa.ForeColor = Color.Firebrick;
             btnXoa.Location = new Point(823, 133);
             btnXoa.Margin = new Padding(4, 3, 4, 3);
             btnXoa.Name = "btnXoa";
@@ -196,6 +199,7 @@
             // btnThem
             // 
             btnThem.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            btnThem.ForeColor = Color.Teal;
             btnThem.Location = new Point(823, 28);
             btnThem.Margin = new Padding(4, 3, 4, 3);
             btnThem.Name = "btnThem";
@@ -210,7 +214,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Teal;
-            label1.Location = new Point(478, 9);
+            label1.Location = new Point(464, 9);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(394, 46);
@@ -220,6 +224,7 @@
             // btnTim
             // 
             btnTim.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            btnTim.ForeColor = Color.Teal;
             btnTim.Location = new Point(1144, 26);
             btnTim.Margin = new Padding(4, 3, 4, 3);
             btnTim.Name = "btnTim";
@@ -232,6 +237,7 @@
             // btnNhap
             // 
             btnNhap.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            btnNhap.ForeColor = Color.Teal;
             btnNhap.Location = new Point(1144, 75);
             btnNhap.Margin = new Padding(4, 3, 4, 3);
             btnNhap.Name = "btnNhap";
@@ -244,6 +250,7 @@
             // btnXuat
             // 
             btnXuat.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            btnXuat.ForeColor = Color.Teal;
             btnXuat.Location = new Point(1144, 131);
             btnXuat.Margin = new Padding(4, 3, 4, 3);
             btnXuat.Name = "btnXuat";
@@ -266,6 +273,7 @@
             // numDonGia
             // 
             numDonGia.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            numDonGia.ForeColor = SystemColors.HotTrack;
             numDonGia.Location = new Point(577, 50);
             numDonGia.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
             numDonGia.Name = "numDonGia";
@@ -276,6 +284,7 @@
             // numSoLuong
             // 
             numSoLuong.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
+            numSoLuong.ForeColor = SystemColors.HotTrack;
             numSoLuong.Location = new Point(145, 127);
             numSoLuong.Name = "numSoLuong";
             numSoLuong.Size = new Size(150, 23);
@@ -373,6 +382,7 @@
             groupBox2.TabIndex = 78;
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông tin sản phẩm";
+            groupBox2.Enter += groupBox2_Enter;
             // 
             // frmSanPham
             // 

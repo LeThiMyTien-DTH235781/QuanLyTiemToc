@@ -58,7 +58,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(37, 37);
             label1.Name = "label1";
-            label1.Size = new Size(94, 17);
+            label1.Size = new Size(126, 20);
             label1.TabIndex = 0;
             label1.Text = "Tên dịch vụ: ";
             // 
@@ -68,15 +68,16 @@
             cboDichVu.Location = new Point(163, 36);
             cboDichVu.Margin = new Padding(3, 4, 3, 4);
             cboDichVu.Name = "cboDichVu";
-            cboDichVu.Size = new Size(344, 25);
+            cboDichVu.Size = new Size(344, 28);
             cboDichVu.TabIndex = 1;
+            cboDichVu.SelectedIndexChanged += cboDichVu_SelectedIndexChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(37, 81);
             label2.Name = "label2";
-            label2.Size = new Size(63, 17);
+            label2.Size = new Size(81, 20);
             label2.TabIndex = 2;
             label2.Text = "Đơn giá:";
             // 
@@ -85,7 +86,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(37, 127);
             label3.Name = "label3";
-            label3.Size = new Size(77, 17);
+            label3.Size = new Size(99, 20);
             label3.TabIndex = 2;
             label3.Text = "Thời Gian:";
             // 
@@ -98,107 +99,123 @@
             groupBox1.Controls.Add(cboDichVu);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
+            groupBox1.Font = new Font("Cascadia Code", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.Location = new Point(14, 10);
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(706, 190);
+            groupBox1.Size = new Size(706, 163);
             groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin dịch vụ";
             // 
             // numThoiGian
             // 
+            numThoiGian.ForeColor = SystemColors.HotTrack;
             numThoiGian.Location = new Point(162, 124);
             numThoiGian.Margin = new Padding(3, 4, 3, 4);
+            numThoiGian.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numThoiGian.Name = "numThoiGian";
             numThoiGian.Size = new Size(150, 25);
             numThoiGian.TabIndex = 6;
             // 
             // numDonGia
             // 
+            numDonGia.ForeColor = SystemColors.HotTrack;
             numDonGia.Location = new Point(163, 78);
             numDonGia.Margin = new Padding(3, 4, 3, 4);
+            numDonGia.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
             numDonGia.Name = "numDonGia";
             numDonGia.Size = new Size(150, 25);
             numDonGia.TabIndex = 5;
             // 
             // btnThoat
             // 
-            btnThoat.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnThoat.Location = new Point(998, 135);
+            btnThoat.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
+            btnThoat.ForeColor = Color.Teal;
+            btnThoat.Location = new Point(970, 132);
             btnThoat.Margin = new Padding(4, 3, 4, 3);
             btnThoat.Name = "btnThoat";
             btnThoat.Size = new Size(141, 32);
             btnThoat.TabIndex = 66;
             btnThoat.Text = "Thoát";
             btnThoat.UseVisualStyleBackColor = true;
+            btnThoat.Click += btnThoat_Click;
             // 
             // btnHuy
             // 
-            btnHuy.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnHuy.Location = new Point(998, 88);
+            btnHuy.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
+            btnHuy.ForeColor = Color.Teal;
+            btnHuy.Location = new Point(970, 85);
             btnHuy.Margin = new Padding(4, 3, 4, 3);
             btnHuy.Name = "btnHuy";
             btnHuy.Size = new Size(141, 32);
             btnHuy.TabIndex = 64;
             btnHuy.Text = "Hủy";
             btnHuy.UseVisualStyleBackColor = true;
+            btnHuy.Click += btnHuy_Click;
             // 
             // btnLuu
             // 
-            btnLuu.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnLuu.ForeColor = Color.DodgerBlue;
-            btnLuu.Location = new Point(998, 45);
+            btnLuu.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
+            btnLuu.ForeColor = Color.Teal;
+            btnLuu.Location = new Point(970, 42);
             btnLuu.Margin = new Padding(4, 3, 4, 3);
             btnLuu.Name = "btnLuu";
             btnLuu.Size = new Size(141, 31);
             btnLuu.TabIndex = 62;
             btnLuu.Text = "Lưu";
             btnLuu.UseVisualStyleBackColor = true;
+            btnLuu.Click += btnLuu_Click;
             // 
             // btnSua
             // 
-            btnSua.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnSua.Location = new Point(818, 88);
+            btnSua.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
+            btnSua.ForeColor = Color.Teal;
+            btnSua.Location = new Point(790, 85);
             btnSua.Margin = new Padding(4, 3, 4, 3);
             btnSua.Name = "btnSua";
             btnSua.Size = new Size(137, 32);
             btnSua.TabIndex = 60;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = true;
+            btnSua.Click += btnSua_Click;
             // 
             // btnXoa
             // 
-            btnXoa.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnXoa.ForeColor = Color.OrangeRed;
-            btnXoa.Location = new Point(818, 135);
+            btnXoa.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
+            btnXoa.ForeColor = Color.Brown;
+            btnXoa.Location = new Point(790, 132);
             btnXoa.Margin = new Padding(4, 3, 4, 3);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(137, 32);
             btnXoa.TabIndex = 59;
             btnXoa.Text = "Xóa ";
             btnXoa.UseVisualStyleBackColor = true;
+            btnXoa.Click += btnXoa_Click;
             // 
             // btnThem
             // 
-            btnThem.Font = new Font("Cambria", 9F, FontStyle.Bold);
-            btnThem.Location = new Point(818, 46);
+            btnThem.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
+            btnThem.ForeColor = Color.Teal;
+            btnThem.Location = new Point(790, 43);
             btnThem.Margin = new Padding(4, 3, 4, 3);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(137, 30);
             btnThem.TabIndex = 58;
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = true;
+            btnThem.Click += btnThem_Click;
             // 
             // groupBox2
             // 
             groupBox2.Controls.Add(dataGridView);
+            groupBox2.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
             groupBox2.Location = new Point(14, 216);
             groupBox2.Margin = new Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(3, 4, 3, 4);
-            groupBox2.Size = new Size(1370, 239);
+            groupBox2.Size = new Size(1138, 239);
             groupBox2.TabIndex = 67;
             groupBox2.TabStop = false;
             groupBox2.Text = "Danh sách dịch vụ";
@@ -214,10 +231,9 @@
             dataGridView.Dock = DockStyle.Fill;
             dataGridView.Location = new Point(3, 22);
             dataGridView.Margin = new Padding(3, 4, 3, 4);
-            dataGridView.MultiSelect = false;
             dataGridView.Name = "dataGridView";
             dataGridView.RowHeadersWidth = 51;
-            dataGridView.Size = new Size(1364, 213);
+            dataGridView.Size = new Size(1132, 213);
             dataGridView.TabIndex = 0;
             // 
             // TenDichVu
@@ -245,7 +261,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1397, 465);
+            ClientSize = new Size(1161, 465);
             Controls.Add(groupBox2);
             Controls.Add(btnThoat);
             Controls.Add(btnHuy);

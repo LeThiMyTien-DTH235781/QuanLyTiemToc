@@ -18,8 +18,8 @@ namespace QuanLyTiemToc.Forms
         public frmDichVu()
         {
             InitializeComponent();
+            this.Load += new EventHandler(frmDichVu_Load);
         }
-        QLTiemTocDbContext context = new QLTiemTocDbContext();
         bool isThem = false;
         int id = 0;
 
@@ -27,7 +27,6 @@ namespace QuanLyTiemToc.Forms
              = new Dictionary<string, (decimal, int)>
         {
             { "Cắt tóc nam",        (50000,  30)  },
-            { "Cắt tóc nữ",         (70000,  45)  },
             { "Nhuộm tóc",          (200000, 90)  },
             { "Uốn tóc",            (300000, 120) },
             { "Duỗi tóc",           (350000, 150) },
@@ -68,32 +67,51 @@ namespace QuanLyTiemToc.Forms
         // ================= LOAD DỊCH VỤ =================
         private void LoadDichVu()
         {
-            var data = context.DichVu
-                .Select(dv => new
-                {
-                    dv.DichVuId,
-                    dv.TenDichVu,
-                    dv.Gia,
-                    dv.ThoiGian
-                })
-                .OrderByDescending(dv => dv.DichVuId)
-                .ToList();
-
-            dataGridView.DataSource = data;
-
-            if (dataGridView.Columns.Count > 0)
+            try
             {
-                dataGridView.Columns["DichVuId"].Visible = false;
-                dataGridView.Columns["DichVuId"].HeaderText = "ID";
-                dataGridView.Columns["TenDichVu"].HeaderText = "Tên dịch vụ";
-                dataGridView.Columns["Gia"].HeaderText = "Giá (VNĐ)";
-                dataGridView.Columns["ThoiGian"].HeaderText = "Thời gian (phút)";
+                using (var db = new QLTiemTocDbContext())
+                {
+                    var data = db.DichVu
+                        .Select(dv => new
+                        {
+                            dv.DichVuId,
+                            dv.TenDichVu,
+                            dv.Gia,
+                            dv.ThoiGian
+                        })
+                        .OrderByDescending(dv => dv.DichVuId)
+                        .ToList();
 
-                dataGridView.Columns["Gia"].DefaultCellStyle.Format = "N0";
-                dataGridView.Columns["Gia"].DefaultCellStyle.Alignment =
-                    DataGridViewContentAlignment.MiddleRight;
+                    dataGridView.DataSource = data;
+
+                    if (dataGridView.Columns.Count > 0)
+                    {
+                        dataGridView.Columns["DichVuId"].Visible = false;
+                        dataGridView.Columns["DichVuId"].HeaderText = "ID";
+                        dataGridView.Columns["TenDichVu"].HeaderText = "Tên dịch vụ";
+                        dataGridView.Columns["Gia"].HeaderText = "Giá (VNĐ)";
+                        dataGridView.Columns["ThoiGian"].HeaderText = "Thời gian (phút)";
+
+                        dataGridView.Columns["Gia"].DefaultCellStyle.Format = "N0";
+                        dataGridView.Columns["Gia"].DefaultCellStyle.Alignment =
+                            DataGridViewContentAlignment.MiddleRight;
+                    }
+
+                    if (data.Count == 0)
+                    {
+                        MessageBox.Show("Chưa có dịch vụ nào trong cơ sở dữ liệu.\nHãy nhấn 'Thêm' để thêm dịch vụ mới.",
+                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi load dữ liệu: " + ex.Message
+                    + "\n\nChi tiết: " + ex.InnerException?.Message,
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         // ================= NẠP COMBOBOX =================
         private void NapDuLieuComboBox()
         {
@@ -102,11 +120,9 @@ namespace QuanLyTiemToc.Forms
                 cboDichVu.Items.Add(ten);
             cboDichVu.SelectedIndex = -1;
         }
-
-
         // ================= NẠP DỮ LIỆU COMBOBOX =================
 
-       
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             isThem = true;
@@ -141,18 +157,28 @@ namespace QuanLyTiemToc.Forms
             int xoaId = Convert.ToInt32(
                 dataGridView.CurrentRow.Cells["DichVuId"].Value);
 
-            using (var db = new QLTiemTocDbContext())
+            try
             {
-                var dv = db.DichVu.Find(xoaId);
-                if (dv != null)
+                using (var db = new QLTiemTocDbContext())
                 {
-                    db.DichVu.Remove(dv);
-                    db.SaveChanges();
+                    var dv = db.DichVu.Find(xoaId);
+                    if (dv != null)
+                    {
+                        db.DichVu.Remove(dv);
+                        db.SaveChanges();
+                        MessageBox.Show("Xóa thành công!");
+                    }
                 }
-            }
 
-            LoadDichVu();
-            ClearText();
+                LoadDichVu();
+                ClearText();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xóa: " + ex.Message
+                    + "\n\nChi tiết: " + ex.InnerException?.Message,
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
         
@@ -164,56 +190,62 @@ namespace QuanLyTiemToc.Forms
                 MessageBox.Show("Vui lòng chọn tên dịch vụ!");
                 return;
             }
-
             if (numDonGia.Value <= 0)
             {
                 MessageBox.Show("Giá phải lớn hơn 0!");
                 return;
             }
-
             if (numThoiGian.Value <= 0)
             {
                 MessageBox.Show("Thời gian phải lớn hơn 0!");
                 return;
             }
 
+            // ❌ XÓA TOÀN BỘ ĐOẠN TEST KẾT NỐI Ở ĐÂY
+
             try
             {
                 decimal gia = numDonGia.Value;
                 int thoiGian = (int)numThoiGian.Value;
 
-                if (isThem)
+                using (var db = new QLTiemTocDbContext())
                 {
-                    var dv = new DichVu
+                    if (isThem)
                     {
-                        TenDichVu = cboDichVu.Text.Trim(),
-                        Gia = gia,
-                        ThoiGian = thoiGian
-                    };
-                    context.DichVu.Add(dv);
-                    context.SaveChanges();
-                    MessageBox.Show("Thêm thành công!");
-                }
-                else
-                {
-                    var dv = context.DichVu.Find(id);
-                    if (dv != null)
+                        var dv = new DichVu
+                        {
+                            TenDichVu = cboDichVu.Text.Trim(),
+                            Gia = gia,
+                            ThoiGian = thoiGian
+                        };
+                        db.DichVu.Add(dv);
+                    }
+                    else
                     {
+                        var dv = db.DichVu.Find(id);
+                        if (dv == null)
+                        {
+                            MessageBox.Show("Không tìm thấy dịch vụ!");
+                            return;
+                        }
                         dv.TenDichVu = cboDichVu.Text.Trim();
                         dv.Gia = gia;
                         dv.ThoiGian = thoiGian;
-                        context.SaveChanges();
-                        MessageBox.Show("Cập nhật thành công!");
                     }
+
+                    db.SaveChanges(); // ← chỉ gọi 1 lần
                 }
 
+                MessageBox.Show(isThem ? "Thêm thành công!" : "Cập nhật thành công!");
                 LoadDichVu();
                 BatTatChucNang(false);
                 ClearText();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message);
+                MessageBox.Show("Lỗi: " + ex.Message
+                    + "\n\nChi tiết: " + ex.InnerException?.Message,
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -226,11 +258,10 @@ namespace QuanLyTiemToc.Forms
         private void btnThoat_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc muốn thoát?", "Xác nhận",
-                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Close();
             }
-
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -243,29 +274,39 @@ namespace QuanLyTiemToc.Forms
 
             string keyword = cboDichVu.Text.Trim().ToLower();
 
-            var data = context.DichVu
-                .Where(dv => dv.TenDichVu.ToLower().Contains(keyword))
-                .Select(dv => new
+            try
+            {
+                using (var db = new QLTiemTocDbContext())
                 {
-                    dv.DichVuId,
-                    dv.TenDichVu,
-                    dv.Gia,
-                    dv.ThoiGian
-                })
-                .ToList();
+                    var data = db.DichVu
+                        .Where(dv => dv.TenDichVu.ToLower().Contains(keyword))
+                        .Select(dv => new
+                        {
+                            dv.DichVuId,
+                            dv.TenDichVu,
+                            dv.Gia,
+                            dv.ThoiGian
+                        })
+                        .ToList();
 
-            dataGridView.DataSource = data;
-            MessageBox.Show($"Tìm thấy {data.Count} kết quả");
+                    dataGridView.DataSource = data;
+                    MessageBox.Show($"Tìm thấy {data.Count} kết quả");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tìm kiếm: " + ex.Message,
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
-
-
 
         private void ClearText()
         {
             cboDichVu.SelectedIndex = -1;
             cboDichVu.Text = "";
-            numDonGia.Value = 0;
-            numThoiGian.Value = 0;
+            if (numDonGia.Minimum <= 0) numDonGia.Value = 0;
+            if (numThoiGian.Minimum <= 0) numThoiGian.Value = 0;
             id = 0;
         }
 
@@ -279,13 +320,15 @@ namespace QuanLyTiemToc.Forms
 
         private void cboDichVu_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string tenDichVu = cboDichVu.Text;
+            string tenDichVu = cboDichVu.Text?.Trim();
+
+            if (string.IsNullOrEmpty(tenDichVu)) return;
 
             if (danhSachDichVu.ContainsKey(tenDichVu))
             {
                 var info = danhSachDichVu[tenDichVu];
-                numDonGia.Value = info.gia;      
-                numThoiGian.Value = info.thoiGian;  
+                numDonGia.Value = info.gia;
+                numThoiGian.Value = info.thoiGian;
             }
         }
 
@@ -295,16 +338,21 @@ namespace QuanLyTiemToc.Forms
 
             var row = dataGridView.Rows[e.RowIndex];
 
+            // ✅ Kiểm tra null trước khi convert
+            if (row.Cells["DichVuId"].Value == null) return;
+
             id = Convert.ToInt32(row.Cells["DichVuId"].Value);
             cboDichVu.Text = row.Cells["TenDichVu"].Value?.ToString() ?? "";
-            numDonGia.Value = Convert.ToDecimal(row.Cells["Gia"].Value);
-            numThoiGian.Value = Convert.ToInt32(row.Cells["ThoiGian"].Value);
-        }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
+            decimal gia = 0;
+            decimal.TryParse(row.Cells["Gia"].Value?.ToString(), out gia);
+            numDonGia.Value = gia;
 
+            int thoiGian = 0;
+            int.TryParse(row.Cells["ThoiGian"].Value?.ToString(), out thoiGian);
+            numThoiGian.Value = thoiGian;
         }
+      
     }
 }
 

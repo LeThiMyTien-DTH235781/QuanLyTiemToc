@@ -150,29 +150,30 @@ namespace QuanLyTiemToc.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LichHenId"));
 
-                    b.Property<int>("DichVuId")
-                        .HasColumnType("int");
+                    b.Property<string>("DichVu")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("KhachHangId")
-                        .HasColumnType("int");
+                    b.Property<string>("TenKhachHang")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("NhanVienId")
-                        .HasColumnType("int");
+                    b.Property<string>("TenNhanVien")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("ThoiGianHen")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("TrangThai")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("LichHenId");
-
-                    b.HasIndex("DichVuId");
-
-                    b.HasIndex("KhachHangId");
-
-                    b.HasIndex("NhanVienId");
 
                     b.ToTable("LichHen");
                 });
@@ -239,13 +240,13 @@ namespace QuanLyTiemToc.Migrations
             modelBuilder.Entity("QuanLyTiemToc.Data.HoaDon", b =>
                 {
                     b.HasOne("QuanLyTiemToc.Data.KhachHang", "KhachHang")
-                        .WithMany()
+                        .WithMany("HoaDons")
                         .HasForeignKey("KhachHangId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("QuanLyTiemToc.Data.NhanVien", "NhanVien")
-                        .WithMany()
+                        .WithMany("HoaDons")
                         .HasForeignKey("NhanVienId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
@@ -280,36 +281,19 @@ namespace QuanLyTiemToc.Migrations
                     b.Navigation("SanPham");
                 });
 
-            modelBuilder.Entity("QuanLyTiemToc.Data.LichHen", b =>
-                {
-                    b.HasOne("QuanLyTiemToc.Data.DichVu", "DichVu")
-                        .WithMany()
-                        .HasForeignKey("DichVuId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("QuanLyTiemToc.Data.KhachHang", "KhachHang")
-                        .WithMany()
-                        .HasForeignKey("KhachHangId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("QuanLyTiemToc.Data.NhanVien", "NhanVien")
-                        .WithMany()
-                        .HasForeignKey("NhanVienId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.Navigation("DichVu");
-
-                    b.Navigation("KhachHang");
-
-                    b.Navigation("NhanVien");
-                });
-
             modelBuilder.Entity("QuanLyTiemToc.Data.HoaDon", b =>
                 {
                     b.Navigation("HoaDonChiTiet");
+                });
+
+            modelBuilder.Entity("QuanLyTiemToc.Data.KhachHang", b =>
+                {
+                    b.Navigation("HoaDons");
+                });
+
+            modelBuilder.Entity("QuanLyTiemToc.Data.NhanVien", b =>
+                {
+                    b.Navigation("HoaDons");
                 });
 #pragma warning restore 612, 618
         }

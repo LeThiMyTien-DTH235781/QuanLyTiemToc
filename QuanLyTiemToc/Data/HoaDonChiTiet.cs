@@ -25,6 +25,9 @@ namespace QuanLyTiemToc.Data
     {
         public int ID { get; set; }
         public int HoaDonId { get; set; }
+        public string TenNhanVien { get; set; }
+        public string TenKhachHang { get; set; }
+        public string TenDichVu { get; set; }
         public int SanPhamID { get; set; }
         public string TenSanPham { get; set; }
         public short SoLuong { get; set; }

@@ -20,7 +20,7 @@ namespace QuanLyTiemToc.Data
         public decimal TongTien { get; set; }
 
         // Navigation
-        public ICollection<HoaDonChiTiet> HoaDonChiTiet { get; set; }
+        public List<HoaDonChiTiet> HoaDonChiTiet { get; set; }
 
     }
     public class DanhSachHoaDon

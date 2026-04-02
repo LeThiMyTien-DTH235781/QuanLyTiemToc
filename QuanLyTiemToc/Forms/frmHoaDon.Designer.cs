@@ -30,11 +30,6 @@
         {
             groupBox1 = new GroupBox();
             dataGridView = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
-            NhanVien = new DataGridViewTextBoxColumn();
-            KhachHang = new DataGridViewTextBoxColumn();
-            NgayLap = new DataGridViewTextBoxColumn();
-            TongTien = new DataGridViewTextBoxColumn();
             btnXuat = new Button();
             btnTimKiem = new Button();
             btnThoat = new Button();
@@ -42,6 +37,11 @@
             btnSua = new Button();
             btnInHoaDon = new Button();
             btnLapHoaDon = new Button();
+            ID = new DataGridViewTextBoxColumn();
+            TenNhanVien = new DataGridViewTextBoxColumn();
+            TenKhachHang = new DataGridViewTextBoxColumn();
+            NgayLap = new DataGridViewTextBoxColumn();
+            TongTien = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
@@ -49,6 +49,7 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(dataGridView);
+            groupBox1.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
             groupBox1.Location = new Point(14, 12);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(1369, 332);
@@ -63,13 +64,97 @@
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView.BackgroundColor = Color.Gainsboro;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, NhanVien, KhachHang, NgayLap, TongTien });
+            dataGridView.Columns.AddRange(new DataGridViewColumn[] { ID, TenNhanVien, TenKhachHang, NgayLap, TongTien });
             dataGridView.Dock = DockStyle.Fill;
-            dataGridView.Location = new Point(3, 23);
+            dataGridView.Location = new Point(3, 21);
             dataGridView.Name = "dataGridView";
             dataGridView.RowHeadersWidth = 51;
-            dataGridView.Size = new Size(1363, 306);
+            dataGridView.Size = new Size(1363, 308);
             dataGridView.TabIndex = 0;
+            // 
+            // btnXuat
+            // 
+            btnXuat.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
+            btnXuat.ForeColor = Color.Teal;
+            btnXuat.Location = new Point(1208, 378);
+            btnXuat.Name = "btnXuat";
+            btnXuat.Size = new Size(137, 51);
+            btnXuat.TabIndex = 2;
+            btnXuat.Text = "Xuất Excel";
+            btnXuat.UseVisualStyleBackColor = true;
+            btnXuat.Click += btnXuat_Click;
+            // 
+            // btnTimKiem
+            // 
+            btnTimKiem.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
+            btnTimKiem.ForeColor = Color.Teal;
+            btnTimKiem.Location = new Point(1041, 378);
+            btnTimKiem.Name = "btnTimKiem";
+            btnTimKiem.Size = new Size(117, 51);
+            btnTimKiem.TabIndex = 3;
+            btnTimKiem.Text = "Tìm kiếm..";
+            btnTimKiem.UseVisualStyleBackColor = true;
+            btnTimKiem.Click += btnTimKiem_Click;
+            // 
+            // btnThoat
+            // 
+            btnThoat.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
+            btnThoat.ForeColor = Color.Teal;
+            btnThoat.Location = new Point(858, 378);
+            btnThoat.Name = "btnThoat";
+            btnThoat.Size = new Size(125, 51);
+            btnThoat.TabIndex = 4;
+            btnThoat.Text = "Thoát";
+            btnThoat.UseVisualStyleBackColor = true;
+            btnThoat.Click += btnThoat_Click;
+            // 
+            // btnXoa
+            // 
+            btnXoa.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
+            btnXoa.ForeColor = Color.Firebrick;
+            btnXoa.Location = new Point(678, 378);
+            btnXoa.Name = "btnXoa";
+            btnXoa.Size = new Size(113, 51);
+            btnXoa.TabIndex = 5;
+            btnXoa.Text = "Xóa";
+            btnXoa.UseVisualStyleBackColor = true;
+            btnXoa.Click += btnXoa_Click;
+            // 
+            // btnSua
+            // 
+            btnSua.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
+            btnSua.ForeColor = Color.Teal;
+            btnSua.Location = new Point(489, 378);
+            btnSua.Name = "btnSua";
+            btnSua.Size = new Size(125, 51);
+            btnSua.TabIndex = 6;
+            btnSua.Text = "Sửa";
+            btnSua.UseVisualStyleBackColor = true;
+            btnSua.Click += btnSua_Click;
+            // 
+            // btnInHoaDon
+            // 
+            btnInHoaDon.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
+            btnInHoaDon.ForeColor = Color.Teal;
+            btnInHoaDon.Location = new Point(293, 378);
+            btnInHoaDon.Name = "btnInHoaDon";
+            btnInHoaDon.Size = new Size(136, 51);
+            btnInHoaDon.TabIndex = 7;
+            btnInHoaDon.Text = "In hóa đơn..";
+            btnInHoaDon.UseVisualStyleBackColor = true;
+            btnInHoaDon.Click += btnInHoaDon_Click;
+            // 
+            // btnLapHoaDon
+            // 
+            btnLapHoaDon.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
+            btnLapHoaDon.ForeColor = Color.Teal;
+            btnLapHoaDon.Location = new Point(35, 378);
+            btnLapHoaDon.Name = "btnLapHoaDon";
+            btnLapHoaDon.Size = new Size(210, 51);
+            btnLapHoaDon.TabIndex = 8;
+            btnLapHoaDon.Text = "Lập hóa đơn mới..🔍";
+            btnLapHoaDon.UseVisualStyleBackColor = true;
+            btnLapHoaDon.Click += btnLapHoaDon_Click;
             // 
             // ID
             // 
@@ -78,19 +163,19 @@
             ID.MinimumWidth = 6;
             ID.Name = "ID";
             // 
-            // NhanVien
+            // TenNhanVien
             // 
-            NhanVien.DataPropertyName = "NhanVien";
-            NhanVien.HeaderText = "Nhân viên";
-            NhanVien.MinimumWidth = 6;
-            NhanVien.Name = "NhanVien";
+            TenNhanVien.DataPropertyName = "TenNhanVien";
+            TenNhanVien.HeaderText = "Nhân viên";
+            TenNhanVien.MinimumWidth = 6;
+            TenNhanVien.Name = "TenNhanVien";
             // 
-            // KhachHang
+            // TenKhachHang
             // 
-            KhachHang.DataPropertyName = "KhachHang";
-            KhachHang.HeaderText = "Khách hàng";
-            KhachHang.MinimumWidth = 6;
-            KhachHang.Name = "KhachHang";
+            TenKhachHang.DataPropertyName = "TenKhachHang";
+            TenKhachHang.HeaderText = "Khách hàng";
+            TenKhachHang.MinimumWidth = 6;
+            TenKhachHang.Name = "TenKhachHang";
             // 
             // NgayLap
             // 
@@ -105,76 +190,6 @@
             TongTien.HeaderText = "Tổng tiền";
             TongTien.MinimumWidth = 6;
             TongTien.Name = "TongTien";
-            // 
-            // btnXuat
-            // 
-            btnXuat.Location = new Point(1178, 380);
-            btnXuat.Name = "btnXuat";
-            btnXuat.Size = new Size(137, 41);
-            btnXuat.TabIndex = 2;
-            btnXuat.Text = "Xuất Excel";
-            btnXuat.UseVisualStyleBackColor = true;
-            btnXuat.Click += btnXuat_Click;
-            // 
-            // btnTimKiem
-            // 
-            btnTimKiem.Location = new Point(1011, 380);
-            btnTimKiem.Name = "btnTimKiem";
-            btnTimKiem.Size = new Size(117, 41);
-            btnTimKiem.TabIndex = 3;
-            btnTimKiem.Text = "Tìm kiếm..";
-            btnTimKiem.UseVisualStyleBackColor = true;
-            btnTimKiem.Click += btnTimKiem_Click;
-            // 
-            // btnThoat
-            // 
-            btnThoat.Location = new Point(828, 380);
-            btnThoat.Name = "btnThoat";
-            btnThoat.Size = new Size(125, 41);
-            btnThoat.TabIndex = 4;
-            btnThoat.Text = "Thoát";
-            btnThoat.UseVisualStyleBackColor = true;
-            btnThoat.Click += btnThoat_Click;
-            // 
-            // btnXoa
-            // 
-            btnXoa.Location = new Point(614, 380);
-            btnXoa.Name = "btnXoa";
-            btnXoa.Size = new Size(148, 41);
-            btnXoa.TabIndex = 5;
-            btnXoa.Text = "Xóa";
-            btnXoa.UseVisualStyleBackColor = true;
-            btnXoa.Click += btnXoa_Click;
-            // 
-            // btnSua
-            // 
-            btnSua.Location = new Point(431, 380);
-            btnSua.Name = "btnSua";
-            btnSua.Size = new Size(125, 41);
-            btnSua.TabIndex = 6;
-            btnSua.Text = "Sửa";
-            btnSua.UseVisualStyleBackColor = true;
-            btnSua.Click += btnSua_Click;
-            // 
-            // btnInHoaDon
-            // 
-            btnInHoaDon.Location = new Point(255, 380);
-            btnInHoaDon.Name = "btnInHoaDon";
-            btnInHoaDon.Size = new Size(136, 41);
-            btnInHoaDon.TabIndex = 7;
-            btnInHoaDon.Text = "In hóa đơn..";
-            btnInHoaDon.UseVisualStyleBackColor = true;
-            btnInHoaDon.Click += btnInHoaDon_Click;
-            // 
-            // btnLapHoaDon
-            // 
-            btnLapHoaDon.Location = new Point(38, 380);
-            btnLapHoaDon.Name = "btnLapHoaDon";
-            btnLapHoaDon.Size = new Size(186, 41);
-            btnLapHoaDon.TabIndex = 8;
-            btnLapHoaDon.Text = "Lập hóa đơn mới..";
-            btnLapHoaDon.UseVisualStyleBackColor = true;
-            btnLapHoaDon.Click += btnLapHoaDon_Click;
             // 
             // frmHoaDon
             // 
@@ -211,8 +226,8 @@
         private Button btnInHoaDon;
         private Button btnLapHoaDon;
         private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn NhanVien;
-        private DataGridViewTextBoxColumn KhachHang;
+        private DataGridViewTextBoxColumn TenNhanVien;
+        private DataGridViewTextBoxColumn TenKhachHang;
         private DataGridViewTextBoxColumn NgayLap;
         private DataGridViewTextBoxColumn TongTien;
     }

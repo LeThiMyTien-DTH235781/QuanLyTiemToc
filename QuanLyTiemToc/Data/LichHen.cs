@@ -13,20 +13,23 @@ namespace QuanLyTiemToc.Data
         [Key]
         public int LichHenId { get; set; }
 
-        [ForeignKey("KhachHang")]
-        public int KhachHangId { get; set; }
-        public KhachHang KhachHang { get; set; }
+        [Required]
+        [MaxLength(100)]
+        public string TenNhanVien { get; set; }
 
-        [ForeignKey("NhanVien")]
-        public int NhanVienId { get; set; }
-        public NhanVien NhanVien { get; set; }
+        [Required]
+        [MaxLength(100)]
+        public string TenKhachHang { get; set; }
 
-        [ForeignKey("DichVu")]
-        public int DichVuId { get; set; }
-        public DichVu DichVu { get; set; }
+        [Required]
+        [MaxLength(100)]
+        public string DichVu { get; set; }
 
         public DateTime ThoiGianHen { get; set; }
 
+        [MaxLength(50)]
         public string TrangThai { get; set; }
+
+       
     }
 }

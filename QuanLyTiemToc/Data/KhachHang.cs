@@ -18,6 +18,7 @@ namespace QuanLyTiemToc.Data
 
         [MaxLength(200)]
         public string DiaChi { get; set; }
+        public ICollection<HoaDon> HoaDons { get; set; }
     }
 
 }

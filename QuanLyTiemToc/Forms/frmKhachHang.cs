@@ -14,18 +14,40 @@ namespace QuanLyTiemToc.Forms
 {
     public partial class frmKhachHang : Form
     {
-        QLTiemTocDbContext context = new QLTiemTocDbContext();
-        bool xuLyThem = false;
-        int id = 0;
-       
 
+        QLTiemTocDbContext context = new QLTiemTocDbContext();
+        int id = 0;
+        bool them = false;
         public frmKhachHang()
         {
             InitializeComponent();
         }
+        private string TaoMaKH()
+        {
+            int maxId = 0;
 
+            if (context.KhachHang.Any())
+            {
+                maxId = context.KhachHang.Max(x => x.KhachHangId);
+            }
 
+            return "KH" + (maxId + 1).ToString("D3");
+        }
+        private void LoadData()
+        {
+            dtKhachHang.DataSource = context.KhachHang
+                .OrderBy(x => x.KhachHangId)
+                .ToList();
 
+            dtKhachHang.Columns["KhachHangId"].HeaderText = "Mã KH";
+            dtKhachHang.Columns["TenKH"].HeaderText = "Tên khách hàng";
+            dtKhachHang.Columns["SDT"].HeaderText = "SĐT";
+            dtKhachHang.Columns["DiaChi"].HeaderText = "Địa chỉ";
+
+            dtKhachHang.Columns["HoaDons"].Visible = false;
+
+            dtKhachHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
         private void BatTatChucNang(bool giaTri)
         {
             btnLuu.Enabled = giaTri;
@@ -37,36 +59,36 @@ namespace QuanLyTiemToc.Forms
             btnThem.Enabled = !giaTri;
             btnSua.Enabled = !giaTri;
             btnXoa.Enabled = !giaTri;
-            
+
         }
-
-        
-
-        
 
         private void btnThem_Click(object sender, EventArgs e)
         {
 
-            xuLyThem = true;
+
+            them = true;
             BatTatChucNang(true);
+
             txtTenKH.Clear();
             txtSDT.Clear();
-            
+            txtDiaChi.Clear();
+            txtMaKH.Text = TaoMaKH();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Xác nhận xóa khách hàng " + txtTenKH.Text + "?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (id == 0)
             {
-                id = Convert.ToInt32(dtKhachHang.CurrentRow.Cells["ID"].Value.ToString());
-                KhachHang kh = context.KhachHang.Find(id);
-                if (kh != null)
-                {
-                    context.KhachHang.Remove(kh);
-                }
-                context.SaveChanges();
+                MessageBox.Show("Chọn khách hàng!");
+                return;
+            }
 
-                frmKhachHang_Load_1(sender, e);
+            var kh = context.KhachHang.Find(id);
+            if (kh != null)
+            {
+                context.KhachHang.Remove(kh);
+                context.SaveChanges();
+                LoadData();
             }
         }
 
@@ -74,78 +96,80 @@ namespace QuanLyTiemToc.Forms
         {
             if (id == 0)
             {
-                MessageBox.Show("Vui lòng chọn khách hàng cần sửa", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Chọn khách hàng!");
                 return;
             }
-            xuLyThem = false;
+
+            them = false;
             BatTatChucNang(true);
-            txtTenKH.Focus();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtTenKH.Text))
-                MessageBox.Show("Vui lòng nhập họ và tên khách hàng?", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (txtTenKH.Text == "")
+            {
+                MessageBox.Show("Nhập tên!");
+                return;
+            }
+
+            if (them)
+            {
+                context.KhachHang.Add(new KhachHang
+                {
+                    TenKH = txtTenKH.Text,
+                    SDT = txtSDT.Text,
+                    DiaChi = txtDiaChi.Text
+                });
+            }
             else
             {
-                if (xuLyThem)
+                var kh = context.KhachHang.Find(id);
+                if (kh != null)
                 {
-                    KhachHang kh = new KhachHang();
                     kh.TenKH = txtTenKH.Text;
                     kh.SDT = txtSDT.Text;
                     kh.DiaChi = txtDiaChi.Text;
-                    context.KhachHang.Add(kh);
-
-                    context.SaveChanges();
                 }
-                else
-                {
-                    KhachHang kh = context.KhachHang.Find(id);
-                    if (kh != null)
-                    {
-                        kh.TenKH = txtTenKH.Text;
-                        kh.SDT = txtSDT.Text;
-                        kh.DiaChi = txtDiaChi.Text;
-                        context.KhachHang.Update(kh);
-
-                        context.SaveChanges();
-                    }
-                }
-
-                frmKhachHang_Load_1(sender, e);
             }
+
+            context.SaveChanges();
+            LoadData();
+            BatTatChucNang(false);
         }
 
 
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            frmKhachHang_Load_1(sender, e);
+            LoadData();
+            BatTatChucNang(false);
         }
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        
+
         private void frmKhachHang_Load_1(object sender, EventArgs e)
         {
+            LoadData();
             BatTatChucNang(false);
-
-            List<KhachHang> kh = new List<KhachHang>();
-            kh = context.KhachHang.ToList();
-
-            BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = kh;
-
-            txtTenKH.DataBindings.Clear();
-            txtTenKH.DataBindings.Add("Text", bindingSource, "TenKH", false, DataSourceUpdateMode.Never);
-
-            // Tương tự cho txtDienThoai và txtDiaChi 
-
-            dtKhachHang.DataSource = bindingSource;
         }
+
+        private void dtKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            var r = dtKhachHang.Rows[e.RowIndex];
+
+            
+            id = Convert.ToInt32(r.Cells["KhachHangId"].Value);
+            txtMaKH.Text = "KH" + id.ToString("D3");
+            txtTenKH.Text = r.Cells["TenKH"].Value?.ToString();
+            txtSDT.Text = r.Cells["SDT"].Value?.ToString();
+            txtDiaChi.Text = r.Cells["DiaChi"].Value?.ToString();
+        }
+       
     }
 }
 
