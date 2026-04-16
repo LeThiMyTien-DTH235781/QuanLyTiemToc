@@ -39,7 +39,7 @@ namespace QuanLyTiemToc.Forms
                 .OrderBy(x => x.KhachHangId)
                 .ToList();
 
-            dtKhachHang.Columns["KhachHangId"].HeaderText = "Mã KH";
+            dtKhachHang.Columns["KhachHangId"].HeaderText = "ID";
             dtKhachHang.Columns["TenKH"].HeaderText = "Tên khách hàng";
             dtKhachHang.Columns["SDT"].HeaderText = "SĐT";
             dtKhachHang.Columns["DiaChi"].HeaderText = "Địa chỉ";

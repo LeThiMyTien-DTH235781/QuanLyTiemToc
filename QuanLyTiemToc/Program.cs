@@ -1,4 +1,5 @@
 using QuanLyTiemToc.Forms;
+using QuanLyTiemToc.Reports;
 
 namespace QuanLyTiemToc
 {
@@ -14,7 +15,7 @@ namespace QuanLyTiemToc
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new frmHoaDon());
+            Application.Run(new frmMain());
 
            
         }

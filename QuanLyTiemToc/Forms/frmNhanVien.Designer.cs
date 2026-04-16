@@ -45,6 +45,11 @@
             cboHoTen = new ComboBox();
             groupBox1 = new GroupBox();
             label1 = new Label();
+            NhanVienId = new DataGridViewTextBoxColumn();
+            HoTen = new DataGridViewTextBoxColumn();
+            DienThoai = new DataGridViewTextBoxColumn();
+            DiaChi = new DataGridViewTextBoxColumn();
+            ChuyenMon = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dtNhanVien).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -135,6 +140,7 @@
             dtNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtNhanVien.BackgroundColor = Color.Gainsboro;
             dtNhanVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtNhanVien.Columns.AddRange(new DataGridViewColumn[] { NhanVienId, HoTen, DienThoai, DiaChi, ChuyenMon });
             dtNhanVien.Location = new Point(14, 272);
             dtNhanVien.MultiSelect = false;
             dtNhanVien.Name = "dtNhanVien";
@@ -239,14 +245,49 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Cambria", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Teal;
-            label1.Location = new Point(382, 4);
+            label1.Location = new Point(406, 9);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(394, 46);
+            label1.Size = new Size(310, 33);
             label1.TabIndex = 52;
             label1.Text = "Tiệm tóc nam Mable🍁";
+            // 
+            // NhanVienId
+            // 
+            NhanVienId.DataPropertyName = "NhanVienId";
+            NhanVienId.HeaderText = "ID";
+            NhanVienId.MinimumWidth = 6;
+            NhanVienId.Name = "NhanVienId";
+            // 
+            // HoTen
+            // 
+            HoTen.DataPropertyName = "HoTen";
+            HoTen.HeaderText = "Họ tên";
+            HoTen.MinimumWidth = 6;
+            HoTen.Name = "HoTen";
+            // 
+            // DienThoai
+            // 
+            DienThoai.DataPropertyName = "DienThoai";
+            DienThoai.HeaderText = "Điện thoại";
+            DienThoai.MinimumWidth = 6;
+            DienThoai.Name = "DienThoai";
+            // 
+            // DiaChi
+            // 
+            DiaChi.DataPropertyName = "DiaChi";
+            DiaChi.HeaderText = "Địa chỉ ";
+            DiaChi.MinimumWidth = 6;
+            DiaChi.Name = "DiaChi";
+            // 
+            // ChuyenMon
+            // 
+            ChuyenMon.DataPropertyName = "ChuyenMon";
+            ChuyenMon.HeaderText = "Chuyên môn";
+            ChuyenMon.MinimumWidth = 6;
+            ChuyenMon.Name = "ChuyenMon";
             // 
             // frmNhanVien
             // 
@@ -293,5 +334,10 @@
         private ComboBox cboHoTen;
         private GroupBox groupBox1;
         private Label label1;
+        private DataGridViewTextBoxColumn NhanVienId;
+        private DataGridViewTextBoxColumn HoTen;
+        private DataGridViewTextBoxColumn DienThoai;
+        private DataGridViewTextBoxColumn DiaChi;
+        private DataGridViewTextBoxColumn ChuyenMon;
     }
 }

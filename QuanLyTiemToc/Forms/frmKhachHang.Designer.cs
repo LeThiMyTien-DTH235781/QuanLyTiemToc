@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             dtKhachHang = new DataGridView();
+            KhachHangId = new DataGridViewTextBoxColumn();
+            TenKH = new DataGridViewTextBoxColumn();
+            SDT = new DataGridViewTextBoxColumn();
+            DiaChi = new DataGridViewTextBoxColumn();
             btnThoat = new Button();
             btnHuy = new Button();
             btnLuu = new Button();
@@ -58,22 +62,51 @@
             dtKhachHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtKhachHang.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             dtKhachHang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtKhachHang.Location = new Point(11, 20);
+            dtKhachHang.Columns.AddRange(new DataGridViewColumn[] { KhachHangId, TenKH, SDT, DiaChi });
+            dtKhachHang.Location = new Point(17, 22);
             dtKhachHang.Margin = new Padding(4, 3, 4, 3);
             dtKhachHang.Name = "dtKhachHang";
             dtKhachHang.RowHeadersWidth = 51;
-            dtKhachHang.Size = new Size(1354, 243);
+            dtKhachHang.Size = new Size(1120, 243);
             dtKhachHang.TabIndex = 28;
             dtKhachHang.CellClick += dtKhachHang_CellClick;
+            // 
+            // KhachHangId
+            // 
+            KhachHangId.DataPropertyName = "KhachHangId";
+            KhachHangId.HeaderText = "ID";
+            KhachHangId.MinimumWidth = 6;
+            KhachHangId.Name = "KhachHangId";
+            // 
+            // TenKH
+            // 
+            TenKH.DataPropertyName = "TenKH";
+            TenKH.HeaderText = "Tên khách hàng";
+            TenKH.MinimumWidth = 6;
+            TenKH.Name = "TenKH";
+            // 
+            // SDT
+            // 
+            SDT.DataPropertyName = "SDT";
+            SDT.HeaderText = "SĐT";
+            SDT.MinimumWidth = 6;
+            SDT.Name = "SDT";
+            // 
+            // DiaChi
+            // 
+            DiaChi.DataPropertyName = "DiaChi";
+            DiaChi.HeaderText = "Địa chỉ ";
+            DiaChi.MinimumWidth = 6;
+            DiaChi.Name = "DiaChi";
             // 
             // btnThoat
             // 
             btnThoat.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
             btnThoat.ForeColor = Color.Teal;
-            btnThoat.Location = new Point(1210, 223);
+            btnThoat.Location = new Point(998, 223);
             btnThoat.Margin = new Padding(4, 3, 4, 3);
             btnThoat.Name = "btnThoat";
-            btnThoat.Size = new Size(157, 44);
+            btnThoat.Size = new Size(139, 35);
             btnThoat.TabIndex = 27;
             btnThoat.Text = "Thoát";
             btnThoat.UseVisualStyleBackColor = true;
@@ -83,10 +116,10 @@
             // 
             btnHuy.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
             btnHuy.ForeColor = Color.Teal;
-            btnHuy.Location = new Point(964, 223);
+            btnHuy.Location = new Point(800, 223);
             btnHuy.Margin = new Padding(4, 3, 4, 3);
             btnHuy.Name = "btnHuy";
-            btnHuy.Size = new Size(156, 44);
+            btnHuy.Size = new Size(139, 35);
             btnHuy.TabIndex = 26;
             btnHuy.Text = "Hủy";
             btnHuy.UseVisualStyleBackColor = true;
@@ -96,10 +129,10 @@
             // 
             btnLuu.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
             btnLuu.ForeColor = Color.Teal;
-            btnLuu.Location = new Point(726, 223);
+            btnLuu.Location = new Point(595, 223);
             btnLuu.Margin = new Padding(4, 3, 4, 3);
             btnLuu.Name = "btnLuu";
-            btnLuu.Size = new Size(156, 44);
+            btnLuu.Size = new Size(141, 35);
             btnLuu.TabIndex = 25;
             btnLuu.Text = "Lưu";
             btnLuu.UseVisualStyleBackColor = true;
@@ -109,10 +142,10 @@
             // 
             btnSua.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
             btnSua.ForeColor = Color.Teal;
-            btnSua.Location = new Point(491, 223);
+            btnSua.Location = new Point(406, 223);
             btnSua.Margin = new Padding(4, 3, 4, 3);
             btnSua.Name = "btnSua";
-            btnSua.Size = new Size(153, 44);
+            btnSua.Size = new Size(133, 35);
             btnSua.TabIndex = 24;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = true;
@@ -122,10 +155,10 @@
             // 
             btnXoa.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
             btnXoa.ForeColor = Color.Firebrick;
-            btnXoa.Location = new Point(261, 223);
+            btnXoa.Location = new Point(219, 223);
             btnXoa.Margin = new Padding(4, 3, 4, 3);
             btnXoa.Name = "btnXoa";
-            btnXoa.Size = new Size(159, 44);
+            btnXoa.Size = new Size(132, 35);
             btnXoa.TabIndex = 23;
             btnXoa.Text = "Xóa ";
             btnXoa.UseVisualStyleBackColor = true;
@@ -135,10 +168,10 @@
             // 
             btnThem.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
             btnThem.ForeColor = Color.Teal;
-            btnThem.Location = new Point(37, 223);
+            btnThem.Location = new Point(41, 223);
             btnThem.Margin = new Padding(4, 3, 4, 3);
             btnThem.Name = "btnThem";
-            btnThem.Size = new Size(148, 44);
+            btnThem.Size = new Size(129, 35);
             btnThem.TabIndex = 22;
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = true;
@@ -157,7 +190,7 @@
             // txtTenKH
             // 
             txtTenKH.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
-            txtTenKH.Location = new Point(903, 38);
+            txtTenKH.Location = new Point(756, 38);
             txtTenKH.Margin = new Padding(4, 3, 4, 3);
             txtTenKH.Name = "txtTenKH";
             txtTenKH.Size = new Size(364, 25);
@@ -176,7 +209,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
-            label4.Location = new Point(12, 92);
+            label4.Location = new Point(12, 88);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(135, 20);
@@ -187,7 +220,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
-            label5.Location = new Point(747, 40);
+            label5.Location = new Point(600, 40);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(144, 20);
@@ -210,7 +243,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Cambria", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Teal;
-            label1.Location = new Point(580, 9);
+            label1.Location = new Point(426, 9);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(310, 33);
@@ -221,7 +254,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
-            label6.Location = new Point(747, 92);
+            label6.Location = new Point(600, 88);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(81, 20);
@@ -231,7 +264,7 @@
             // txtDiaChi
             // 
             txtDiaChi.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
-            txtDiaChi.Location = new Point(903, 85);
+            txtDiaChi.Location = new Point(756, 85);
             txtDiaChi.Margin = new Padding(4, 3, 4, 3);
             txtDiaChi.Name = "txtDiaChi";
             txtDiaChi.Size = new Size(254, 25);
@@ -251,7 +284,7 @@
             groupBox1.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
             groupBox1.Location = new Point(29, 66);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1338, 131);
+            groupBox1.Size = new Size(1133, 131);
             groupBox1.TabIndex = 29;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin khách hàng";
@@ -260,9 +293,9 @@
             // 
             groupBox2.Controls.Add(dtKhachHang);
             groupBox2.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
-            groupBox2.Location = new Point(11, 304);
+            groupBox2.Location = new Point(12, 273);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1372, 248);
+            groupBox2.Size = new Size(1150, 276);
             groupBox2.TabIndex = 30;
             groupBox2.TabStop = false;
             groupBox2.Text = "Danh sách khách hàng ";
@@ -272,7 +305,7 @@
             AutoScaleDimensions = new SizeF(10F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Silver;
-            ClientSize = new Size(1434, 579);
+            ClientSize = new Size(1177, 561);
             Controls.Add(groupBox2);
             Controls.Add(btnLuu);
             Controls.Add(groupBox1);
@@ -315,5 +348,9 @@
         private TextBox txtDiaChi;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
+        private DataGridViewTextBoxColumn KhachHangId;
+        private DataGridViewTextBoxColumn TenKH;
+        private DataGridViewTextBoxColumn SDT;
+        private DataGridViewTextBoxColumn DiaChi;
     }
 }

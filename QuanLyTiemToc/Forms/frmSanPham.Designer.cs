@@ -41,7 +41,6 @@
             btnSua = new Button();
             btnXoa = new Button();
             btnThem = new Button();
-            label1 = new Label();
             btnTim = new Button();
             btnNhap = new Button();
             btnXuat = new Button();
@@ -56,6 +55,7 @@
             DonGia = new DataGridViewTextBoxColumn();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)numDonGia).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numSoLuong).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtSanPham).BeginInit();
@@ -208,18 +208,6 @@
             btnThem.Text = "Thêm";
             btnThem.UseVisualStyleBackColor = true;
             btnThem.Click += btnThem_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Teal;
-            label1.Location = new Point(464, 9);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(394, 46);
-            label1.TabIndex = 51;
-            label1.Text = "Tiệm tóc nam Mable🍁";
             // 
             // btnTim
             // 
@@ -382,7 +370,18 @@
             groupBox2.TabIndex = 78;
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông tin sản phẩm";
-            groupBox2.Enter += groupBox2_Enter;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Cambria", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Teal;
+            label1.Location = new Point(513, 9);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(310, 33);
+            label1.TabIndex = 76;
+            label1.Text = "Tiệm tóc nam Mable🍁";
             // 
             // frmSanPham
             // 
@@ -390,9 +389,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Silver;
             ClientSize = new Size(1334, 555);
+            Controls.Add(label1);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
-            Controls.Add(label1);
             Name = "frmSanPham";
             Text = "frmSanPham";
             Load += frmSanPham_Load;
@@ -421,7 +420,6 @@
         private Button btnSua;
         private Button btnXoa;
         private Button btnThem;
-        private Label label1;
         private Button btnTim;
         private Button btnNhap;
         private Button btnXuat;
@@ -436,5 +434,6 @@
         private DataGridViewTextBoxColumn DonVi;
         private DataGridViewTextBoxColumn DonGia;
         private GroupBox groupBox2;
+        private Label label1;
     }
 }

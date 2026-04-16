@@ -220,13 +220,12 @@
             groupBox2.Size = new Size(1221, 182);
             groupBox2.TabIndex = 75;
             groupBox2.TabStop = false;
-            groupBox2.Text = "Thông tin dịch vụ";
-//            groupBox2.Enter += groupBox2_Enter;
+            groupBox2.Text = "Thông tin lịch hẹn";
             // 
             // cboKhachHang
             // 
             cboKhachHang.FormattingEnabled = true;
-            cboKhachHang.Location = new Point(197, 78);
+            cboKhachHang.Location = new Point(263, 77);
             cboKhachHang.Name = "cboKhachHang";
             cboKhachHang.Size = new Size(264, 28);
             cboKhachHang.TabIndex = 7;
@@ -259,7 +258,7 @@
             // dateThoiGian
             // 
             dateThoiGian.Format = DateTimePickerFormat.Short;
-            dateThoiGian.Location = new Point(196, 128);
+            dateThoiGian.Location = new Point(262, 127);
             dateThoiGian.Name = "dateThoiGian";
             dateThoiGian.Size = new Size(267, 25);
             dateThoiGian.TabIndex = 4;
@@ -285,7 +284,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(37, 37);
+            label1.Location = new Point(103, 36);
             label1.Name = "label1";
             label1.Size = new Size(135, 20);
             label1.TabIndex = 0;
@@ -294,7 +293,7 @@
             // cboNhanVien
             // 
             cboNhanVien.FormattingEnabled = true;
-            cboNhanVien.Location = new Point(197, 36);
+            cboNhanVien.Location = new Point(263, 35);
             cboNhanVien.Name = "cboNhanVien";
             cboNhanVien.Size = new Size(269, 28);
             cboNhanVien.TabIndex = 1;
@@ -302,7 +301,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(37, 126);
+            label3.Location = new Point(103, 125);
             label3.Name = "label3";
             label3.Size = new Size(135, 20);
             label3.TabIndex = 2;
@@ -311,7 +310,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(37, 81);
+            label2.Location = new Point(103, 80);
             label2.Name = "label2";
             label2.Size = new Size(144, 20);
             label2.TabIndex = 2;

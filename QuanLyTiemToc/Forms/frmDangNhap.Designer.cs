@@ -28,26 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
             txtMatKhau = new TextBox();
             txtTenDangNhap = new TextBox();
             btnDangNhap = new Button();
             btnHuyBo = new Button();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.Mable;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(714, 480);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -76,6 +65,7 @@
             txtMatKhau.BackColor = Color.Gainsboro;
             txtMatKhau.Location = new Point(232, 208);
             txtMatKhau.Name = "txtMatKhau";
+            txtMatKhau.PasswordChar = '*';
             txtMatKhau.Size = new Size(311, 27);
             txtMatKhau.TabIndex = 2;
             txtMatKhau.KeyDown += txtMatKhau_KeyDown;
@@ -110,6 +100,18 @@
             btnHuyBo.TabIndex = 3;
             btnHuyBo.Text = "Hủy bỏ";
             btnHuyBo.UseVisualStyleBackColor = false;
+            btnHuyBo.Click += btnHuyBo_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = Properties.Resources.Mable;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(714, 480);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // frmDangNhap
             // 
@@ -132,12 +134,12 @@
 
         #endregion
 
-        private PictureBox pictureBox1;
         private Label label1;
         private Label label2;
         private TextBox txtMatKhau;
-        private TextBox txtTenDangNhap;
+        internal TextBox txtTenDangNhap;
         private Button btnDangNhap;
         private Button btnHuyBo;
+        private PictureBox pictureBox1;
     }
 }
