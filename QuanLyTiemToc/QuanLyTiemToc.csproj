@@ -54,6 +54,9 @@
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>QLTiemTocDataSet.Designer.cs</LastGenOutput>
     </None>
+    <None Update="Reports\rptInHoaDonrdlc.rdlc">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

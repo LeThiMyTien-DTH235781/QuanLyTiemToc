@@ -15,7 +15,7 @@ namespace QuanLyTiemToc
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new frmMain());
+            Application.Run(new frmInHoaDon());
 
            
         }

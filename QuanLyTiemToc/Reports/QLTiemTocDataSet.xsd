@@ -36,16 +36,16 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DanhSachHoaDonChiTiet" msprop:Generator_RowEvHandlerName="DanhSachHoaDonChiTietRowChangeEventHandler" msprop:Generator_RowDeletedName="DanhSachHoaDonChiTietRowDeleted" msprop:Generator_RowDeletingName="DanhSachHoaDonChiTietRowDeleting" msprop:Generator_RowEvArgName="DanhSachHoaDonChiTietRowChangeEvent" msprop:Generator_TablePropName="DanhSachHoaDonChiTiet" msprop:Generator_RowChangedName="DanhSachHoaDonChiTietRowChanged" msprop:Generator_RowChangingName="DanhSachHoaDonChiTietRowChanging" msprop:Generator_TableClassName="DanhSachHoaDonChiTietDataTable" msprop:Generator_RowClassName="DanhSachHoaDonChiTietRow" msprop:Generator_TableVarName="tableDanhSachHoaDonChiTiet" msprop:Generator_UserTableName="DanhSachHoaDonChiTiet">
+        <xs:element name="DanhSachHoaDon" msprop:Generator_RowEvHandlerName="DanhSachHoaDonRowChangeEventHandler" msprop:Generator_RowDeletedName="DanhSachHoaDonRowDeleted" msprop:Generator_RowDeletingName="DanhSachHoaDonRowDeleting" msprop:Generator_RowEvArgName="DanhSachHoaDonRowChangeEvent" msprop:Generator_TablePropName="DanhSachHoaDon" msprop:Generator_RowChangedName="DanhSachHoaDonRowChanged" msprop:Generator_RowChangingName="DanhSachHoaDonRowChanging" msprop:Generator_TableClassName="DanhSachHoaDonDataTable" msprop:Generator_RowClassName="DanhSachHoaDonRow" msprop:Generator_TableVarName="tableDanhSachHoaDon" msprop:Generator_UserTableName="DanhSachHoaDon">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_UserColumnName="ID" type="xs:int" minOccurs="0" />
-              <xs:element name="HoaDonID" msprop:Generator_ColumnPropNameInRow="HoaDonID" msprop:Generator_ColumnPropNameInTable="HoaDonIDColumn" msprop:Generator_ColumnVarNameInTable="columnHoaDonID" msprop:Generator_UserColumnName="HoaDonID" type="xs:int" minOccurs="0" />
-              <xs:element name="TenDichVu" msprop:Generator_ColumnPropNameInRow="TenDichVu" msprop:Generator_ColumnPropNameInTable="TenDichVuColumn" msprop:Generator_ColumnVarNameInTable="columnTenDichVu" msprop:Generator_UserColumnName="TenDichVu" type="xs:string" minOccurs="0" />
-              <xs:element name="TenNhanVien" msprop:Generator_ColumnPropNameInRow="TenNhanVien" msprop:Generator_ColumnPropNameInTable="TenNhanVienColumn" msprop:Generator_ColumnVarNameInTable="columnTenNhanVien" msprop:Generator_UserColumnName="TenNhanVien" type="xs:string" minOccurs="0" />
-              <xs:element name="DonGia" msprop:Generator_ColumnPropNameInRow="DonGia" msprop:Generator_ColumnPropNameInTable="DonGiaColumn" msprop:Generator_ColumnVarNameInTable="columnDonGia" msprop:Generator_UserColumnName="DonGia" type="xs:decimal" minOccurs="0" />
-              <xs:element name="ThanhTien" msprop:Generator_ColumnPropNameInRow="ThanhTien" msprop:Generator_ColumnPropNameInTable="ThanhTienColumn" msprop:Generator_ColumnVarNameInTable="columnThanhTien" msprop:Generator_UserColumnName="ThanhTien" type="xs:decimal" minOccurs="0" />
               <xs:element name="TenKhachHang" msprop:Generator_ColumnPropNameInRow="TenKhachHang" msprop:Generator_ColumnPropNameInTable="TenKhachHangColumn" msprop:Generator_ColumnVarNameInTable="columnTenKhachHang" msprop:Generator_UserColumnName="TenKhachHang" type="xs:string" minOccurs="0" />
+              <xs:element name="TenDichVu" msprop:Generator_ColumnPropNameInRow="TenDichVu" msprop:Generator_ColumnPropNameInTable="TenDichVuColumn" msprop:Generator_ColumnVarNameInTable="columnTenDichVu" msprop:Generator_UserColumnName="TenDichVu" type="xs:string" minOccurs="0" />
+              <xs:element name="DonGiaDichVu" msprop:Generator_ColumnPropNameInRow="DonGiaDichVu" msprop:Generator_ColumnPropNameInTable="DonGiaDichVuColumn" msprop:Generator_ColumnVarNameInTable="columnDonGiaDichVu" msprop:Generator_UserColumnName="DonGiaDichVu" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TenSanPham" msprop:Generator_ColumnPropNameInRow="TenSanPham" msprop:Generator_ColumnPropNameInTable="TenSanPhamColumn" msprop:Generator_ColumnVarNameInTable="columnTenSanPham" msprop:Generator_UserColumnName="TenSanPham" type="xs:string" minOccurs="0" />
+              <xs:element name="DonGiaSanPham" msprop:Generator_ColumnPropNameInRow="DonGiaSanPham" msprop:Generator_ColumnPropNameInTable="DonGiaSanPhamColumn" msprop:Generator_ColumnVarNameInTable="columnDonGiaSanPham" msprop:Generator_UserColumnName="DonGiaSanPham" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ThanhTien" msprop:Generator_ColumnPropNameInRow="ThanhTien" msprop:Generator_ColumnPropNameInTable="ThanhTienColumn" msprop:Generator_ColumnVarNameInTable="columnThanhTien" msprop:Generator_UserColumnName="ThanhTien" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -59,8 +59,8 @@
       <xs:selector xpath=".//mstns:DoanhThu" />
       <xs:field xpath="mstns:LichHenId" />
     </xs:unique>
-    <xs:unique name="DanhSachHoaDonChiTietKey1">
-      <xs:selector xpath=".//mstns:DanhSachHoaDonChiTiet" />
+    <xs:unique name="DanhSachHoaDonKey1">
+      <xs:selector xpath=".//mstns:DanhSachHoaDon" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
   </xs:element>
