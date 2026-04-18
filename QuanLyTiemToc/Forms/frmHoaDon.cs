@@ -143,28 +143,17 @@ namespace QuanLyTiemToc.Forms
         {
             if (dataGridView.CurrentRow == null)
             {
-                MessageBox.Show("Vui lòng chọn hóa đơn!");
+                MessageBox.Show("Vui lòng chọn hóa đơn cần in!",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            id = Convert.ToInt32(dataGridView.CurrentRow.Cells["HoaDonId"].Value);
+            int maHoaDon = Convert.ToInt32(dataGridView.CurrentRow.Cells["HoaDonId"].Value);
 
-            var hoaDon = context.HoaDon
-                .Include(r => r.NhanVien)
-                .Include(r => r.KhachHang)
-                .Include(r => r.HoaDonChiTiet)
-                .FirstOrDefault(r => r.HoaDonId == id);
-
-            if (hoaDon == null) return;
-
-            string noiDung =
-                $"MÃ HÓA ĐƠN: {hoaDon.HoaDonId}\n" +
-                $"NHÂN VIÊN: {hoaDon.NhanVien?.HoTen ?? ""}\n" +
-                $"KHÁCH HÀNG: {hoaDon.KhachHang?.TenKH ?? ""}\n" +
-                $"NGÀY LẬP: {hoaDon.NgayLap:dd/MM/yyyy HH:mm}\n\n" +
-                $"TỔNG TIỀN: {hoaDon.TongTien:N0} VNĐ";
-
-            MessageBox.Show(noiDung, "Hóa Đơn");
+            using (Reports.frmInHoaDon frm = new Reports.frmInHoaDon(maHoaDon))
+            {
+                frm.ShowDialog();
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)

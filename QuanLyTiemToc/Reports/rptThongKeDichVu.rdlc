@@ -406,7 +406,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Format(Fields!Gia.Value, "#,##0") &amp; " VNĐ"</Value>
+                                  <Value>=Format(Fields!Gia.Value, "#,##0") &amp; "Đ"</Value>
                                   <Style>
                                     <FontFamily>Cascadia Code</FontFamily>
                                     <FontWeight>Bold</FontWeight>
@@ -431,6 +431,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>

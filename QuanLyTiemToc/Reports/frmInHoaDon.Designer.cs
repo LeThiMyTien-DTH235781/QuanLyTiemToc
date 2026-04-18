@@ -48,6 +48,7 @@
             Name = "frmInHoaDon";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmInHoaDon";
+            Load += frmInHoaDon_Load;
             ResumeLayout(false);
         }
 

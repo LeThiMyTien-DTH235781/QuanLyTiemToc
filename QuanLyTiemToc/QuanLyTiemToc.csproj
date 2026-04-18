@@ -9,11 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Reports\rptInHoaDonrdlc.rdlc" />
     <None Remove="Reports\rptThongKeDichVu.rdlc" />
     <None Remove="Reports\rptThongKeDoanhThu.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Reports\rptInHoaDonrdlc.rdlc">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptThongKeDichVu.rdlc" />
     <EmbeddedResource Include="Reports\rptThongKeDoanhThu.rdlc" />
   </ItemGroup>
@@ -53,9 +57,6 @@
     <None Update="Reports\QLTiemTocDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>QLTiemTocDataSet.Designer.cs</LastGenOutput>
-    </None>
-    <None Update="Reports\rptInHoaDonrdlc.rdlc">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

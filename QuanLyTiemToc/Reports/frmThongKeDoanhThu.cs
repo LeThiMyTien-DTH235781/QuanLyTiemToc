@@ -1,4 +1,5 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Reporting.WinForms;
 using QuanLyTiemToc.Data;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace QuanLyTiemToc.Reports
         {
             InitializeComponent();
         }
+
         QLTiemTocDbContext context = new QLTiemTocDbContext();
         QLTiemTocDataSet.DoanhThuDataTable doanhThuDataTable =
             new QLTiemTocDataSet.DoanhThuDataTable();
-
         private void NapReport(string moTa)
         {
             ReportDataSource reportDataSource = new ReportDataSource();
@@ -46,28 +47,31 @@ namespace QuanLyTiemToc.Reports
         // ===== HÀM ĐỔ DỮ LIỆU =====
         private void DoDuLieu(DateTime? tuNgay = null, DateTime? denNgay = null)
         {
-            var query = context.LichHen
-                .Select(lh => new
-                {
-                    LichHenId = lh.LichHenId,
-                    NgayHen = lh.ThoiGianHen,
-                    TenKhachHang = lh.TenKhachHang,
-                    TenNhanVien = lh.TenNhanVien,
-                    TenDichVu = lh.DichVu,
-                    Gia = context.DichVu
-                                       .Where(dv => dv.TenDichVu == lh.DichVu)
-                                       .Select(dv => dv.Gia)
-                                       .FirstOrDefault(),
-                    ThoiGian = context.DichVu
-                                       .Where(dv => dv.TenDichVu == lh.DichVu)
-                                       .Select(dv => dv.ThoiGian)
-                                       .FirstOrDefault()
-                });
+            var query = context.HoaDon
+       .Include(hd => hd.KhachHang)
+       .Include(hd => hd.NhanVien)
+       .Include(hd => hd.HoaDonChiTiet)
+           .ThenInclude(ct => ct.DichVu)
+       .Include(hd => hd.HoaDonChiTiet)
+           .ThenInclude(ct => ct.SanPham)
+       .SelectMany(hd => hd.HoaDonChiTiet, (hd, ct) => new
+       {
+           LichHenId = ct.HoaDonChiTietId,  // ← SỬA: dùng ChiTietId thay vì HoaDonId
+           NgayHen = hd.NgayLap,
+           TenKhachHang = hd.KhachHang != null ? hd.KhachHang.TenKH : "",
+           TenNhanVien = hd.NhanVien != null ? hd.NhanVien.HoTen : "",
+           TenDichVu = ct.DichVu != null ? ct.DichVu.TenDichVu
+                        : ct.SanPham != null ? ct.SanPham.TenSanPham
+                        : "",
+           Gia = ct.DonGia,
+           ThoiGian = ct.DichVu != null ? ct.DichVu.ThoiGian : 0,
+           ThanhTien = ct.ThanhTien
+       });
 
             if (tuNgay.HasValue)
-                query = query.Where(lh => lh.NgayHen >= tuNgay.Value);
+                query = query.Where(x => x.NgayHen >= tuNgay.Value);
             if (denNgay.HasValue)
-                query = query.Where(lh => lh.NgayHen <= denNgay.Value);
+                query = query.Where(x => x.NgayHen <= denNgay.Value);
 
             var doanhThu = query.ToList();
 
@@ -82,7 +86,7 @@ namespace QuanLyTiemToc.Reports
                     row.TenDichVu,
                     row.Gia,
                     row.ThoiGian,
-                    row.Gia          // ThanhTien = Gia
+                    row.ThanhTien
                 );
             }
         }
@@ -103,6 +107,7 @@ namespace QuanLyTiemToc.Reports
 
         private void btnLocKetQua_Click(object sender, EventArgs e)
         {
+
             try
             {
                 DateTime tuNgay = dtpTuNgay.Value.Date;

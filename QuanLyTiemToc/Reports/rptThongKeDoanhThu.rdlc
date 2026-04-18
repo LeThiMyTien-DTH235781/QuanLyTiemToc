@@ -661,7 +661,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Format(Fields!Gia.Value, "#,##0") &amp; " VNĐ"</Value>
+                                  <Value>=Format(Fields!Gia.Value, "#,##0") &amp; " Đ"</Value>
                                   <Style>
                                     <FontFamily>Cascadia Code</FontFamily>
                                     <FontWeight>Bold</FontWeight>
@@ -770,7 +770,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Format(Fields!ThanhTien.Value, "#,##0") &amp; " VNĐ"</Value>
+                                  <Value>=Format(Fields!ThanhTien.Value, "#,##0") &amp; "Đ"</Value>
                                   <Style>
                                     <FontFamily>Cascadia Code</FontFamily>
                                     <FontWeight>Bold</FontWeight>
