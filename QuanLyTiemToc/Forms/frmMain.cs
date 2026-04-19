@@ -17,7 +17,9 @@ namespace QuanLyTiemToc.Forms
         {
             InitializeComponent();
         }
+
         string tenNguoiDung = "";
+        string tenDangNhap = "";
         frmDangNhap dangNhap = null;
         frmNhanVien nhanVien = null;
         frmKhachHang khachHang = null;
@@ -57,7 +59,6 @@ namespace QuanLyTiemToc.Forms
             lblTrangThai.Text = "Chưa đăng nhập.";
         }
 
-        /// <summary>Quản lý: toàn quyền truy cập.</summary>
         private void QuyenQuanLy()
         {
             mnuDangNhap.Enabled = false;
@@ -76,7 +77,6 @@ namespace QuanLyTiemToc.Forms
             lblTrangThai.Text = "Quản lý: " + tenNguoiDung;
         }
 
-        /// <summary>Nhân viên: hạn chế quản trị nhân sự, sản phẩm, dịch vụ.</summary>
         private void QuyenNhanVien()
         {
             mnuDangNhap.Enabled = false;
@@ -89,19 +89,12 @@ namespace QuanLyTiemToc.Forms
             mnuDichVu.Enabled = false;
             mnuLichHen.Enabled = true;
             mnuHoaDon.Enabled = true;
-
-
             mnuThongKeDoanhThu.Enabled = true;
             mnuThongKeDichVu.Enabled = true;
 
             lblTrangThai.Text = "Nhân viên: " + tenNguoiDung;
         }
 
-        // =====================================================================
-        // ĐĂNG NHẬP
-        // frmDangNhap tự xử lý: validate, giới hạn 3 lần sai, Application.Exit()
-        // frmMain chỉ cần đọc DialogResult và tên đăng nhập để cấp quyền.
-        // =====================================================================
         private void DangNhap()
         {
             if (dangNhap == null || dangNhap.IsDisposed)
@@ -109,11 +102,7 @@ namespace QuanLyTiemToc.Forms
 
             if (dangNhap.ShowDialog() == DialogResult.OK)
             {
-                // Đọc tên đăng nhập từ textbox của frmDangNhap
                 string tenDN = dangNhap.txtTenDangNhap.Text.Trim().ToLower();
-
-                // "admin" → Quản lý, tài khoản khác → Nhân viên
-                // Mở rộng sau: kiểm tra role từ database thay cho chuỗi cố định
                 if (tenDN == "admin")
                 {
                     tenNguoiDung = "Administrator";
@@ -125,27 +114,94 @@ namespace QuanLyTiemToc.Forms
                     QuyenNhanVien();
                 }
             }
-            // DialogResult.Cancel → giữ nguyên ChuaDangNhap
         }
 
         private void mnuDangNhap_Click(object sender, EventArgs e)
         {
             DangNhap();
-            ChuaDangNhap();
         }
 
         private void mnuDangXuat_Click(object sender, EventArgs e)
         {
-            foreach (Form child in MdiChildren)
-                child.Close();
+            if (MessageBox.Show("Bạn có chắc muốn đăng xuất?", "Xác nhận",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                foreach (Form child in MdiChildren)
+                    child.Close();
 
-            ChuaDangNhap();
+                tenNguoiDung = "";
+                tenDangNhap = "";
+                ChuaDangNhap();
+            }
         }
 
         private void mnuDoiMatKhau_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng đổi mật khẩu đang được phát triển.", "Thông báo",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Form frm = new Form();
+            frm.Text = "Đổi mật khẩu";
+            frm.Size = new Size(320, 220);
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.FormBorderStyle = FormBorderStyle.FixedDialog;
+            frm.MaximizeBox = false;
+            frm.MinimizeBox = false;
+
+            var lblCu = new Label { Text = "Mật khẩu cũ:", Left = 20, Top = 20, Width = 100 };
+            var lblMoi = new Label { Text = "Mật khẩu mới:", Left = 20, Top = 60, Width = 100 };
+            var lblXN = new Label { Text = "Xác nhận:", Left = 20, Top = 100, Width = 100 };
+
+            var txtCu = new TextBox { Left = 130, Top = 17, Width = 150, UseSystemPasswordChar = true };
+            var txtMoi = new TextBox { Left = 130, Top = 57, Width = 150, UseSystemPasswordChar = true };
+            var txtXN = new TextBox { Left = 130, Top = 97, Width = 150, UseSystemPasswordChar = true };
+
+            var btnLuu = new Button { Text = "Lưu", Left = 80, Top = 140, Width = 80 };
+            var btnHuy = new Button { Text = "Hủy", Left = 170, Top = 140, Width = 80 };
+
+            btnHuy.Click += (s, ev) => frm.Close();
+
+            btnLuu.Click += (s, ev) =>
+            {
+                if (string.IsNullOrEmpty(txtCu.Text) ||
+                    string.IsNullOrEmpty(txtMoi.Text) ||
+                    string.IsNullOrEmpty(txtXN.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (txtCu.Text.Trim() != frmDangNhap.MatKhauHienTai)
+                {
+                    MessageBox.Show("Mật khẩu cũ không đúng.", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtCu.Clear();
+                    txtCu.Focus();
+                    return;
+                }
+
+                if (txtMoi.Text != txtXN.Text)
+                {
+                    MessageBox.Show("Mật khẩu xác nhận không khớp.", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtXN.Clear();
+                    txtXN.Focus();
+                    return;
+                }
+
+                if (txtMoi.Text.Trim().Length < 3)
+                {
+                    MessageBox.Show("Mật khẩu mới phải có ít nhất 3 ký tự.", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                frmDangNhap.MatKhauHienTai = txtMoi.Text.Trim();
+                MessageBox.Show("Đổi mật khẩu thành công!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frm.Close();
+            };
+
+            frm.Controls.AddRange(new Control[] { lblCu, lblMoi, lblXN, txtCu, txtMoi, txtXN, btnLuu, btnHuy });
+            frm.ShowDialog(this);
         }
 
         private void mnuThoat_Click(object sender, EventArgs e)

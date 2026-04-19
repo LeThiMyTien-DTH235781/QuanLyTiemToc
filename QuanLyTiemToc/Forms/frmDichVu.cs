@@ -201,8 +201,6 @@ namespace QuanLyTiemToc.Forms
                 return;
             }
 
-            // ❌ XÓA TOÀN BỘ ĐOẠN TEST KẾT NỐI Ở ĐÂY
-
             try
             {
                 decimal gia = numDonGia.Value;
@@ -233,7 +231,7 @@ namespace QuanLyTiemToc.Forms
                         dv.ThoiGian = thoiGian;
                     }
 
-                    db.SaveChanges(); // ← chỉ gọi 1 lần
+                    db.SaveChanges(); 
                 }
 
                 MessageBox.Show(isThem ? "Thêm thành công!" : "Cập nhật thành công!");
@@ -338,7 +336,6 @@ namespace QuanLyTiemToc.Forms
 
             var row = dataGridView.Rows[e.RowIndex];
 
-            // ✅ Kiểm tra null trước khi convert
             if (row.Cells["DichVuId"].Value == null) return;
 
             id = Convert.ToInt32(row.Cells["DichVuId"].Value);

@@ -47,7 +47,6 @@
             mnuHuongDanSuDung = new ToolStripMenuItem();
             hướngDẫnSửDụngToolStripMenuItem = new ToolStripMenuItem();
             mnuThongTinPhamMen = new ToolStripMenuItem();
-            label1 = new Label();
             statusStrip1 = new StatusStrip();
             lblTrangThai = new ToolStripStatusLabel();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
@@ -192,20 +191,11 @@
             mnuThongTinPhamMen.Text = "Thông tin phần mền";
             mnuThongTinPhamMen.Click += mnuThongTinPhamMen_Click;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(1, 457);
-            label1.Name = "label1";
-            label1.Size = new Size(118, 20);
-            label1.TabIndex = 1;
-            label1.Text = "Chưa đăng nhập";
-            // 
             // statusStrip1
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
             statusStrip1.Items.AddRange(new ToolStripItem[] { lblTrangThai, toolStripStatusLabel1, lblLienKet });
-            statusStrip1.Location = new Point(0, 454);
+            statusStrip1.Location = new Point(0, 461);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.RenderMode = ToolStripRenderMode.ManagerRenderMode;
             statusStrip1.Size = new Size(829, 26);
@@ -222,7 +212,7 @@
             // toolStripStatusLabel1
             // 
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            toolStripStatusLabel1.Size = new Size(736, 20);
+            toolStripStatusLabel1.Size = new Size(697, 20);
             toolStripStatusLabel1.Spring = true;
             toolStripStatusLabel1.Text = "                                                                                    ";
             // 
@@ -238,9 +228,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.AppWorkspace;
-            ClientSize = new Size(829, 480);
+            ClientSize = new Size(829, 487);
             Controls.Add(statusStrip1);
-            Controls.Add(label1);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
@@ -276,10 +265,9 @@
         private ToolStripMenuItem mnuThongKeDoanhThu;
         private ToolStripMenuItem hướngDẫnSửDụngToolStripMenuItem;
         private ToolStripMenuItem mnuThongTinPhamMen;
-        private Label label1;
         private StatusStrip statusStrip1;
-        private ToolStripStatusLabel lblTrangThai;
         private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStripStatusLabel lblLienKet;
+        private ToolStripStatusLabel lblTrangThai;
     }
 }

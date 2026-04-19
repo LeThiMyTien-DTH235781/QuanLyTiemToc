@@ -65,9 +65,8 @@ namespace QuanLyTiemToc.Forms
         {
             dtSanPham.AutoGenerateColumns = false;
 
-            // Luôn clear để tránh bị trùng/đè
             dtSanPham.DataSource = null;
-            dtSanPham.Columns.Clear(); // ← Thêm dòng này
+            dtSanPham.Columns.Clear(); 
 
             dtSanPham.Columns.Add(new DataGridViewTextBoxColumn
             {
@@ -292,7 +291,7 @@ namespace QuanLyTiemToc.Forms
             {
                 MessageBox.Show("Không tìm thấy sản phẩm nào!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadDanhSachSanPham(); // Reset lại danh sách
+                LoadDanhSachSanPham(); 
             }
             else
             {
@@ -341,7 +340,6 @@ namespace QuanLyTiemToc.Forms
             int soLuongLoi = 0;
             var lines = System.IO.File.ReadAllLines(filePath, Encoding.UTF8);
 
-            // Bỏ qua dòng tiêu đề (dòng đầu tiên)
             for (int i = 1; i < lines.Length; i++)
             {
                 try
@@ -387,10 +385,8 @@ namespace QuanLyTiemToc.Forms
                         var danhSach = context.SanPham.ToList();
                         var sb = new StringBuilder();
 
-                        // Header
                         sb.AppendLine("Tên sản phẩm,Số lượng,Đơn vị,Đơn giá");
 
-                        // Data
                         foreach (var sp in danhSach)
                         {
                             sb.AppendLine($"{sp.TenSanPham},{sp.SoLuong},{sp.DonVi},{sp.DonGia}");

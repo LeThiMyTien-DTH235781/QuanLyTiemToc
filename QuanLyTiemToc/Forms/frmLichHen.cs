@@ -74,8 +74,6 @@ namespace QuanLyTiemToc.Forms
             id = 0;
         }
 
-
-        // ================== LOAD HỌ TÊN NHÂN VIÊN ==================
         private void LoadHoTen()
         {
             cboNhanVien.Items.Clear();
@@ -103,7 +101,6 @@ namespace QuanLyTiemToc.Forms
             cboKhachHang.SelectedIndex = -1;
         }
 
-        // ================== LOAD DỊCH VỤ ==================
         private void LoadDichVu()
         {
             cboDichVu.Items.Clear();
@@ -113,7 +110,6 @@ namespace QuanLyTiemToc.Forms
             cboDichVu.SelectedIndex = -1;
         }
 
-        // ================== LOAD TRẠNG THÁI ==================
         private void LoadTrangThai()
         {
             cboTrangThai.Items.Clear();
@@ -124,7 +120,6 @@ namespace QuanLyTiemToc.Forms
             cboTrangThai.SelectedIndex = -1;
         }
 
-        // ================== LOAD LỊCH HẸN TỪ DATABASE ==================
         private void LoadLichHen()
         {
             var data = context.LichHen

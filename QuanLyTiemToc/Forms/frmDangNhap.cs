@@ -11,17 +11,33 @@ using System.Windows.Forms;
 namespace QuanLyTiemToc.Forms
 {
     public partial class frmDangNhap : Form
-    {
-        // Tài khoản và mật khẩu cố định
-        private const string TENDANGNHAP_HOPLELH = "admin";
-        private const string MATKHAU_HOPLE = "123";
+    {private const string TENDANGNHAP_HOPLE = "admin";
+        private static string MATKHAU_HOPLE = "123";
 
-        // Giới hạn số lần đăng nhập sai
+        public static string MatKhauHienTai
+        {
+            get { return MATKHAU_HOPLE; }
+            set { MATKHAU_HOPLE = value; }
+        }
         private int soLanSai = 0;
         private const int SO_LAN_SAI_TOI_DA = 3;
         public frmDangNhap()
         {
             InitializeComponent();
+            var chk = new CheckBox
+            {
+                Text = "Hiện mật khẩu",
+                Left = txtMatKhau.Left,
+                Top = txtMatKhau.Bottom + 5,
+                Width = 120
+            };
+
+            chk.CheckedChanged += (s, e) =>
+            {
+                txtMatKhau.UseSystemPasswordChar = !chk.Checked;
+            };
+
+            this.Controls.Add(chk);
         }
 
         private void txtMatKhau_KeyDown(object sender, KeyEventArgs e)
@@ -35,7 +51,6 @@ namespace QuanLyTiemToc.Forms
             string tenDangNhap = txtTenDangNhap.Text.Trim();
             string matKhau = txtMatKhau.Text.Trim();
 
-            // Kiểm tra để trống
             if (string.IsNullOrEmpty(tenDangNhap) || string.IsNullOrEmpty(matKhau))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu!",
@@ -43,8 +58,7 @@ namespace QuanLyTiemToc.Forms
                 return;
             }
 
-            // Kiểm tra tài khoản và mật khẩu
-            if (tenDangNhap == TENDANGNHAP_HOPLELH && matKhau == MATKHAU_HOPLE)
+            if (tenDangNhap == TENDANGNHAP_HOPLE && matKhau == MATKHAU_HOPLE)
             {
                 this.DialogResult = DialogResult.OK;
                 this.Close();

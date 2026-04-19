@@ -56,7 +56,7 @@ namespace QuanLyTiemToc.Forms
             cboSanPham.DataSource = context.SanPham.ToList();
             cboSanPham.DisplayMember = "TenSanPham";
             cboSanPham.ValueMember = "SanPhamId";
-            // KHÔNG set SelectedIndex = -1 để tránh SelectedItem == null khi load
+            
         }
 
         public void BatTatChucNang()
@@ -70,7 +70,6 @@ namespace QuanLyTiemToc.Forms
             dataGridView.Columns.Clear();
             dataGridView.AutoGenerateColumns = false;
 
-            // ID trước Tên nhân viên
             dataGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "ID",

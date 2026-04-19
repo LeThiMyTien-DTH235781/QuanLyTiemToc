@@ -65,7 +65,6 @@
             txtMatKhau.BackColor = Color.Gainsboro;
             txtMatKhau.Location = new Point(232, 208);
             txtMatKhau.Name = "txtMatKhau";
-            txtMatKhau.PasswordChar = '*';
             txtMatKhau.Size = new Size(311, 27);
             txtMatKhau.TabIndex = 2;
             txtMatKhau.KeyDown += txtMatKhau_KeyDown;
