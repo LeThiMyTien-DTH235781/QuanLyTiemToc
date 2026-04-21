@@ -42,6 +42,11 @@
             label1 = new Label();
             groupBox1 = new GroupBox();
             dataGridView = new DataGridView();
+            TenNhanVien = new DataGridViewTextBoxColumn();
+            TenKhachHang = new DataGridViewTextBoxColumn();
+            TenDichVu = new DataGridViewTextBoxColumn();
+            TenSanPham = new DataGridViewTextBoxColumn();
+            ThanhTien = new DataGridViewTextBoxColumn();
             btnXoa = new Button();
             cboSanPham = new ComboBox();
             btnXacNhanBan = new Button();
@@ -50,11 +55,6 @@
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
-            TenNhanVien = new DataGridViewTextBoxColumn();
-            TenKhachHang = new DataGridViewTextBoxColumn();
-            TenDichVu = new DataGridViewTextBoxColumn();
-            TenSanPham = new DataGridViewTextBoxColumn();
-            ThanhTien = new DataGridViewTextBoxColumn();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numGiaDichVu).BeginInit();
             groupBox1.SuspendLayout();
@@ -224,6 +224,41 @@
             dataGridView.Size = new Size(1243, 207);
             dataGridView.TabIndex = 5;
             // 
+            // TenNhanVien
+            // 
+            TenNhanVien.DataPropertyName = "TenNhanVien";
+            TenNhanVien.HeaderText = "Tên nhân viên";
+            TenNhanVien.MinimumWidth = 6;
+            TenNhanVien.Name = "TenNhanVien";
+            // 
+            // TenKhachHang
+            // 
+            TenKhachHang.DataPropertyName = "TenKhachHang";
+            TenKhachHang.HeaderText = "Tên khách hàng";
+            TenKhachHang.MinimumWidth = 6;
+            TenKhachHang.Name = "TenKhachHang";
+            // 
+            // TenDichVu
+            // 
+            TenDichVu.DataPropertyName = "TenDichVu";
+            TenDichVu.HeaderText = "Dịch vụ";
+            TenDichVu.MinimumWidth = 6;
+            TenDichVu.Name = "TenDichVu";
+            // 
+            // TenSanPham
+            // 
+            TenSanPham.DataPropertyName = "TenSanPham";
+            TenSanPham.HeaderText = "Sản phẩm";
+            TenSanPham.MinimumWidth = 6;
+            TenSanPham.Name = "TenSanPham";
+            // 
+            // ThanhTien
+            // 
+            ThanhTien.DataPropertyName = "ThanhTien";
+            ThanhTien.HeaderText = "Thành tiền";
+            ThanhTien.MinimumWidth = 6;
+            ThanhTien.Name = "ThanhTien";
+            // 
             // btnXoa
             // 
             btnXoa.ForeColor = Color.Red;
@@ -303,41 +338,6 @@
             label3.TabIndex = 0;
             label3.Text = "Sản phẩm(*):";
             // 
-            // TenNhanVien
-            // 
-            TenNhanVien.DataPropertyName = "TenNhanVien";
-            TenNhanVien.HeaderText = "Tên nhân viên";
-            TenNhanVien.MinimumWidth = 6;
-            TenNhanVien.Name = "TenNhanVien";
-            // 
-            // TenKhachHang
-            // 
-            TenKhachHang.DataPropertyName = "TenKhachHang";
-            TenKhachHang.HeaderText = "Tên khách hàng";
-            TenKhachHang.MinimumWidth = 6;
-            TenKhachHang.Name = "TenKhachHang";
-            // 
-            // TenDichVu
-            // 
-            TenDichVu.DataPropertyName = "TenDichVu";
-            TenDichVu.HeaderText = "Dịch vụ";
-            TenDichVu.MinimumWidth = 6;
-            TenDichVu.Name = "TenDichVu";
-            // 
-            // TenSanPham
-            // 
-            TenSanPham.DataPropertyName = "TenSanPham";
-            TenSanPham.HeaderText = "Sản phẩm";
-            TenSanPham.MinimumWidth = 6;
-            TenSanPham.Name = "TenSanPham";
-            // 
-            // ThanhTien
-            // 
-            ThanhTien.DataPropertyName = "ThanhTien";
-            ThanhTien.HeaderText = "Thành tiền";
-            ThanhTien.MinimumWidth = 6;
-            ThanhTien.Name = "ThanhTien";
-            // 
             // frmHoaDonChiTiet
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
@@ -352,6 +352,7 @@
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ForeColor = Color.Black;
             Name = "frmHoaDonChiTiet";
+            Text = "Hóa đơn chi tiết ";
             Load += frmHoaDonChiTiet_Load;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();

@@ -35,6 +35,11 @@
             btnXoa = new Button();
             btnThem = new Button();
             dtNhanVien = new DataGridView();
+            NhanVienId = new DataGridViewTextBoxColumn();
+            HoTen = new DataGridViewTextBoxColumn();
+            DienThoai = new DataGridViewTextBoxColumn();
+            DiaChi = new DataGridViewTextBoxColumn();
+            ChuyenMon = new DataGridViewTextBoxColumn();
             label2 = new Label();
             label3 = new Label();
             txtSDT = new TextBox();
@@ -45,11 +50,6 @@
             cboHoTen = new ComboBox();
             groupBox1 = new GroupBox();
             label1 = new Label();
-            NhanVienId = new DataGridViewTextBoxColumn();
-            HoTen = new DataGridViewTextBoxColumn();
-            DienThoai = new DataGridViewTextBoxColumn();
-            DiaChi = new DataGridViewTextBoxColumn();
-            ChuyenMon = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dtNhanVien).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -83,7 +83,7 @@
             // btnLuu
             // 
             btnLuu.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
-            btnLuu.ForeColor = Color.Teal;
+            btnLuu.ForeColor = Color.DodgerBlue;
             btnLuu.Location = new Point(592, 219);
             btnLuu.Margin = new Padding(4, 3, 4, 3);
             btnLuu.Name = "btnLuu";
@@ -148,6 +148,41 @@
             dtNhanVien.Size = new Size(1146, 267);
             dtNhanVien.TabIndex = 46;
             dtNhanVien.CellClick += dtNhanVien_CellClick;
+            // 
+            // NhanVienId
+            // 
+            NhanVienId.DataPropertyName = "NhanVienId";
+            NhanVienId.HeaderText = "ID";
+            NhanVienId.MinimumWidth = 6;
+            NhanVienId.Name = "NhanVienId";
+            // 
+            // HoTen
+            // 
+            HoTen.DataPropertyName = "HoTen";
+            HoTen.HeaderText = "Họ tên";
+            HoTen.MinimumWidth = 6;
+            HoTen.Name = "HoTen";
+            // 
+            // DienThoai
+            // 
+            DienThoai.DataPropertyName = "DienThoai";
+            DienThoai.HeaderText = "Điện thoại";
+            DienThoai.MinimumWidth = 6;
+            DienThoai.Name = "DienThoai";
+            // 
+            // DiaChi
+            // 
+            DiaChi.DataPropertyName = "DiaChi";
+            DiaChi.HeaderText = "Địa chỉ ";
+            DiaChi.MinimumWidth = 6;
+            DiaChi.Name = "DiaChi";
+            // 
+            // ChuyenMon
+            // 
+            ChuyenMon.DataPropertyName = "ChuyenMon";
+            ChuyenMon.HeaderText = "Chuyên môn";
+            ChuyenMon.MinimumWidth = 6;
+            ChuyenMon.Name = "ChuyenMon";
             // 
             // label2
             // 
@@ -254,41 +289,6 @@
             label1.TabIndex = 52;
             label1.Text = "Tiệm tóc nam Mable🍁";
             // 
-            // NhanVienId
-            // 
-            NhanVienId.DataPropertyName = "NhanVienId";
-            NhanVienId.HeaderText = "ID";
-            NhanVienId.MinimumWidth = 6;
-            NhanVienId.Name = "NhanVienId";
-            // 
-            // HoTen
-            // 
-            HoTen.DataPropertyName = "HoTen";
-            HoTen.HeaderText = "Họ tên";
-            HoTen.MinimumWidth = 6;
-            HoTen.Name = "HoTen";
-            // 
-            // DienThoai
-            // 
-            DienThoai.DataPropertyName = "DienThoai";
-            DienThoai.HeaderText = "Điện thoại";
-            DienThoai.MinimumWidth = 6;
-            DienThoai.Name = "DienThoai";
-            // 
-            // DiaChi
-            // 
-            DiaChi.DataPropertyName = "DiaChi";
-            DiaChi.HeaderText = "Địa chỉ ";
-            DiaChi.MinimumWidth = 6;
-            DiaChi.Name = "DiaChi";
-            // 
-            // ChuyenMon
-            // 
-            ChuyenMon.DataPropertyName = "ChuyenMon";
-            ChuyenMon.HeaderText = "Chuyên môn";
-            ChuyenMon.MinimumWidth = 6;
-            ChuyenMon.Name = "ChuyenMon";
-            // 
             // frmNhanVien
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
@@ -306,7 +306,7 @@
             Controls.Add(btnXoa);
             Font = new Font("Cascadia Code", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Name = "frmNhanVien";
-            Text = "frmNhanVien";
+            Text = "Nhân viên ";
             Load += frmNhanVien_Load;
             ((System.ComponentModel.ISupportInitialize)dtNhanVien).EndInit();
             groupBox1.ResumeLayout(false);

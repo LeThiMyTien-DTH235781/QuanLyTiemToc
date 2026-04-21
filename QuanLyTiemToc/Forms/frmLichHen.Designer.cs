@@ -331,7 +331,7 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "frmLichHen";
-            Text = "frmLichHen";
+            Text = "Lịch hẹn ";
             Load += frmLichHen_Load;
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();

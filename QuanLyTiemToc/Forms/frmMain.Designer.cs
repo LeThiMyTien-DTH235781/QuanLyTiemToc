@@ -57,6 +57,7 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.Font = new Font("Cascadia Code", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { hệThốngToolStripMenuItem, quảnLýToolStripMenuItem, báoCáoToolStripMenuItem, mnuHuongDanSuDung });
             menuStrip1.Location = new Point(0, 0);
@@ -212,7 +213,7 @@
             // toolStripStatusLabel1
             // 
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            toolStripStatusLabel1.Size = new Size(697, 20);
+            toolStripStatusLabel1.Size = new Size(736, 20);
             toolStripStatusLabel1.Spring = true;
             toolStripStatusLabel1.Text = "                                                                                    ";
             // 
@@ -227,14 +228,14 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.AppWorkspace;
+            BackColor = Color.LightGray;
             ClientSize = new Size(829, 487);
             Controls.Add(statusStrip1);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "frmMain";
-            Text = "frmMain";
+            Text = "Trang chủ ";
             Load += frmMain_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

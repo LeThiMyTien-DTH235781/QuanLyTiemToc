@@ -47,7 +47,7 @@
             Controls.Add(reportViewer1);
             Name = "frmInHoaDon";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmInHoaDon";
+            Text = "In hóa đơn ";
             Load += frmInHoaDon_Load;
             ResumeLayout(false);
         }

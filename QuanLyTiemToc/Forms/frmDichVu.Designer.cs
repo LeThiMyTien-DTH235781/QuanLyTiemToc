@@ -92,7 +92,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = SystemColors.ControlLight;
+            groupBox1.BackColor = Color.LightGray;
             groupBox1.Controls.Add(numThoiGian);
             groupBox1.Controls.Add(numDonGia);
             groupBox1.Controls.Add(label1);
@@ -158,7 +158,7 @@
             // btnLuu
             // 
             btnLuu.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
-            btnLuu.ForeColor = Color.Teal;
+            btnLuu.ForeColor = Color.DodgerBlue;
             btnLuu.Location = new Point(970, 42);
             btnLuu.Margin = new Padding(4, 3, 4, 3);
             btnLuu.Name = "btnLuu";
@@ -226,6 +226,7 @@
             dataGridView.AllowUserToDeleteRows = false;
             dataGridView.AllowUserToResizeRows = false;
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView.BackgroundColor = Color.LightGray;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.Columns.AddRange(new DataGridViewColumn[] { TenDichVu, Gia, ThoiGian });
             dataGridView.Dock = DockStyle.Fill;
@@ -261,6 +262,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Silver;
             ClientSize = new Size(1161, 465);
             Controls.Add(groupBox2);
             Controls.Add(btnThoat);
@@ -273,7 +275,7 @@
             Font = new Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Margin = new Padding(3, 4, 3, 4);
             Name = "frmDichVu";
-            Text = "frmDichVu";
+            Text = "Dịch vụ";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numThoiGian).EndInit();

@@ -30,6 +30,11 @@
         {
             groupBox1 = new GroupBox();
             dataGridView = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
+            TenNhanVien = new DataGridViewTextBoxColumn();
+            TenKhachHang = new DataGridViewTextBoxColumn();
+            NgayLap = new DataGridViewTextBoxColumn();
+            TongTien = new DataGridViewTextBoxColumn();
             btnXuat = new Button();
             btnTimKiem = new Button();
             btnThoat = new Button();
@@ -37,11 +42,6 @@
             btnSua = new Button();
             btnInHoaDon = new Button();
             btnLapHoaDon = new Button();
-            ID = new DataGridViewTextBoxColumn();
-            TenNhanVien = new DataGridViewTextBoxColumn();
-            TenKhachHang = new DataGridViewTextBoxColumn();
-            NgayLap = new DataGridViewTextBoxColumn();
-            TongTien = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
@@ -71,6 +71,41 @@
             dataGridView.RowHeadersWidth = 51;
             dataGridView.Size = new Size(1363, 308);
             dataGridView.TabIndex = 0;
+            // 
+            // ID
+            // 
+            ID.DataPropertyName = "ID";
+            ID.HeaderText = "ID";
+            ID.MinimumWidth = 6;
+            ID.Name = "ID";
+            // 
+            // TenNhanVien
+            // 
+            TenNhanVien.DataPropertyName = "TenNhanVien";
+            TenNhanVien.HeaderText = "Nhân viên";
+            TenNhanVien.MinimumWidth = 6;
+            TenNhanVien.Name = "TenNhanVien";
+            // 
+            // TenKhachHang
+            // 
+            TenKhachHang.DataPropertyName = "TenKhachHang";
+            TenKhachHang.HeaderText = "Khách hàng";
+            TenKhachHang.MinimumWidth = 6;
+            TenKhachHang.Name = "TenKhachHang";
+            // 
+            // NgayLap
+            // 
+            NgayLap.DataPropertyName = "NgayLap";
+            NgayLap.HeaderText = "Ngày lập";
+            NgayLap.MinimumWidth = 6;
+            NgayLap.Name = "NgayLap";
+            // 
+            // TongTien
+            // 
+            TongTien.DataPropertyName = "TongTien";
+            TongTien.HeaderText = "Tổng tiền";
+            TongTien.MinimumWidth = 6;
+            TongTien.Name = "TongTien";
             // 
             // btnXuat
             // 
@@ -156,41 +191,6 @@
             btnLapHoaDon.UseVisualStyleBackColor = true;
             btnLapHoaDon.Click += btnLapHoaDon_Click;
             // 
-            // ID
-            // 
-            ID.DataPropertyName = "ID";
-            ID.HeaderText = "ID";
-            ID.MinimumWidth = 6;
-            ID.Name = "ID";
-            // 
-            // TenNhanVien
-            // 
-            TenNhanVien.DataPropertyName = "TenNhanVien";
-            TenNhanVien.HeaderText = "Nhân viên";
-            TenNhanVien.MinimumWidth = 6;
-            TenNhanVien.Name = "TenNhanVien";
-            // 
-            // TenKhachHang
-            // 
-            TenKhachHang.DataPropertyName = "TenKhachHang";
-            TenKhachHang.HeaderText = "Khách hàng";
-            TenKhachHang.MinimumWidth = 6;
-            TenKhachHang.Name = "TenKhachHang";
-            // 
-            // NgayLap
-            // 
-            NgayLap.DataPropertyName = "NgayLap";
-            NgayLap.HeaderText = "Ngày lập";
-            NgayLap.MinimumWidth = 6;
-            NgayLap.Name = "NgayLap";
-            // 
-            // TongTien
-            // 
-            TongTien.DataPropertyName = "TongTien";
-            TongTien.HeaderText = "Tổng tiền";
-            TongTien.MinimumWidth = 6;
-            TongTien.Name = "TongTien";
-            // 
             // frmHoaDon
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
@@ -207,7 +207,7 @@
             Controls.Add(groupBox1);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Name = "frmHoaDon";
-            Text = "frmHoaDon";
+            Text = "Hóa đơn ";
             Load += frmHoaDon_Load;
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();

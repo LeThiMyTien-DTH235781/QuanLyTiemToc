@@ -61,6 +61,7 @@
             dtKhachHang.AllowUserToDeleteRows = false;
             dtKhachHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtKhachHang.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            dtKhachHang.BackgroundColor = Color.LightGray;
             dtKhachHang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtKhachHang.Columns.AddRange(new DataGridViewColumn[] { KhachHangId, TenKH, SDT, DiaChi });
             dtKhachHang.Location = new Point(17, 22);
@@ -128,7 +129,7 @@
             // btnLuu
             // 
             btnLuu.Font = new Font("Cascadia Code", 9F, FontStyle.Bold);
-            btnLuu.ForeColor = Color.Teal;
+            btnLuu.ForeColor = Color.DodgerBlue;
             btnLuu.Location = new Point(595, 223);
             btnLuu.Margin = new Padding(4, 3, 4, 3);
             btnLuu.Name = "btnLuu";
@@ -281,10 +282,10 @@
             groupBox1.Controls.Add(txtTenKH);
             groupBox1.Controls.Add(txtSDT);
             groupBox1.Controls.Add(txtDiaChi);
-            groupBox1.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
-            groupBox1.Location = new Point(29, 66);
+            groupBox1.Font = new Font("Cascadia Code", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.Location = new Point(29, 45);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1133, 131);
+            groupBox1.Size = new Size(1133, 152);
             groupBox1.TabIndex = 29;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin khách hàng";
@@ -318,7 +319,7 @@
             Font = new Font("Cambria", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Margin = new Padding(4, 3, 4, 3);
             Name = "frmKhachHang";
-            Text = "frmKhachHang";
+            Text = "Khách hàng ";
             Load += frmKhachHang_Load_1;
             ((System.ComponentModel.ISupportInitialize)dtKhachHang).EndInit();
             groupBox1.ResumeLayout(false);

@@ -125,7 +125,7 @@
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Name = "frmDangNhap";
-            Text = "frmDangNhap";
+            Text = "Đăng nhập";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -107,19 +107,30 @@ namespace QuanLyTiemToc.Forms
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (id == 0) return;
-
-            var nv = context.NhanVien.Find(id);
-            if (nv != null)
+            if (id == 0)
             {
-                if (MessageBox.Show("Xóa nhân viên này?", "Xác nhận",
-                    MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    context.NhanVien.Remove(nv);
-                    context.SaveChanges();
-                    LoadNhanVien();
-                    ClearText();
-                }
+                MessageBox.Show("Vui lòng chọn nhân viên cần xóa!");
+                return;
+            }
+
+            var nv = context.NhanVien.FirstOrDefault(x => x.NhanVienId == id);
+
+            if (nv == null)
+            {
+                MessageBox.Show("Không tìm thấy nhân viên!");
+                return;
+            }
+
+            if (MessageBox.Show("Bạn có chắc muốn xóa không?", "Xác nhận",
+                MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                context.NhanVien.Remove(nv);
+                context.SaveChanges();
+
+                MessageBox.Show("Xóa thành công!");
+
+                LoadNhanVien();
+                ClearText();
             }
         }
 

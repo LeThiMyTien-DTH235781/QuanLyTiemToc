@@ -160,7 +160,7 @@
             // btnLuu
             // 
             btnLuu.Font = new Font("Cascadia Code", 7.8F, FontStyle.Bold);
-            btnLuu.ForeColor = Color.Teal;
+            btnLuu.ForeColor = Color.DodgerBlue;
             btnLuu.Location = new Point(983, 27);
             btnLuu.Margin = new Padding(4, 3, 4, 3);
             btnLuu.Name = "btnLuu";
@@ -393,7 +393,7 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "frmSanPham";
-            Text = "frmSanPham";
+            Text = "Sản phẩm ";
             Load += frmSanPham_Load;
             ((System.ComponentModel.ISupportInitialize)numDonGia).EndInit();
             ((System.ComponentModel.ISupportInitialize)numSoLuong).EndInit();
